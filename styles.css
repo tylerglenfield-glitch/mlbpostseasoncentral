@@ -1,4 +1,4 @@
-/* Color Palette & Layout System */
+/* Color Palette & Global Variables */
 :root {
   --bg-dark: #0b0f19;
   --bg-surface: #151c2c;
@@ -36,7 +36,7 @@ body.light-mode {
   --shadow-glow: rgba(0, 0, 0, 0.06);
 }
 
-/* Hyperlink Reset Engine */
+/* Base Reset & Hyperlink Engine */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -275,12 +275,13 @@ button:hover, select:hover {
   display: inline-block;
   background-color: var(--accent-gold);
   color: #000000;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 900;
-  padding: 4px 12px;
+  padding: 6px 16px;
   border-radius: 20px;
   letter-spacing: 1px;
   margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .hero-title {
@@ -304,7 +305,7 @@ button:hover, select:hover {
   flex-wrap: wrap;
 }
 
-/* Buttons */
+/* Buttons Engine */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -396,7 +397,7 @@ button:hover, select:hover {
   border: 1px solid var(--border-color);
 }
 
-/* Scoreboard Grid */
+/* Scoreboard Grid & Stat Leaders */
 .scoreboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -450,6 +451,7 @@ button:hover, select:hover {
 .bracket-filter-btns {
   display: flex;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .filter-tab {
@@ -463,6 +465,17 @@ button:hover, select:hover {
   background-color: var(--primary-blue);
   color: #ffffff;
   border-color: var(--primary-blue);
+}
+
+.predictor-tab {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--accent-gold);
+  border: 1px solid var(--accent-gold);
+}
+
+.predictor-tab.active {
+  background-color: var(--accent-gold);
+  color: #000000;
 }
 
 .bracket-wrapper {
@@ -594,7 +607,7 @@ button:hover, select:hover {
   color: var(--text-main);
 }
 
-/* Table Card */
+/* Table Component */
 .table-card-wrapper {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
@@ -650,7 +663,25 @@ button:hover, select:hover {
   transform: translateY(-2px);
 }
 
-/* 30-Team Directory Grid */
+/* Search Bar & 30-Team Directory Grid */
+.search-input-field {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+}
+
+.search-input-field:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 10px var(--shadow-glow);
+}
+
 .division-tab-bar {
   display: flex;
   gap: 8px;
@@ -699,7 +730,7 @@ button:hover, select:hover {
   border-color: var(--primary-blue);
 }
 
-/* Spotlight Card */
+/* Spotlight Preview Card */
 .spotlight-card {
   display: grid;
   grid-template-columns: 320px 1fr;
@@ -800,7 +831,7 @@ button:hover, select:hover {
   color: var(--primary-blue);
 }
 
-/* Portal Banner */
+/* Dedicated Team Portal View */
 .portal-header-banner {
   background: linear-gradient(135deg, var(--team-theme-primary) 0%, var(--team-theme-accent) 100%);
   padding: 45px 24px;
@@ -1057,7 +1088,7 @@ button:hover, select:hover {
   text-decoration: underline;
 }
 
-/* Modal Overlay */
+/* Modal Window Overlay */
 .modal-backdrop {
   position: fixed;
   top: 0;
