@@ -3,103 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MLB Postseason 2026 | 30-Team Franchise Portals</title>
+  <title>MLB Postseason 2026 | 30-Team Franchise Hub</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
 </head>
 <body class="dark-mode">
 
-  <!-- Navigation Directory -->
+  <!-- Sticky Top Navigation Directory Bar -->
   <header class="top-header">
     <nav class="navbar">
       <a href="index.html" class="brand-logo">
-        <span class="logo-ball">⚾</span>
+        <div class="logo-icon-bg">⚾</div>
         <div class="logo-text">
-          <span class="logo-title">MLB POSTSEASON</span>
-          <span class="logo-sub">2026 OFFICIAL PORTAL</span>
+          <span class="logo-title">OCTOBER PORTAL</span>
+          <span class="logo-sub">MLB POSTSEASON 2026</span>
         </div>
       </a>
 
       <ul class="nav-directory" id="main-nav-links">
-        <li><a href="index.html" id="nav-home">Home & Scores</a></li>
-        <li><a href="bracket.html" id="nav-bracket">Playoff Bracket & TV</a></li>
-        <li><a href="teams.html" class="active" id="nav-teams">30-Team Hub</a></li>
+        <li><a href="index.html" class="nav-link" id="nav-home">Scores & News</a></li>
+        <li><a href="bracket.html" class="nav-link" id="nav-bracket">Interactive Bracket</a></li>
+        <li><a href="teams.html" class="nav-link active" id="nav-teams">30-Team Franchise Hub</a></li>
       </ul>
 
       <div class="header-controls">
-        <button onclick="openFavoriteTeamPortal()" class="fav-quick-btn">
-          ⭐ <span id="fav-quick-label">My Team Portal</span>
+        <button onclick="openFavoriteTeamPortal()" class="fav-quick-pill" id="fav-quick-btn">
+          <span class="star-icon">⭐</span> <span id="fav-quick-label">My Team Portal</span>
         </button>
-        <select id="lang-select" onchange="changeLanguage(this.value)">
-          <option value="en">English 🇺🇸</option>
-          <option value="es">Español 🇲🇽</option>
-          <option value="zh">中文 🇨🇳</option>
-        </select>
-        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Theme">
-          <span id="theme-icon">🌙</span> <span id="theme-label">Dark</span>
+        <div class="select-wrapper">
+          <select id="lang-select" class="custom-select" onchange="changeLanguage(this.value)">
+            <option value="en">🇺🇸 EN</option>
+            <option value="es">🇲🇽 ES</option>
+            <option value="zh">🇨🇳 ZH</option>
+          </select>
+        </div>
+        <button id="theme-toggle" class="icon-toggle-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
+          <span id="theme-icon">🌙</span>
         </button>
       </div>
     </nav>
   </header>
 
-  <!-- Live Ticker Bar -->
+  <!-- Live Scores Ticker Banner -->
   <div class="ticker-bar">
-    <div class="ticker-label">LIVE SYNC</div>
+    <div class="ticker-badge"><span class="pulse-dot"></span> LIVE SYNC</div>
     <div class="ticker-content" id="ticker-content">
-      <span>⚾ Fetching real-time MLB scoreboards and postseason series data...</span>
+      <span>⚾ Connecting to ESPN real-time MLB stats feed...</span>
     </div>
-    <button onclick="fetchLiveMLBData()" class="refresh-pill-btn">🔄 Sync Live API</button>
+    <button onclick="fetchLiveMLBData()" class="sync-refresh-btn">🔄 Refresh Scores</button>
   </div>
 
   <!-- VIEW 1: 30-TEAM DIRECTORY GRID -->
   <div id="main-teams-hub">
     <main class="main-layout">
       <section id="team-spotlight" class="content-section">
-        <div class="section-heading-row">
+        <div class="section-heading">
           <div>
-            <h2 id="heading-teams">⭐ 30 MLB Teams Hub & Franchise Portals</h2>
-            <p class="section-subtitle" id="sub-teams">Select any MLB team to preview their stats or click to launch their full, dedicated team page!</p>
+            <span class="heading-kicker">30-FRANCHISE PORTAL</span>
+            <h2 id="heading-teams">MLB Franchise Directory & Team Portals</h2>
+            <p class="section-subtitle" id="sub-teams">Select any team in Major League Baseball to preview their record or launch their dedicated team portal!</p>
           </div>
         </div>
 
-        <div class="division-tabs">
-          <button class="div-tab active" onclick="filterTeamsByDivision('ALL')">All 30 Teams</button>
-          <button class="div-tab" onclick="filterTeamsByDivision('AL_EAST')">AL East</button>
-          <button class="div-tab" onclick="filterTeamsByDivision('AL_CENTRAL')">AL Central</button>
-          <button class="div-tab" onclick="filterTeamsByDivision('AL_WEST')">AL West</button>
-          <button class="div-tab" onclick="filterTeamsByDivision('NL_EAST')">NL East</button>
-          <button class="div-tab" onclick="filterTeamsByDivision('NL_CENTRAL')">NL Central</button>
-          <button class="div-tab" onclick="filterTeamsByDivision('NL_WEST')">NL West</button>
+        <!-- Division Filter Buttons -->
+        <div class="division-tab-bar">
+          <button class="div-tab-btn active" onclick="filterTeamsByDivision('ALL')">All 30 Teams</button>
+          <button class="div-tab-btn" onclick="filterTeamsByDivision('AL_EAST')">AL East</button>
+          <button class="div-tab-btn" onclick="filterTeamsByDivision('AL_CENTRAL')">AL Central</button>
+          <button class="div-tab-btn" onclick="filterTeamsByDivision('AL_WEST')">AL West</button>
+          <button class="div-tab-btn" onclick="filterTeamsByDivision('NL_EAST')">NL East</button>
+          <button class="div-tab-btn" onclick="filterTeamsByDivision('NL_CENTRAL')">NL Central</button>
+          <button class="div-tab-btn" onclick="filterTeamsByDivision('NL_WEST')">NL West</button>
         </div>
 
-        <div class="team-picker-grid" id="team-picker-grid">
-          <!-- 30 Teams dynamically rendered by script.js -->
+        <!-- Team Selector Grid -->
+        <div class="team-grid-picker" id="team-picker-grid">
+          <!-- 30 Teams rendered dynamically by script.js -->
         </div>
 
-        <!-- Team Quick Preview Spotlight Card -->
-        <div class="team-spotlight-card" id="team-spotlight-card">
+        <!-- Dynamic Team Spotlight Preview Card -->
+        <div class="spotlight-card" id="team-spotlight-card">
           <div class="spotlight-media">
-            <img id="spotlight-img" src="dodgers.jpg" alt="Team Spotlight Photo" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1562077772-3bd90403f7f0?auto=format&fit=crop&w=800&q=80';">
-            <div class="spotlight-badge" id="spotlight-badge">#3 Seed • NLCS</div>
+            <img id="spotlight-img" src="dodgers.jpg" alt="Team Spotlight" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1562077772-3bd90403f7f0?auto=format&fit=crop&w=800&q=80';">
+            <div class="spotlight-media-badge" id="spotlight-badge">#3 Seed • NLCS</div>
           </div>
-          <div class="spotlight-details">
+          <div class="spotlight-body">
             <div class="spotlight-header">
               <h3 id="spotlight-title">Los Angeles Dodgers</h3>
-              <div class="btn-group-sm">
-                <button onclick="setFavoriteTeam()" class="fav-heart-btn" id="fav-btn">❤️ Save as Favorite</button>
-                <button onclick="launchDedicatedPortal()" class="btn btn-primary" style="padding:8px 16px; font-size:13px;">🚀 Open Dedicated Team Portal</button>
+              <div class="spotlight-action-row">
+                <button onclick="setFavoriteTeam()" class="btn-fav-heart" id="fav-btn">❤️ Save as Favorite</button>
+                <button onclick="launchDedicatedPortal()" class="btn btn-primary btn-sm">🚀 Open Dedicated Portal</button>
               </div>
             </div>
-            <p class="spotlight-desc" id="spotlight-desc">
-              The Dodgers entered the 2026 postseason boasting one of the most potent lineups in baseball. Led by two-way icon Shohei Ohtani, Mookie Betts, and Freddie Freeman, Los Angeles won the NL Wild Card round and ALDS, advancing to the NLCS.
+            <p class="spotlight-description" id="spotlight-desc">
+              The Dodgers entered the 2026 postseason boasting one of the most potent lineups in baseball history. Led by two-way icon Shohei Ohtani, Mookie Betts, and Freddie Freeman, Los Angeles advanced through the Wild Card and Division series into the NLCS.
             </p>
-            <div class="spotlight-stats">
-              <div class="stat-pill"><span class="stat-title">2026 Record</span><strong class="stat-value" id="spotlight-rec">98 - 64</strong></div>
-              <div class="stat-pill"><span class="stat-title">Postseason Status</span><strong class="stat-value" id="spotlight-pos">NLCS vs Milwaukee</strong></div>
-              <div class="stat-pill"><span class="stat-title">Featured Star</span><strong class="stat-value" id="spotlight-star">Shohei Ohtani</strong></div>
-              <div class="stat-pill"><span class="stat-title">World Series Titles</span><strong class="stat-value" id="spotlight-ws">8 Titles</strong></div>
+            <div class="spotlight-stats-grid">
+              <div class="stat-pill-box"><span class="stat-lbl">2026 Record</span><strong class="stat-val" id="spotlight-rec">98 - 64</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">Postseason Status</span><strong class="stat-val" id="spotlight-pos">NLCS vs Milwaukee</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">Featured Star</span><strong class="stat-val" id="spotlight-star">Shohei Ohtani</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">World Series Titles</span><strong class="stat-val" id="spotlight-ws">8 Titles</strong></div>
             </div>
           </div>
         </div>
@@ -107,25 +112,23 @@
     </main>
   </div>
 
-  <!-- VIEW 2: DEDICATED FULL-PAGE TEAM PORTAL -->
+  <!-- VIEW 2: DEDICATED FULL-PAGE TEAM PORTAL VIEW -->
   <div id="dedicated-team-portal" style="display: none;">
     <div class="portal-header-banner" id="portal-banner">
-      <div class="portal-banner-container">
-        <button onclick="showTeamsHub()" class="back-hub-btn">← Back to 30-Team Directory</button>
-        <div class="portal-team-identity">
-          <div class="portal-logo-circle">
-            <span id="portal-emoji">⚾</span>
-          </div>
-          <div>
-            <div class="portal-badge-line">
-              <span class="badge" id="portal-badge">#1 Seed</span>
-              <span class="badge badge-outline" id="portal-div-name">NL Central</span>
+      <div class="portal-container">
+        <button onclick="showTeamsHub()" class="back-link-btn">← Back to 30-Team Directory</button>
+        <div class="portal-identity-row">
+          <div class="portal-logo-circle">⚾</div>
+          <div class="portal-titles">
+            <div class="portal-badge-group">
+              <span class="pill-badge gold" id="portal-badge">#1 Seed</span>
+              <span class="pill-badge outline" id="portal-div-name">NL Central</span>
             </div>
             <h1 id="portal-team-name">Milwaukee Brewers</h1>
-            <p id="portal-tagline">Official 2026 Team Postseason & Franchise Hub</p>
+            <p id="portal-tagline" class="portal-sub">Official 2026 Postseason & Franchise Hub</p>
           </div>
         </div>
-        <div class="portal-header-actions">
+        <div class="portal-actions">
           <button onclick="setFavoriteTeam()" class="btn btn-secondary" id="portal-fav-btn">❤️ Favorite Team</button>
           <a id="portal-official-btn" href="#" target="_blank" class="btn btn-primary">Official MLB Site ↗</a>
         </div>
@@ -134,35 +137,35 @@
 
     <div class="main-layout">
       <!-- Portal Sub-Nav Tabs -->
-      <div class="portal-tabs-bar">
-        <button class="portal-tab active" onclick="switchPortalTab('overview')">📊 Overview & Stats</button>
-        <button class="portal-tab" onclick="switchPortalTab('schedule')">📅 Schedule & Game Logs</button>
-        <button class="portal-tab" onclick="switchPortalTab('roster')">⭐ Roster & Stars</button>
-        <button class="portal-tab" onclick="switchPortalTab('news')">📰 Team News</button>
+      <div class="portal-subnav-tabs">
+        <button class="portal-tab-btn active" onclick="switchPortalTab('overview')">📊 Overview & Stats</button>
+        <button class="portal-tab-btn" onclick="switchPortalTab('schedule')">📅 Schedule & Game Logs</button>
+        <button class="portal-tab-btn" onclick="switchPortalTab('roster')">⭐ Key Stars & Roster</button>
+        <button class="portal-tab-btn" onclick="switchPortalTab('news')">📰 Team Coverage</button>
       </div>
 
       <!-- PORTAL TAB 1: OVERVIEW -->
       <div id="ptab-overview" class="portal-tab-content active">
-        <div class="portal-overview-grid">
-          <div class="portal-card">
+        <div class="portal-grid-2col">
+          <div class="card-box">
             <h3>📖 2026 Season Storyline</h3>
-            <p id="portal-full-desc" class="portal-p-text">Team storyline text...</p>
+            <p id="portal-full-desc" class="body-p">Team storyline details...</p>
 
-            <div class="spotlight-stats" style="margin-top:20px;">
-              <div class="stat-pill"><span class="stat-title">2026 Record</span><strong class="stat-value" id="ptab-rec">103 - 59</strong></div>
-              <div class="stat-pill"><span class="stat-title">Home Record</span><strong class="stat-value" id="ptab-home">54 - 27</strong></div>
-              <div class="stat-pill"><span class="stat-title">Away Record</span><strong class="stat-value" id="ptab-away">49 - 32</strong></div>
-              <div class="stat-pill"><span class="stat-title">Run Differential</span><strong class="stat-value" id="ptab-rundiff">+142</strong></div>
+            <div class="spotlight-stats-grid" style="margin-top:20px;">
+              <div class="stat-pill-box"><span class="stat-lbl">2026 Record</span><strong class="stat-val" id="ptab-rec">103 - 59</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">Home Record</span><strong class="stat-val" id="ptab-home">54 - 27</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">Away Record</span><strong class="stat-val" id="ptab-away">49 - 32</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">Run Differential</span><strong class="stat-val" id="ptab-rundiff">+142</strong></div>
             </div>
           </div>
 
-          <div class="portal-card">
-            <h3>🏆 Franchise Honors</h3>
-            <ul class="honors-list">
-              <li><strong>World Series Titles:</strong> <span id="ptab-ws-titles">0</span></li>
-              <li><strong>League Pennants:</strong> <span id="ptab-pennants">2</span></li>
-              <li><strong>Division Titles:</strong> <span id="ptab-div-titles">6</span></li>
-              <li><strong>Stadium:</strong> <span id="ptab-stadium">American Family Field</span></li>
+          <div class="card-box">
+            <h3>🏆 Franchise Achievements</h3>
+            <ul class="honors-data-list">
+              <li><span>World Series Titles:</span> <strong id="ptab-ws-titles">0</strong></li>
+              <li><span>League Pennants:</span> <strong id="ptab-pennants">2</strong></li>
+              <li><span>Division Titles:</span> <strong id="ptab-div-titles">6</strong></li>
+              <li><span>Home Stadium:</span> <strong id="ptab-stadium">American Family Field</strong></li>
             </ul>
           </div>
         </div>
@@ -170,33 +173,33 @@
 
       <!-- PORTAL TAB 2: SCHEDULE & GAME LOG -->
       <div id="ptab-schedule" class="portal-tab-content">
-        <div class="portal-card">
-          <h3>⚾ Postseason & Recent Game Log</h3>
-          <div class="schedule-table-card" style="margin-top:15px;">
+        <div class="card-box">
+          <h3>⚾ 2026 Postseason & Recent Game Log</h3>
+          <div class="table-card-wrapper" style="margin-top:15px;">
             <table class="schedule-table">
               <thead>
                 <tr>
                   <th>Game</th>
                   <th>Opponent</th>
-                  <th>Result / Time</th>
+                  <th>Result</th>
                   <th>Score</th>
                   <th>Broadcast / Tickets</th>
                 </tr>
               </thead>
               <tbody id="portal-gamelog-body">
-                <!-- JS Populated -->
+                <!-- Dynamically rendered -->
               </tbody>
             </table>
           </div>
         </div>
       </div>
 
-      <!-- PORTAL TAB 3: ROSTER & STARS -->
+      <!-- PORTAL TAB 3: ROSTER STARS -->
       <div id="ptab-roster" class="portal-tab-content">
-        <div class="portal-card">
+        <div class="card-box">
           <h3>⭐ Key Players & Roster Anchors</h3>
-          <div class="roster-grid" id="portal-roster-grid">
-            <!-- JS Populated -->
+          <div class="roster-card-grid" id="portal-roster-grid">
+            <!-- Dynamically rendered -->
           </div>
         </div>
       </div>
@@ -204,7 +207,7 @@
       <!-- PORTAL TAB 4: TEAM NEWS -->
       <div id="ptab-news" class="portal-tab-content">
         <div class="news-masonry" id="portal-news-grid">
-          <!-- JS Populated -->
+          <!-- Dynamically rendered -->
         </div>
       </div>
 
@@ -213,9 +216,12 @@
 
   <footer>
     <div class="footer-container">
-      <div class="footer-brand">⚾ MLB Postseason 2026 Portal</div>
-      <p>Real-time scores, 30-team dedicated portals, interactive brackets, and broadcast schedules.</p>
-      <p class="footer-copy">&copy; 2026 Major League Baseball. All rights reserved.</p>
+      <div class="footer-brand">
+        <span class="logo-icon-bg sm">⚾</span>
+        <span>MLB POSTSEASON 2026 PORTAL</span>
+      </div>
+      <p>Real-time game scores, interactive brackets, broadcast listings, and 30-team franchise hubs.</p>
+      <div class="footer-copy">&copy; 2026 Major League Baseball Postseason Digital Experience. All rights reserved.</div>
     </div>
   </footer>
 
