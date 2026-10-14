@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 MLB Postseason Hub | Bracket, Scores & Schedule</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+
+  <!-- Sticky Top Directory & Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <span class="mlb-logo">⚾</span> 
+        <span id="nav-brand">MLB Postseason 2026</span>
+      </div>
+      
+      <!-- Directory Links -->
+      <ul class="nav-links">
+        <li><a href="#news" id="nav-news">Headlines</a></li>
+        <li><a href="#bracket" id="nav-bracket">Playoff Bracket</a></li>
+        <li><a href="#schedule" id="nav-schedule">Games & TV</a></li>
+        <li><a href="#team-hub" id="nav-team">Team Hub</a></li>
+      </ul>
+
+      <!-- Controls: Theme & Language -->
+      <div class="nav-controls">
+        <select id="lang-selector" onchange="changeLanguage(this.value)">
+          <option value="en">English 🇺🇸</option>
+          <option value="es">Español 🇲🇽</option>
+          <option value="zh">中文 🇨🇳</option>
+        </select>
+        <button id="theme-btn" onclick="toggleTheme()">🌓 Light</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Hero Banner -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <span class="badge">OCTOBER ROAD TO THE WORLD SERIES</span>
+      <h1 id="hero-title">2026 League Championship Series</h1>
+      <p id="hero-subtitle">Catch every pitch, live broadcast schedules, real-time news, and interactive playoff bracket updates.</p>
+      <div class="hero-buttons">
+        <a href="#bracket" class="btn btn-primary" id="btn-view-bracket">View Bracket</a>
+        <a href="#schedule" class="btn btn-secondary" id="btn-view-games">Game Schedule</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- Section 1: Postseason News Feed -->
+    <section id="news" class="section">
+      <div class="section-header">
+        <h2 id="news-heading">📰 Latest Postseason Headlines</h2>
+        <span class="source-tag">Sources: ESPN • MLB.com • FOX Sports</span>
+      </div>
+
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="news-img-placeholder">
+            <img src="brewers.jpg" alt="Milwaukee Brewers" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1508802222057-4cabc15b825f?auto=format&fit=crop&w=600&q=80';">
+            <span class="tag tag-nlcs">NLCS</span>
+          </div>
+          <div class="news-body">
+            <span class="news-date">Oct 14, 2026 • MLB.com</span>
+            <h3>Brewers Take 2-0 NLCS Lead Headed to Los Angeles</h3>
+            <p>Milwaukee's pitching staff holds off the Dodgers late comeback attempt in Game 2. Series shifts to Dodger Stadium tonight for Game 3.</p>
+            <a href="https://www.mlb.com/news" target="_blank" class="read-more">Read Full Story on MLB.com →</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-img-placeholder">
+            <img src="guardians.jpg" alt="Cleveland Guardians" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=600&q=80';">
+            <span class="tag tag-alcs">ALCS</span>
+          </div>
+          <div class="news-body">
+            <span class="news-date">Oct 13, 2026 • ESPN</span>
+            <h3>Rays Bounce Back in Game 2 to Even ALCS vs Guardians</h3>
+            <p>Tampa Bay answers with a 3-1 victory in St. Petersburg behind stellar bullpen work. Game 3 moves to Progressive Field in Cleveland.</p>
+            <a href="https://www.espn.com/mlb/" target="_blank" class="read-more">Read Full Story on ESPN →</a>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-img-placeholder">
+            <img src="yankees.jpg" alt="New York Yankees" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1562077772-3bd90403f7f0?auto=format&fit=crop&w=600&q=80';">
+            <span class="tag tag-alds">ALDS Recap</span>
+          </div>
+          <div class="news-body">
+            <span class="news-date">Oct 10, 2026 • FOX Sports</span>
+            <h3>2026 Division Series Highlights & World Series Odds</h3>
+            <p>Analytic breakdowns of how the Rays, Guardians, Dodgers, and Brewers advanced past the ALDS and NLDS rounds.</p>
+            <a href="https://www.foxsports.com/mlb" target="_blank" class="read-more">Read Analysis on FOX Sports →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section 2: Interactive Playoff Bracket -->
+    <section id="bracket" class="section">
+      <div class="section-header">
+        <h2 id="bracket-heading">🏆 2026 Postseason Playoff Bracket</h2>
+        <p id="bracket-sub">Interactive visual bracket showing current series scores and standings.</p>
+      </div>
+
+      <div class="bracket-container">
+        <!-- ALCS Round -->
+        <div class="bracket-column">
+          <h3 class="round-title">American League Series (ALCS)</h3>
+          
+          <div class="matchup-card live-series">
+            <div class="team-row winner">
+              <span class="seed">#1</span>
+              <span class="team-name">Tampa Bay Rays</span>
+              <span class="series-score">1</span>
+            </div>
+            <div class="team-row">
+              <span class="seed">#2</span>
+              <span class="team-name">Cleveland Guardians</span>
+              <span class="series-score">1</span>
+            </div>
+            <div class="series-status">Series Tied 1-1 (Best of 7)</div>
+          </div>
+        </div>
+
+        <!-- World Series Round -->
+        <div class="bracket-column world-series-col">
+          <h3 class="round-title gold">World Series 👑</h3>
+          
+          <div class="matchup-card ws-card">
+            <div class="team-row pending">
+              <span class="seed">AL</span>
+              <span class="team-name">AL Champion (Rays / Guardians)</span>
+              <span class="series-score">-</span>
+            </div>
+            <div class="team-row pending">
+              <span class="seed">NL</span>
+              <span class="team-name">NL Champion (Brewers / Dodgers)</span>
+              <span class="series-score">-</span>
+            </div>
+            <div class="series-status">Starts Oct 23 on FOX</div>
+          </div>
+        </div>
+
+        <!-- NLCS Round -->
+        <div class="bracket-column">
+          <h3 class="round-title">National League Series (NLCS)</h3>
+          
+          <div class="matchup-card live-series">
+            <div class="team-row winner">
+              <span class="seed">#1</span>
+              <span class="team-name">Milwaukee Brewers</span>
+              <span class="series-score">2</span>
+            </div>
+            <div class="team-row">
+              <span class="seed">#2</span>
+              <span class="team-name">Los Angeles Dodgers</span>
+              <span class="series-score">0</span>
+            </div>
+            <div class="series-status">MIL Leads 2-0 • Game 3 Tonight!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Games, TV Channels & Tickets -->
+    <section id="schedule" class="section">
+      <div class="section-header">
+        <h2 id="schedule-heading">📺 Upcoming Schedule, Broadcast & Tickets</h2>
+        <p id="schedule-sub">Where to watch every 2026 LCS game on TV or stream live online.</p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th id="th-game">Game / Matchup</th>
+              <th id="th-date">Date & Time (ET)</th>
+              <th id="th-tv">Broadcast TV / Stream</th>
+              <th id="th-venue">Venue & Location</th>
+              <th id="th-tickets">Tickets</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="game-row featured">
+              <td>
+                <strong>NLCS Game 3</strong><br>
+                <span class="sub-text">Milwaukee Brewers @ LA Dodgers</span>
+              </td>
+              <td>Oct 14 • 8:00 PM ET</td>
+              <td><span class="channel-badge fs1">FS1</span> <span class="channel-badge fox">FOX Deportes</span></td>
+              <td>Dodger Stadium, Los Angeles, CA</td>
+              <td><a href="https://www.ticketmaster.com/mlb" target="_blank" class="ticket-btn">Buy Tickets 🎟️</a></td>
+            </tr>
+
+            <tr class="game-row">
+              <td>
+                <strong>ALCS Game 3</strong><br>
+                <span class="sub-text">Tampa Bay Rays @ Cleveland Guardians</span>
+              </td>
+              <td>Oct 15 • 1:00 PM ET</td>
+              <td><span class="channel-badge tbs">TBS</span> <span class="channel-badge max">HBO Max</span></td>
+              <td>Progressive Field, Cleveland, OH</td>
+              <td><a href="https://www.stubhub.com/mlb-tickets" target="_blank" class="ticket-btn">Buy Tickets 🎟️</a></td>
+            </tr>
+
+            <tr class="game-row">
+              <td>
+                <strong>NLCS Game 4</strong><br>
+                <span class="sub-text">Milwaukee Brewers @ LA Dodgers</span>
+              </td>
+              <td>Oct 15 • 9:00 PM ET</td>
+              <td><span class="channel-badge fs1">FS1</span> <span class="channel-badge fox">FOX One</span></td>
+              <td>Dodger Stadium, Los Angeles, CA</td>
+              <td><a href="https://www.ticketmaster.com/mlb" target="_blank" class="ticket-btn">Buy Tickets 🎟️</a></td>
+            </tr>
+
+            <tr class="game-row">
+              <td>
+                <strong>ALCS Game 4</strong><br>
+                <span class="sub-text">Tampa Bay Rays @ Cleveland Guardians</span>
+              </td>
+              <td>Oct 16 • 6:00 PM ET</td>
+              <td><span class="channel-badge tbs">TBS</span> <span class="channel-badge max">HBO Max</span></td>
+              <td>Progressive Field, Cleveland, OH</td>
+              <td><a href="https://www.stubhub.com/mlb-tickets" target="_blank" class="ticket-btn">Buy Tickets 🎟️</a></td>
+            </tr>
+
+            <tr class="game-row">
+              <td>
+                <strong>World Series Game 1</strong><br>
+                <span class="sub-text">AL Champion @ NL Champion</span>
+              </td>
+              <td>Oct 23 • 8:00 PM ET</td>
+              <td><span class="channel-badge fox">FOX</span></td>
+              <td>TBD (Home of Higher Seed)</td>
+              <td><a href="https://www.mlb.com/tickets" target="_blank" class="ticket-btn">Buy Tickets 🎟️</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Favorite Team Hub (Dedicated Dynamic Page/Section) -->
+    <section id="team-hub" class="section team-spotlight-section">
+      <div class="section-header">
+        <h2 id="team-heading">⭐ Favorite Team Hub</h2>
+        <p id="team-sub">Select your team to load their dedicated roster spotlight, stats, and custom graphics!</p>
+      </div>
+
+      <!-- Team Selector Buttons -->
+      <div class="team-selector-bar">
+        <button class="team-select-btn active" onclick="selectTeam('dodgers')">Dodgers</button>
+        <button class="team-select-btn" onclick="selectTeam('brewers')">Brewers</button>
+        <button class="team-select-btn" onclick="selectTeam('guardians')">Guardians</button>
+        <button class="team-select-btn" onclick="selectTeam('rays')">Rays</button>
+        <button class="team-select-btn" onclick="selectTeam('yankees')">Yankees</button>
+        <button class="team-select-btn" onclick="selectTeam('braves')">Braves</button>
+      </div>
+
+      <!-- Dedicated Dynamic Team Spotlight Box -->
+      <div id="team-display-card" class="team-card-banner">
+        <div class="team-card-image">
+          <img id="team-img" src="dodgers.jpg" alt="Team Spotlight Image" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1562077772-3bd90403f7f0?auto=format&fit=crop&w=600&q=80';">
+        </div>
+        <div class="team-card-info">
+          <div class="team-title-row">
+            <h3 id="team-name-title">Los Angeles Dodgers</h3>
+            <span id="team-seed-badge" class="badge">#2 Seed • NL West Champs</span>
+          </div>
+
+          <p id="team-description">
+            The Dodgers entered the 2026 postseason with a 100-62 record after winning the NL West. Led by two-way superstar Shohei Ohtani and pitcher Yoshinobu Yamamoto, the Dodgers advanced through the NLDS over Atlanta and are currently battling Milwaukee in the NLCS.
+          </p>
+
+          <div class="team-stats-grid">
+            <div class="stat-box">
+              <span class="stat-label" id="lbl-record">2026 Regular Season</span>
+              <strong class="stat-val" id="team-stat-record">100 - 62</strong>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label" id="lbl-status">Current Round</span>
+              <strong class="stat-val" id="team-stat-status">NLCS vs Milwaukee</strong>
+            </div>
+            <div class="stat-box">
+              <span class="stat-label" id="lbl-star">Key Player</span>
+              <strong class="stat-val" id="team-stat-star">Shohei Ohtani</strong>
+            </div>
+          </div>
+
+          <div class="team-actions">
+            <a id="team-official-link" href="https://www.mlb.com/dodgers" target="_blank" class="btn btn-primary">Official Team Site ↗</a>
+            <button onclick="saveFavoriteTeam()" class="btn btn-secondary" id="btn-save-fav">❤️ Save as My Favorite</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Major League Baseball Postseason Interactive Portal. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
