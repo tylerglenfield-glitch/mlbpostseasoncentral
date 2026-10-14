@@ -1,11 +1,11 @@
-// Complete 30 MLB Teams Database Engine
+// Complete 30 MLB Franchises Database with Official Primary & Secondary Colors
 const mlb30Teams = {
   // AL EAST
   yankees: { 
     name: "New York Yankees", div: "AL_EAST", seed: "AL Wild Card", rec: "93 - 69", pos: "Eliminated in ALDS", star: "Aaron Judge", ws: "27 Titles", 
-    primary: "#0c2340", accent: "#001c43", stadium: "Yankee Stadium (Bronx, NY)", pennants: "40", divTitles: "20",
+    primary: "#0c2340", accent: "#1c355e", stadium: "Yankee Stadium (Bronx, NY)", pennants: "40", divTitles: "20",
     img: "yankees.jpg", fallback: "https://images.unsplash.com/photo-1562077772-3bd90403f7f0?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/yankees", 
-    desc: "The New York Yankees entered the 2026 postseason having won 93 games in a highly competitive AL East. Behind Aaron Judge's 50+ home run campaign, the Yankees advanced past Boston in the Wild Card round before engaging in an ALDS battle with Tampa Bay.",
+    desc: "The New York Yankees entered the 2026 postseason having won 93 games in a competitive AL East. Behind Aaron Judge's 53-home-run MVP campaign, the Yankees defeated Boston in the Wild Card round before engaging in a tense ALDS against Tampa Bay.",
     roster: [
       { name: "Aaron Judge", pos: "OF | #99", stat: ".322 BA, 53 HR, 128 RBI" },
       { name: "Juan Soto", pos: "OF | #22", stat: ".288 BA, 41 HR, 109 RBI" },
@@ -17,24 +17,24 @@ const mlb30Teams = {
       { game: "AL Wild Card Game 2", opp: "vs Boston Red Sox", res: "W 4-1", score: "4 - 1", tv: "ESPN" }
     ]
   },
-  redsox: { name: "Boston Red Sox", div: "AL_EAST", seed: "AL Wild Card #5", rec: "89 - 73", pos: "Eliminated in Wild Card", star: "Rafael Devers", ws: "9 Titles", primary: "#bd3039", accent: "#0c2340", stadium: "Fenway Park (Boston, MA)", pennants: "14", divTitles: "10", img: "redsox.jpg", fallback: "https://images.unsplash.com/photo-1508802222057-4cabc15b825f?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/redsox", desc: "Boston staged a remarkable second-half surge in 2026 to capture an AL Wild Card berth behind Rafael Devers.", roster: [{ name: "Rafael Devers", pos: "3B | #11", stat: ".282 BA, 34 HR" }], gamelog: [] },
-  rays: { name: "Tampa Bay Rays", div: "AL_EAST", seed: "#1 Seed • AL East Champs", rec: "98 - 64", pos: "ALCS Series Tied 2-2", star: "Junior Caminero", ws: "0 Titles", primary: "#092c5c", accent: "#8fbce6", stadium: "Tropicana Field (St. Petersburg, FL)", pennants: "2", divTitles: "5", img: "rays.jpg", fallback: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/rays", desc: "Tampa Bay posted an AL-best 98 wins to capture the AL East title and are currently battling Seattle in the ALCS.", roster: [{ name: "Junior Caminero", pos: "3B | #1", stat: ".290 BA, 31 HR" }], gamelog: [] },
-  orioles: { name: "Baltimore Orioles", div: "AL_EAST", seed: "In Contention", rec: "86 - 76", pos: "Regular Season 4th", star: "Gunnar Henderson", ws: "3 Titles", primary: "#df4601", accent: "#000000", stadium: "Camden Yards", pennants: "7", divTitles: "10", img: "orioles.jpg", fallback: "https://images.unsplash.com/photo-1508802222057-4cabc15b825f?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/orioles", desc: "Baltimore's core continues to showcase incredible young offensive depth.", roster: [{ name: "Gunnar Henderson", pos: "SS", stat: "37 HR" }], gamelog: [] },
+  redsox: { name: "Boston Red Sox", div: "AL_EAST", seed: "AL Wild Card #5", rec: "89 - 73", pos: "Eliminated in Wild Card", star: "Rafael Devers", ws: "9 Titles", primary: "#bd3039", accent: "#0c2340", stadium: "Fenway Park (Boston, MA)", pennants: "14", divTitles: "10", img: "redsox.jpg", fallback: "https://images.unsplash.com/photo-1508802222057-4cabc15b825f?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/redsox", desc: "Boston staged a second-half surge in 2026 to capture an AL Wild Card berth behind Rafael Devers.", roster: [{ name: "Rafael Devers", pos: "3B | #11", stat: ".282 BA, 34 HR" }], gamelog: [] },
+  rays: { name: "Tampa Bay Rays", div: "AL_EAST", seed: "#1 Seed • AL East Champs", rec: "98 - 64", pos: "ALCS Series Tied 2-2", star: "Junior Caminero", ws: "0 Titles", primary: "#092c5c", accent: "#00a3e0", stadium: "Tropicana Field (St. Petersburg, FL)", pennants: "2", divTitles: "5", img: "rays.jpg", fallback: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/rays", desc: "Tampa Bay posted an AL-best 98 wins to win the AL East title and are currently battling Seattle in the ALCS.", roster: [{ name: "Junior Caminero", pos: "3B | #1", stat: ".290 BA, 31 HR" }], gamelog: [] },
+  orioles: { name: "Baltimore Orioles", div: "AL_EAST", seed: "In Contention", rec: "86 - 76", pos: "Regular Season 4th", star: "Gunnar Henderson", ws: "3 Titles", primary: "#df4601", accent: "#000000", stadium: "Camden Yards", pennants: "7", divTitles: "10", img: "orioles.jpg", fallback: "https://images.unsplash.com/photo-1508802222057-4cabc15b825f?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/orioles", desc: "Baltimore's core continues to showcase young offensive depth.", roster: [{ name: "Gunnar Henderson", pos: "SS", stat: "37 HR" }], gamelog: [] },
   bluejays: { name: "Toronto Blue Jays", div: "AL_EAST", seed: "In Contention", rec: "82 - 80", pos: "Regular Season 5th", star: "Vladimir Guerrero Jr.", ws: "2 Titles", primary: "#134a8e", accent: "#1d2d5c", stadium: "Rogers Centre", pennants: "2", divTitles: "6", img: "bluejays.jpg", fallback: "https://images.unsplash.com/photo-1562077772-3bd90403f7f0?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/bluejays", desc: "Toronto finished above .500 in a competitive AL East.", roster: [{ name: "Vladimir Guerrero Jr.", pos: "1B", stat: "30 HR" }], gamelog: [] },
 
   // AL CENTRAL
   guardians: { name: "Cleveland Guardians", div: "AL_CENTRAL", seed: "#3 Seed • AL Central Champs", rec: "88 - 74", pos: "Eliminated in ALDS", star: "José Ramírez", ws: "2 Titles", primary: "#0c2340", accent: "#e31937", stadium: "Progressive Field", pennants: "6", divTitles: "12", img: "guardians.jpg", fallback: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/guardians", desc: "Cleveland won the AL Central and pushed Seattle to 5 games in the ALDS.", roster: [{ name: "José Ramírez", pos: "3B", stat: "38 HR, 115 RBI" }], gamelog: [] },
   tigers: { name: "Detroit Tigers", div: "AL_CENTRAL", seed: "AL Wild Card #6", rec: "86 - 76", pos: "Eliminated in WC", star: "Tarik Skubal", ws: "4 Titles", primary: "#0c2340", accent: "#fa4616", stadium: "Comerica Park", pennants: "11", divTitles: "7", img: "tigers.jpg", fallback: "https://images.unsplash.com/photo-1508802222057-4cabc15b825f?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/tigers", desc: "Detroit made a late-season run behind Tarik Skubal's pitching.", roster: [{ name: "Tarik Skubal", pos: "SP", stat: "18-4, 2.39 ERA" }], gamelog: [] },
-  twins: { name: "Minnesota Twins", div: "AL_CENTRAL", seed: "In Contention", rec: "84 - 78", pos: "Regular Season 3rd", star: "Carlos Correa", ws: "3 Titles", primary: "#072746", accent: "#d31145", stadium: "Target Field", pennants: "6", divTitles: "12", img: "twins.jpg", fallback: "https://images.unsplash.com/photo-1562077772-3bd90403f7f0?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/twins", desc: "Minnesota stayed in playoff contention throughout 2026.", roster: [{ name: "Carlos Correa", pos: "SS", stat: ".290 BA" }], gamelog: [] },
+  twins: { name: "Minnesota Twins", div: "AL_CENTRAL", seed: "In Contention", rec: "84 - 78", pos: "Regular Season 3rd", star: "Carlos Correa", ws: "3 Titles", primary: "#072746", accent: "#d31145", stadium: "Target Field", pennants: "6", divTitles: "12", img: "twins.jpg", fallback: "https://images.unsplash.com/photo-1562077772-3bd90403f7f0?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/twins", desc: "Minnesota stayed in contention throughout the 2026 season.", roster: [{ name: "Carlos Correa", pos: "SS", stat: ".290 BA" }], gamelog: [] },
   royals: { name: "Kansas City Royals", div: "AL_CENTRAL", seed: "In Contention", rec: "83 - 79", pos: "Regular Season 4th", star: "Bobby Witt Jr.", ws: "2 Titles", primary: "#004687", accent: "#7ab2dd", stadium: "Kauffman Stadium", pennants: "4", divTitles: "1", img: "royals.jpg", fallback: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/royals", desc: "Bobby Witt Jr. posted an MVP-caliber season for KC.", roster: [{ name: "Bobby Witt Jr.", pos: "SS", stat: "32 HR, 31 SB" }], gamelog: [] },
-  whitesox: { name: "Chicago White Sox", div: "AL_CENTRAL", seed: "Rebuilding", rec: "60 - 102", pos: "Regular Season 5th", star: "Luis Robert Jr.", ws: "3 Titles", primary: "#27251f", accent: "#c4ced4", stadium: "Guaranteed Rate Field", pennants: "6", divTitles: "6", img: "whitesox.jpg", fallback: "https://images.unsplash.com/photo-1508802222057-4cabc15b825f?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/whitesox", desc: "Chicago is developing top young prospects.", roster: [{ name: "Luis Robert Jr.", pos: "OF", stat: "24 HR" }], gamelog: [] },
+  whitesox: { name: "Chicago White Sox", div: "AL_CENTRAL", seed: "Rebuilding", rec: "60 - 102", pos: "Regular Season 5th", star: "Luis Robert Jr.", ws: "3 Titles", primary: "#27251f", accent: "#c4ced4", stadium: "Guaranteed Rate Field", pennants: "6", divTitles: "6", img: "whitesox.jpg", fallback: "https://images.unsplash.com/photo-1508802222057-4cabc15b825f?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/whitesox", desc: "Chicago is rebuilding around top prospects.", roster: [{ name: "Luis Robert Jr.", pos: "OF", stat: "24 HR" }], gamelog: [] },
 
   // AL WEST
   mariners: { name: "Seattle Mariners", div: "AL_WEST", seed: "#2 Seed • AL West Champs", rec: "92 - 70", pos: "ALCS Series Tied 2-2", star: "Julio Rodríguez", ws: "0 Titles", primary: "#0c2c56", accent: "#005c5c", stadium: "T-Mobile Park", pennants: "0", divTitles: "4", img: "mariners.jpg", fallback: "https://images.unsplash.com/photo-1562077772-3bd90403f7f0?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/mariners", desc: "Seattle won the AL West and is tied 2-2 with Tampa Bay in the ALCS.", roster: [{ name: "Julio Rodríguez", pos: "CF", stat: "30 HR, 30 SB" }], gamelog: [] },
   astros: { name: "Houston Astros", div: "AL_WEST", seed: "In Contention", rec: "87 - 75", pos: "Regular Season 2nd", star: "Yordan Alvarez", ws: "2 Titles", primary: "#002d62", accent: "#eb6e1f", stadium: "Minute Maid Park", pennants: "5", divTitles: "13", img: "astros.jpg", fallback: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/astros", desc: "Houston compiled another winning season in the AL West.", roster: [{ name: "Yordan Alvarez", pos: "DH", stat: "35 HR" }], gamelog: [] },
   rangers: { name: "Texas Rangers", div: "AL_WEST", seed: "In Contention", rec: "80 - 82", pos: "Regular Season 3rd", star: "Corey Seager", ws: "1 Title", primary: "#003278", accent: "#c0111f", stadium: "Globe Life Field", pennants: "3", divTitles: "7", img: "rangers.jpg", fallback: "https://images.unsplash.com/photo-1508802222057-4cabc15b825f?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/rangers", desc: "Texas continues to build around Corey Seager.", roster: [{ name: "Corey Seager", pos: "SS", stat: "30 HR" }], gamelog: [] },
   athletics: { name: "Athletics", div: "AL_WEST", seed: "Rebuilding", rec: "69 - 93", pos: "Regular Season 4th", star: "Lawrence Butler", ws: "9 Titles", primary: "#003831", accent: "#efb21e", stadium: "Sutter Health Park", pennants: "15", divTitles: "17", img: "athletics.jpg", fallback: "https://images.unsplash.com/photo-1562077772-3bd90403f7f0?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/athletics", desc: "The Athletics displayed young power hitters in 2026.", roster: [{ name: "Lawrence Butler", pos: "OF", stat: "22 HR" }], gamelog: [] },
-  angels: { name: "Los Angeles Angels", div: "AL_WEST", seed: "Rebuilding", rec: "66 - 96", pos: "Regular Season 5th", star: "Mike Trout", ws: "1 Title", primary: "#ba0021", accent: "#003263", stadium: "Angel Stadium", pennants: "1", divTitles: "9", img: "angels.jpg", fallback: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/angels", desc: "Mike Trout leads the Angels as young talent develops.", roster: [{ name: "Mike Trout", pos: "CF", stat: "28 HR" }], gamelog: [] },
+  angels: { name: "Los Angeles Angels", div: "AL_WEST", seed: "Rebuilding", rec: "66 - 96", pos: "Regular Season 5th", star: "Mike Trout", ws: "1 Title", primary: "#ba0021", accent: "#003263", stadium: "Angel Stadium", pennants: "1", divTitles: "9", img: "angels.jpg", fallback: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/angels", desc: "Mike Trout leads the Angels as young prospects transition up.", roster: [{ name: "Mike Trout", pos: "CF", stat: "28 HR" }], gamelog: [] },
 
   // NL EAST
   mets: { name: "New York Mets", div: "NL_EAST", seed: "NL Wild Card #4", rec: "89 - 73", pos: "Eliminated in NLDS", star: "Francisco Lindor", ws: "2 Titles", primary: "#002d62", accent: "#ff5910", stadium: "Citi Field", pennants: "5", divTitles: "6", img: "mets.jpg", fallback: "https://images.unsplash.com/photo-1562077772-3bd90403f7f0?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/mets", desc: "The Mets defeated Atlanta in the Wild Card before taking Milwaukee to 4 games in the NLDS.", roster: [{ name: "Francisco Lindor", pos: "SS", stat: "31 HR, 91 RBI" }], gamelog: [] },
@@ -69,7 +69,7 @@ const mlb30Teams = {
     name: "Los Angeles Dodgers", div: "NL_WEST", seed: "#3 Seed • NL Wild Card", rec: "98 - 64", pos: "NLCS Trailing 1-3 vs MIL", star: "Shohei Ohtani", ws: "8 Titles", 
     primary: "#005a9c", accent: "#ef3e42", stadium: "Dodger Stadium (Los Angeles, CA)", pennants: "25", divTitles: "21",
     img: "dodgers.jpg", fallback: "https://images.unsplash.com/photo-1562077772-3bd90403f7f0?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/dodgers", 
-    desc: "The Dodgers entered the 2026 postseason boasting one of the most star-studded rosters in baseball history. Led by two-way icon Shohei Ohtani, Mookie Betts, and Yoshinobu Yamamoto, Los Angeles advanced to the NLCS.",
+    desc: "The Dodgers entered the 2026 postseason boasting one of the most star-studded rosters in baseball history. Led by two-way icon Shohei Ohtani, Mookie Betts, and Yoshinobu Yamamoto, Los Angeles advanced through the Wild Card and Division series into the NLCS.",
     roster: [
       { name: "Shohei Ohtani", pos: "DH/SP | #17", stat: ".310 BA, 54 HR, 130 RBI" },
       { name: "Mookie Betts", pos: "SS/OF | #5", stat: ".289 BA, 28 HR, 82 RBI" },
@@ -83,12 +83,12 @@ const mlb30Teams = {
   padres: { name: "San Diego Padres", div: "NL_WEST", seed: "NL Wild Card #6", rec: "87 - 75", pos: "Eliminated in WC", star: "Fernando Tatis Jr.", ws: "0 Titles", primary: "#2f241d", accent: "#ffc425", stadium: "Petco Park", pennants: "2", divTitles: "5", img: "padres.jpg", fallback: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/padres", desc: "San Diego earned a Wild Card spot behind star outfield hitting.", roster: [{ name: "Fernando Tatis Jr.", pos: "RF", stat: "28 HR, 80 RBI" }], gamelog: [] },
   diamondbacks: { name: "Arizona Diamondbacks", div: "NL_WEST", seed: "In Contention", rec: "84 - 78", pos: "Regular Season 3rd", star: "Corbin Carroll", ws: "1 Title", primary: "#a71930", accent: "#e3d4ad", stadium: "Chase Field", pennants: "2", divTitles: "5", img: "diamondbacks.jpg", fallback: "https://images.unsplash.com/photo-1508802222057-4cabc15b825f?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/dbacks", desc: "Arizona's baserunning speed kept them in playoff contention.", roster: [{ name: "Corbin Carroll", pos: "OF", stat: "22 HR, 35 SB" }], gamelog: [] },
   giants: { name: "San Francisco Giants", div: "NL_WEST", seed: "In Contention", rec: "80 - 82", pos: "Regular Season 4th", star: "Matt Chapman", ws: "8 Titles", primary: "#fd5a1e", accent: "#000000", stadium: "Oracle Park", pennants: "23", divTitles: "9", img: "giants.jpg", fallback: "https://images.unsplash.com/photo-1562077772-3bd90403f7f0?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/giants", desc: "San Francisco relied on elite defense and pitching at Oracle Park.", roster: [{ name: "Matt Chapman", pos: "3B", stat: "27 HR, Gold Glove" }], gamelog: [] },
-  rockies: { name: "Colorado Rockies", div: "NL_WEST", seed: "Rebuilding", rec: "61 - 101", pos: "Regular Season 5th", star: "Ezequiel Tovar", ws: "0 Titles", primary: "#330066", accent: "#c4ced4", stadium: "Coors Field", pennants: "1", divTitles: "0", img: "rockies.jpg", fallback: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/rockies", desc: "Colorado continues developing young infield prospects.", roster: [{ name: "Ezequiel Tovar", pos: "SS", stat: "25 HR" }], gamelog: [] }
+  rockies: { name: "Colorado Rockies", div: "NL_WEST", seed: "Rebuilding", rec: "61 - 101", pos: "Regular Season 5th", star: "Ezequiel Tovar", ws: "0 Titles", primary: "#330066", accent: "#c4ced4", stadium: "Coors Field", pennants: "1", divTitles: "0", img: "rockies.jpg", fallback: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80", url: "https://www.mlb.com/rockies", desc: "Colorado continues developing young prospects.", roster: [{ name: "Ezequiel Tovar", pos: "SS", stat: "25 HR" }], gamelog: [] }
 };
 
 let selectedTeamKey = 'dodgers';
 
-// TEAM HUB PAGE VIEW LOGIC
+// VIEW ENGINE: Multi-page & Portal Switching
 function showTeamsHub() {
   const mainHub = document.getElementById('main-teams-hub');
   const portalView = document.getElementById('dedicated-team-portal');
@@ -108,51 +108,28 @@ function openTeamPortal(key) {
   const portalView = document.getElementById('dedicated-team-portal');
 
   if (!portalView) {
-    // If user is on index.html or bracket.html, navigate to teams.html
     window.location.href = `teams.html?team=${key}`;
     return;
   }
 
-  // Set Theme Color Variable dynamically based on team colors
+  // Update Dynamic Theme CSS Color Variables for Franchise Customization
   document.documentElement.style.setProperty('--team-theme-primary', t.primary || '#0c2340');
   document.documentElement.style.setProperty('--team-theme-accent', t.accent || '#2563eb');
 
-  // Populate Header Banner
-  const nameElem = document.getElementById('portal-team-name');
-  if (nameElem) nameElem.innerText = t.name;
-  
-  const badgeElem = document.getElementById('portal-badge');
-  if (badgeElem) badgeElem.innerText = t.seed;
+  const nameElem = document.getElementById('portal-team-name'); if (nameElem) nameElem.innerText = t.name;
+  const badgeElem = document.getElementById('portal-badge'); if (badgeElem) badgeElem.innerText = t.seed;
+  const divElem = document.getElementById('portal-div-name'); if (divElem) divElem.innerText = t.div.replace('_', ' ');
+  const tagElem = document.getElementById('portal-tagline'); if (tagElem) tagElem.innerText = `Official 2026 ${t.name} Postseason & Franchise Hub`;
+  const linkElem = document.getElementById('portal-official-btn'); if (linkElem) linkElem.href = t.url;
 
-  const divElem = document.getElementById('portal-div-name');
-  if (divElem) divElem.innerText = t.div.replace('_', ' ');
+  const descElem = document.getElementById('portal-full-desc'); if (descElem) descElem.innerText = t.desc;
+  const recElem = document.getElementById('ptab-rec'); if (recElem) recElem.innerText = t.rec;
+  const wsElem = document.getElementById('ptab-ws-titles'); if (wsElem) wsElem.innerText = t.ws;
+  const penElem = document.getElementById('ptab-pennants'); if (penElem) penElem.innerText = t.pennants || "N/A";
+  const divTitleElem = document.getElementById('ptab-div-titles'); if (divTitleElem) divTitleElem.innerText = t.divTitles || "N/A";
+  const stadElem = document.getElementById('ptab-stadium'); if (stadElem) stadElem.innerText = t.stadium || "MLB Ballpark";
 
-  const tagElem = document.getElementById('portal-tagline');
-  if (tagElem) tagElem.innerText = `Official 2026 ${t.name} Postseason & Franchise Hub`;
-
-  const linkElem = document.getElementById('portal-official-btn');
-  if (linkElem) linkElem.href = t.url;
-
-  // Populate Overview Tab
-  const descElem = document.getElementById('portal-full-desc');
-  if (descElem) descElem.innerText = t.desc;
-
-  const recElem = document.getElementById('ptab-rec');
-  if (recElem) recElem.innerText = t.rec;
-
-  const wsElem = document.getElementById('ptab-ws-titles');
-  if (wsElem) wsElem.innerText = t.ws;
-
-  const penElem = document.getElementById('ptab-pennants');
-  if (penElem) penElem.innerText = t.pennants || "N/A";
-
-  const divTitleElem = document.getElementById('ptab-div-titles');
-  if (divTitleElem) divTitleElem.innerText = t.divTitles || "N/A";
-
-  const stadElem = document.getElementById('ptab-stadium');
-  if (stadElem) stadElem.innerText = t.stadium || "MLB Ballpark";
-
-  // Populate Roster Grid
+  // Roster Grid Populator
   const rosterGrid = document.getElementById('portal-roster-grid');
   if (rosterGrid) {
     rosterGrid.innerHTML = '';
@@ -169,7 +146,7 @@ function openTeamPortal(key) {
     }
   }
 
-  // Populate Game Log
+  // Game Log Table Populator
   const gamelogBody = document.getElementById('portal-gamelog-body');
   if (gamelogBody) {
     gamelogBody.innerHTML = '';
@@ -181,7 +158,7 @@ function openTeamPortal(key) {
             <td>${g.opp}</td>
             <td><strong style="color:${g.res.includes('W') ? 'var(--accent-green)' : 'var(--accent-red)'}">${g.res}</strong></td>
             <td>${g.score}</td>
-            <td><span class="badge-net badge-fs1">${g.tv}</span> <a href="https://www.mlb.com/tickets" target="_blank" class="ticket-link">Tickets 🎟️</a></td>
+            <td><span class="net-pill net-fs1">${g.tv}</span> <a href="https://www.mlb.com/tickets" target="_blank" class="ticket-pill-btn">Tickets 🎟️</a></td>
           </tr>
         `;
       });
@@ -192,26 +169,26 @@ function openTeamPortal(key) {
           <td>Regular Season Schedule</td>
           <td><strong>${t.rec}</strong></td>
           <td>-</td>
-          <td><a href="${t.url}" target="_blank" class="ticket-link">View MLB.com Schedule</a></td>
+          <td><a href="${t.url}" target="_blank" class="ticket-pill-btn">View MLB Schedule ↗</a></td>
         </tr>
       `;
     }
   }
 
-  // Populate Team News
+  // News Wire Populator
   const newsGrid = document.getElementById('portal-news-grid');
   if (newsGrid) {
     newsGrid.innerHTML = `
       <article class="news-card">
         <div class="news-thumb">
           <img src="${t.img}" alt="${t.name}" onerror="this.onerror=null; this.src='${t.fallback}';">
-          <span class="news-tag alcs-tag">${t.seed}</span>
+          <span class="news-badge badge-nlcs">${t.seed}</span>
         </div>
-        <div class="news-content">
-          <span class="news-meta">Oct 2026 • MLB.com Team Wire</span>
-          <h3>${t.name} Postseason Analysis & Headline Report</h3>
+        <div class="news-body">
+          <div class="news-meta">Oct 2026 • MLB.com Team Wire</div>
+          <h3>${t.name} Postseason Coverage & Performance Breakdown</h3>
           <p>${t.desc}</p>
-          <a href="${t.url}" target="_blank" class="news-link">Read Full Coverage on MLB.com →</a>
+          <a href="${t.url}" target="_blank" class="news-action-btn">Read Full Coverage on MLB.com ↗</a>
         </div>
       </article>
     `;
@@ -236,7 +213,7 @@ function openFavoriteTeamPortal() {
 }
 
 function switchPortalTab(tabName) {
-  document.querySelectorAll('.portal-tab').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.portal-tab-btn').forEach(btn => btn.classList.remove('active'));
   document.querySelectorAll('.portal-tab-content').forEach(c => c.classList.remove('active'));
 
   if (event && event.target) event.target.classList.add('active');
@@ -244,7 +221,7 @@ function switchPortalTab(tabName) {
   if (targetContent) targetContent.classList.add('active');
 }
 
-// 30 Teams Grid Selector Renderer
+// 30-Team Division Grid Renderer
 function renderTeamGrid(filterDiv = 'ALL') {
   const grid = document.getElementById('team-picker-grid');
   if (!grid) return;
@@ -263,7 +240,7 @@ function renderTeamGrid(filterDiv = 'ALL') {
 }
 
 function filterTeamsByDivision(divName) {
-  document.querySelectorAll('.div-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.div-tab-btn').forEach(t => t.classList.remove('active'));
   if (event && event.target) event.target.classList.add('active');
   renderTeamGrid(divName);
 }
@@ -275,26 +252,13 @@ function selectTeam(key) {
 
   renderTeamGrid();
 
-  const titleElem = document.getElementById('spotlight-title');
-  if (titleElem) titleElem.innerText = t.name;
-
-  const badgeElem = document.getElementById('spotlight-badge');
-  if (badgeElem) badgeElem.innerText = t.seed;
-
-  const descElem = document.getElementById('spotlight-desc');
-  if (descElem) descElem.innerText = t.desc;
-
-  const recElem = document.getElementById('spotlight-rec');
-  if (recElem) recElem.innerText = t.rec;
-
-  const posElem = document.getElementById('spotlight-pos');
-  if (posElem) posElem.innerText = t.pos;
-
-  const starElem = document.getElementById('spotlight-star');
-  if (starElem) starElem.innerText = t.star;
-
-  const wsElem = document.getElementById('spotlight-ws');
-  if (wsElem) wsElem.innerText = t.ws;
+  const titleElem = document.getElementById('spotlight-title'); if (titleElem) titleElem.innerText = t.name;
+  const badgeElem = document.getElementById('spotlight-badge'); if (badgeElem) badgeElem.innerText = t.seed;
+  const descElem = document.getElementById('spotlight-desc'); if (descElem) descElem.innerText = t.desc;
+  const recElem = document.getElementById('spotlight-rec'); if (recElem) recElem.innerText = t.rec;
+  const posElem = document.getElementById('spotlight-pos'); if (posElem) posElem.innerText = t.pos;
+  const starElem = document.getElementById('spotlight-star'); if (starElem) starElem.innerText = t.star;
+  const wsElem = document.getElementById('spotlight-ws'); if (wsElem) wsElem.innerText = t.ws;
 
   const img = document.getElementById('spotlight-img');
   if (img) {
@@ -312,11 +276,11 @@ function setFavoriteTeam() {
 
 // Schedule Table Renderer
 const scheduleData = [
-  { match: "ALCS Game 5", matchup: "Tampa Bay Rays @ Seattle Mariners", time: "Oct 15 • 7:07 PM ET", net: "TBS", badge: "badge-tbs", stream: "HBO Max / TBS App", venue: "T-Mobile Park, Seattle, WA", link: "https://www.stubhub.com/mlb-tickets" },
-  { match: "NLCS Game 5", matchup: "Milwaukee Brewers @ LA Dodgers", time: "Oct 16 • 8:08 PM ET", net: "FS1", badge: "badge-fs1", stream: "FOX Sports App", venue: "Dodger Stadium, Los Angeles, CA", link: "https://www.ticketmaster.com/mlb" },
-  { match: "ALCS Game 6*", matchup: "Seattle Mariners @ Tampa Bay Rays", time: "Oct 17 • 8:03 PM ET", net: "TBS", badge: "badge-tbs", stream: "HBO Max / TBS App", venue: "Tropicana Field, St. Petersburg, FL", link: "https://www.mlb.com/tickets" },
-  { match: "NLCS Game 6*", matchup: "LA Dodgers @ Milwaukee Brewers", time: "Oct 18 • 7:08 PM ET", net: "FS1", badge: "badge-fs1", stream: "FOX Sports App", venue: "American Family Field, Milwaukee, WI", link: "https://www.ticketmaster.com/mlb" },
-  { match: "World Series Game 1", matchup: "AL Champion vs NL Champion", time: "Oct 23 • 8:00 PM ET", net: "FOX", badge: "badge-fox", stream: "FOX Sports Live", venue: "TBD (Home of Higher Seed)", link: "https://www.mlb.com/tickets" }
+  { match: "ALCS Game 5", matchup: "Tampa Bay Rays @ Seattle Mariners", time: "Oct 15 • 7:07 PM ET", net: "TBS", badge: "net-tbs", stream: "HBO Max / TBS App", venue: "T-Mobile Park, Seattle, WA", link: "https://www.stubhub.com/mlb-tickets" },
+  { match: "NLCS Game 5", matchup: "Milwaukee Brewers @ LA Dodgers", time: "Oct 16 • 8:08 PM ET", net: "FS1", badge: "net-fs1", stream: "FOX Sports App", venue: "Dodger Stadium, Los Angeles, CA", link: "https://www.ticketmaster.com/mlb" },
+  { match: "ALCS Game 6*", matchup: "Seattle Mariners @ Tampa Bay Rays", time: "Oct 17 • 8:03 PM ET", net: "TBS", badge: "net-tbs", stream: "HBO Max / TBS App", venue: "Tropicana Field, St. Petersburg, FL", link: "https://www.mlb.com/tickets" },
+  { match: "NLCS Game 6*", matchup: "LA Dodgers @ Milwaukee Brewers", time: "Oct 18 • 7:08 PM ET", net: "FS1", badge: "net-fs1", stream: "FOX Sports App", venue: "American Family Field, Milwaukee, WI", link: "https://www.ticketmaster.com/mlb" },
+  { match: "World Series Game 1", matchup: "AL Champion vs NL Champion", time: "Oct 23 • 8:00 PM ET", net: "FOX", badge: "net-fox", stream: "FOX Sports Live", venue: "TBD (Home of Higher Seed)", link: "https://www.mlb.com/tickets" }
 ];
 
 function renderSchedule() {
@@ -329,21 +293,21 @@ function renderSchedule() {
       <tr>
         <td><strong>${item.match}</strong><br><span style="font-size:12px; color:var(--text-muted);">${item.matchup}</span></td>
         <td>${item.time}</td>
-        <td><span class="badge-net ${item.badge}">${item.net}</span></td>
+        <td><span class="net-pill ${item.badge}">${item.net}</span></td>
         <td>${item.stream}</td>
         <td>${item.venue}</td>
-        <td><a href="${item.link}" target="_blank" class="ticket-link">Tickets 🎟️</a></td>
+        <td><a href="${item.link}" target="_blank" class="ticket-pill-btn">Tickets 🎟️</a></td>
       </tr>
     `;
   });
 }
 
-// Live Auto-Updating MLB API Fetch Engine
+// Live Auto-Updating ESPN API Engine
 async function fetchLiveMLBData() {
   const ticker = document.getElementById('ticker-content');
   const scoreGrid = document.getElementById('live-scoreboard-grid');
 
-  if (ticker) ticker.innerHTML = "<span>🔄 Fetching live game scores from MLB/ESPN feeds...</span>";
+  if (ticker) ticker.innerHTML = "<span>🔄 Fetching live game scores from official ESPN API...</span>";
 
   try {
     const res = await fetch('https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard');
@@ -360,8 +324,11 @@ async function fetchLiveMLBData() {
         const status = event.status.type.shortDetail;
         const isCompleted = event.status.type.completed;
 
+        const awayScore = parseInt(away.score) || 0;
+        const homeScore = parseInt(home.score) || 0;
+
         if (ticker) {
-          ticker.innerHTML += `<span style="margin-right:25px;">⚾ <strong>${away.team.abbreviation} ${away.score || 0}</strong> @ <strong>${home.team.abbreviation} ${home.score || 0}</strong> (${status})</span>`;
+          ticker.innerHTML += `<span style="margin-right:25px;">⚾ <strong>${away.team.abbreviation} ${awayScore}</strong> @ <strong>${home.team.abbreviation} ${homeScore}</strong> (${status})</span>`;
         }
 
         if (scoreGrid) {
@@ -371,13 +338,13 @@ async function fetchLiveMLBData() {
                 <span>POSTSEASON</span>
                 <span class="status-badge ${isCompleted ? 'final' : ''}">${status}</span>
               </div>
-              <div class="team-score-row ${parseInt(away.score) > parseInt(home.score) ? 'winner' : ''}">
+              <div class="team-score-row ${awayScore > homeScore ? 'winner' : ''}">
                 <span>${away.team.displayName}</span>
-                <span>${away.score || 0}</span>
+                <span>${awayScore}</span>
               </div>
-              <div class="team-score-row ${parseInt(home.score) > parseInt(home.score) ? 'winner' : ''}">
+              <div class="team-score-row ${homeScore > awayScore ? 'winner' : ''}">
                 <span>${home.team.displayName}</span>
-                <span>${home.score || 0}</span>
+                <span>${homeScore}</span>
               </div>
             </div>
           `;
@@ -420,7 +387,7 @@ function renderFallbackScoreboard() {
   }
 }
 
-// Bracket Matchup Modal Window
+// Bracket Matchup Modal Window Pop-up
 const matchupDetailsMap = {
   'ALCS': { title: "ALCS: Rays vs Mariners", summary: "Series tied 2-2. Winner advances to the 2026 World Series.", games: ["Game 1: TB 3, SEA 1", "Game 2: SEA 4, TB 2", "Game 3: TB 6, SEA 3", "Game 4: SEA 5, TB 4"] },
   'NLCS': { title: "NLCS: Brewers vs Dodgers", summary: "Milwaukee leads 3-1. Game 5 at Dodger Stadium.", games: ["Game 1: MIL 5, LAD 2", "Game 2: MIL 3, LAD 1", "Game 3: LAD 8, MIL 0", "Game 4: MIL 4, LAD 2"] },
@@ -439,9 +406,9 @@ function openMatchupDetails(key) {
   };
 
   content.innerHTML = `
-    <h3 style="font-size:22px; font-weight:900; margin-bottom:10px;">${details.title}</h3>
-    <p style="color:var(--text-muted); font-size:14px; margin-bottom:15px;">${details.summary}</p>
-    <div style="background:var(--bg-dark); padding:12px; border-radius:8px; border:1px solid var(--border-color);">
+    <h3 style="font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:800; margin-bottom:10px;">${details.title}</h3>
+    <p style="color:var(--text-muted); font-size:14px; margin-bottom:16px;">${details.summary}</p>
+    <div style="background:var(--bg-dark); padding:14px; border-radius:10px; border:1px solid var(--border-color);">
       <strong style="display:block; margin-bottom:8px; font-size:13px; color:var(--primary-blue);">Game Log Breakdown:</strong>
       <ul style="list-style:none; font-size:13px; line-height:1.8;">
         ${details.games.map(g => `<li>⚾ ${g}</li>`).join('')}
@@ -462,7 +429,7 @@ function closeMatchupModalDirect() {
 }
 
 function filterBracket(league) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
   if (event && event.target) event.target.classList.add('active');
 
   const nodes = document.querySelectorAll('.matchup-node');
@@ -473,7 +440,7 @@ function filterBracket(league) {
       node.style.display = 'block';
     } else if (league === 'nl' && (node.innerText.includes('NL') || node.innerText.includes('Brewers') || node.innerText.includes('Dodgers') || node.innerText.includes('Mets') || node.innerText.includes('Padres') || node.innerText.includes('Phillies') || node.innerText.includes('Braves'))) {
       node.style.display = 'block';
-    } else if (node.classList.contains('ws-node')) {
+    } else if (node.classList.contains('ws-card')) {
       node.style.display = 'block';
     } else {
       node.style.display = 'none';
@@ -481,11 +448,11 @@ function filterBracket(league) {
   });
 }
 
-// Translations
+// Translations Dictionary
 const i18n = {
-  en: { home: "Home & Scores", bracket: "Playoff Bracket & TV", teams: "30-Team Hub", heroTitle: "2026 Major League Baseball Postseason" },
-  es: { home: "Inicio y Marcadores", bracket: "Cuadro y Transmisiones", teams: "Hub 30 Equipos", heroTitle: "Posttemporada MLB 2026 en Vivo" },
-  zh: { home: "首页与比分", bracket: "对阵图与电视转播", teams: "30支球队中心", heroTitle: "2026 MLB 美国职业棒球季后赛" }
+  en: { home: "Scores & News", bracket: "Interactive Bracket", teams: "30-Team Franchise Hub", heroTitle: "Road to the World Series" },
+  es: { home: "Marcadores y Noticias", bracket: "Cuadro Interactivo", teams: "Hub 30 Franquicias", heroTitle: "El Camino a la Serie Mundial" },
+  zh: { home: "比分与新闻", bracket: "互动季后赛图", teams: "30支球队中心", heroTitle: "通往世界大赛之路" }
 };
 
 function changeLanguage(langKey) {
@@ -500,45 +467,37 @@ function changeLanguage(langKey) {
 
 function toggleTheme() {
   const body = document.body;
-  const label = document.getElementById('theme-label');
   const icon = document.getElementById('theme-icon');
 
   if (body.classList.contains('dark-mode')) {
     body.classList.remove('dark-mode');
     body.classList.add('light-mode');
-    if (label) label.innerText = 'Light';
     if (icon) icon.innerText = '☀️';
     localStorage.setItem('themeMode', 'light');
   } else {
     body.classList.remove('light-mode');
     body.classList.add('dark-mode');
-    if (label) label.innerText = 'Dark';
     if (icon) icon.innerText = '🌙';
     localStorage.setItem('themeMode', 'dark');
   }
 }
 
-// Application Initialization Across Pages
+// App Initialization
 window.addEventListener('DOMContentLoaded', () => {
-  // Theme check
   const savedTheme = localStorage.getItem('themeMode');
   if (savedTheme === 'light') {
     document.body.classList.remove('dark-mode');
     document.body.classList.add('light-mode');
-    const label = document.getElementById('theme-label');
     const icon = document.getElementById('theme-icon');
-    if (label) label.innerText = 'Light';
     if (icon) icon.innerText = '☀️';
   }
 
-  // Favorite team check
   const savedFav = localStorage.getItem('favMLBTeam');
   if (savedFav && mlb30Teams[savedFav]) {
     const lbl = document.getElementById('fav-quick-label');
     if (lbl) lbl.innerText = mlb30Teams[savedFav].name;
   }
 
-  // URL Query check for team loading
   const urlParams = new URLSearchParams(window.location.search);
   const teamParam = urlParams.get('team');
 
@@ -552,6 +511,6 @@ window.addEventListener('DOMContentLoaded', () => {
     selectTeam(savedFav);
   }
 
-  // Auto Refresh live data every 60 seconds
+  // Refresh live scores every 60s
   setInterval(fetchLiveMLBData, 60000);
 });
