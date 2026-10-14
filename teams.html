@@ -11,7 +11,7 @@
 </head>
 <body class="dark-mode">
 
-  <!-- Sticky Header Nav -->
+  <!-- Sticky Top Directory Bar -->
   <header class="top-header">
     <nav class="navbar">
       <a href="index.html" class="brand-logo">
@@ -67,6 +67,11 @@
           </div>
         </div>
 
+        <!-- Search Bar -->
+        <div class="search-box-wrapper" style="margin-bottom: 20px;">
+          <input type="text" id="team-search-input" placeholder="🔍 Search by team name, city, or division..." onkeyup="searchTeams(this.value)" class="search-input-field">
+        </div>
+
         <!-- Division Filters -->
         <div class="division-tab-bar">
           <button class="div-tab-btn active" onclick="filterTeamsByDivision('ALL', event)">All 30 Teams</button>
@@ -80,31 +85,31 @@
 
         <!-- Team Selector Grid -->
         <div class="team-grid-picker" id="team-picker-grid">
-          <!-- 30 Teams dynamically rendered by script.js -->
+          <!-- 30 Teams rendered by script.js -->
         </div>
 
         <!-- Spotlight Preview Card -->
         <div class="spotlight-card" id="team-spotlight-card">
           <div class="spotlight-media">
-            <img id="spotlight-img" src="https://images.unsplash.com/photo-1508802222057-4cabc15b825f?auto=format&fit=crop&w=800&q=80" alt="Team Spotlight">
-            <div class="spotlight-media-badge" id="spotlight-badge">#3 Seed • NLCS</div>
+            <img id="spotlight-img" src="yankees.jpg" alt="Team Spotlight" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1562077772-3bd90403f7f0?auto=format&fit=crop&w=800&q=80';">
+            <div class="spotlight-media-badge" id="spotlight-badge">AL Wild Card</div>
           </div>
           <div class="spotlight-body">
             <div class="spotlight-header">
-              <h3 id="spotlight-title">Los Angeles Dodgers</h3>
+              <h3 id="spotlight-title">New York Yankees</h3>
               <div class="spotlight-action-row">
-                <button onclick="setFavoriteTeam()" class="btn-fav-heart" id="fav-btn">❤️ Favorite Team</button>
+                <button onclick="setFavoriteTeam()" class="btn-fav-heart" id="fav-btn">❤️ Save as Favorite</button>
                 <button onclick="launchDedicatedPortal()" class="btn btn-primary btn-sm">🚀 Open Dedicated Portal</button>
               </div>
             </div>
             <p class="spotlight-description" id="spotlight-desc">
-              The Dodgers entered the 2026 postseason boasting one of the most potent lineups in baseball history. Led by Shohei Ohtani, Mookie Betts, and Freddie Freeman, Los Angeles advanced through the Wild Card and Division series into the NLCS.
+              The New York Yankees entered the 2026 postseason having won 93 games. Behind Aaron Judge's 53-home-run campaign, the Yankees defeated Boston in the Wild Card before facing Tampa Bay in the ALDS.
             </p>
             <div class="spotlight-stats-grid">
-              <div class="stat-pill-box"><span class="stat-lbl">2026 Record</span><strong class="stat-val" id="spotlight-rec">98 - 64</strong></div>
-              <div class="stat-pill-box"><span class="stat-lbl">Postseason Status</span><strong class="stat-val" id="spotlight-pos">NLCS vs Milwaukee</strong></div>
-              <div class="stat-pill-box"><span class="stat-lbl">Featured Star</span><strong class="stat-val" id="spotlight-star">Shohei Ohtani</strong></div>
-              <div class="stat-pill-box"><span class="stat-lbl">World Series Titles</span><strong class="stat-val" id="spotlight-ws">8 Titles</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">2026 Record</span><strong class="stat-val" id="spotlight-rec">93 - 69</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">Postseason Status</span><strong class="stat-val" id="spotlight-pos">Eliminated in ALDS</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">Featured Star</span><strong class="stat-val" id="spotlight-star">Aaron Judge</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">World Series Titles</span><strong class="stat-val" id="spotlight-ws">27 Titles</strong></div>
             </div>
           </div>
         </div>
@@ -112,7 +117,7 @@
     </main>
   </div>
 
-  <!-- VIEW 2: DEDICATED TEAM PORTAL -->
+  <!-- VIEW 2: DEDICATED FULL-PAGE TEAM PORTAL VIEW -->
   <div id="dedicated-team-portal" style="display: none;">
     <div class="portal-header-banner" id="portal-banner">
       <div class="portal-container">
@@ -129,14 +134,14 @@
           </div>
         </div>
         <div class="portal-actions">
-          <button onclick="setFavoriteTeam()" class="btn btn-secondary" id="portal-fav-btn">❤️ Favorite Team</button>
+          <button onclick="setFavoriteTeam()" class="btn btn-secondary" id="portal-fav-btn">❤️ Set as Favorite Team</button>
           <a id="portal-official-btn" href="#" target="_blank" class="btn btn-primary">Official MLB Site ↗</a>
         </div>
       </div>
     </div>
 
     <div class="main-layout">
-      <!-- Sub-Nav Tabs -->
+      <!-- Portal Sub-Nav Tabs -->
       <div class="portal-subnav-tabs">
         <button class="portal-tab-btn active" onclick="switchPortalTab('overview', event)">📊 Overview & Stats</button>
         <button class="portal-tab-btn" onclick="switchPortalTab('schedule', event)">📅 Schedule & Game Logs</button>
@@ -163,7 +168,7 @@
             <h3>🏆 Franchise Achievements</h3>
             <ul class="honors-data-list">
               <li><span>World Series Titles:</span> <strong id="ptab-ws-titles">0</strong></li>
-              <li><span>League Pennants:</span> <strong id="ptab-pennants">2</strong></li>
+              <li><span>League Pennants:</span> <strong id="ptab-pennants">1</strong></li>
               <li><span>Division Titles:</span> <strong id="ptab-div-titles">6</strong></li>
               <li><span>Home Stadium:</span> <strong id="ptab-stadium">American Family Field</strong></li>
             </ul>
@@ -174,7 +179,7 @@
       <!-- TAB 2: SCHEDULE -->
       <div id="ptab-schedule" class="portal-tab-content">
         <div class="card-box">
-          <h3>⚾ 2026 Postseason & Recent Game Log</h3>
+          <h3>⚾ 2026 Postseason & Game Log</h3>
           <div class="table-card-wrapper" style="margin-top:15px;">
             <table class="schedule-table">
               <thead>
@@ -187,7 +192,7 @@
                 </tr>
               </thead>
               <tbody id="portal-gamelog-body">
-                <!-- Dynamically rendered -->
+                <!-- Rendered dynamically -->
               </tbody>
             </table>
           </div>
@@ -199,7 +204,7 @@
         <div class="card-box">
           <h3>⭐ Key Players & Roster Anchors</h3>
           <div class="roster-card-grid" id="portal-roster-grid">
-            <!-- Dynamically rendered -->
+            <!-- Rendered dynamically -->
           </div>
         </div>
       </div>
@@ -207,7 +212,7 @@
       <!-- TAB 4: NEWS -->
       <div id="ptab-news" class="portal-tab-content">
         <div class="news-masonry" id="portal-news-grid">
-          <!-- Dynamically rendered -->
+          <!-- Rendered dynamically -->
         </div>
       </div>
 
