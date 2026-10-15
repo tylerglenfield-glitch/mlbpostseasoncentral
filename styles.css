@@ -1,4 +1,4 @@
-/* Color Palette & Layout System */
+/* Color System & CSS Variables */
 :root {
   --bg-dark: #0b0f19;
   --bg-surface: #151c2c;
@@ -61,7 +61,7 @@ a, a:visited, a:hover, a:active {
   text-decoration: none;
 }
 
-/* Header & Glass Navbar */
+/* Glass Header Navbar */
 .top-header {
   position: sticky;
   top: 0;
@@ -254,7 +254,7 @@ button:hover, select:hover {
   border-radius: 20px;
 }
 
-/* Hero Section & Live Ticking Timer */
+/* Hero Banner & Timer */
 .hero-section {
   position: relative;
   background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%);
@@ -314,7 +314,7 @@ button:hover, select:hover {
   flex-wrap: wrap;
 }
 
-/* Buttons Engine */
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -353,7 +353,7 @@ button:hover, select:hover {
   font-size: 13px;
 }
 
-/* 🤖 AI Overview Styling */
+/* Redesigned AI Section */
 .ai-overview-grid {
   display: grid;
   grid-template-columns: 1.6fr 1fr;
@@ -410,6 +410,8 @@ button:hover, select:hover {
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  margin-bottom: 20px;
 }
 
 .prob-label-row {
@@ -433,6 +435,45 @@ button:hover, select:hover {
   transition: width 0.8s ease-in-out;
 }
 
+.ai-metrics-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 16px;
+}
+
+.metric-mini-card {
+  background-color: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.m-lbl {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.m-val {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  margin: 2px 0;
+}
+
+.m-val.green { color: var(--accent-green); }
+.m-val.blue { color: var(--primary-blue); }
+.m-val.gold { color: var(--accent-gold); }
+
+.m-sub {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
 .side-ai-card h3 {
   font-size: 16px;
   font-weight: 800;
@@ -442,25 +483,127 @@ button:hover, select:hover {
 .ai-matchup-item {
   background-color: var(--bg-dark);
   border: 1px solid var(--border-color);
-  padding: 12px 14px;
-  border-radius: 10px;
-  margin-bottom: 12px;
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+.ai-match-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .ai-match-title {
   font-size: 13px;
   font-weight: 800;
   color: var(--primary-blue);
-  margin-bottom: 4px;
+}
+
+.ai-match-pill {
+  font-size: 10px;
+  font-weight: 800;
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--accent-gold);
+  padding: 2px 8px;
+  border-radius: 4px;
 }
 
 .ai-match-detail {
   font-size: 12px;
   color: var(--text-muted);
   line-height: 1.5;
+  margin-bottom: 8px;
 }
 
-/* Content Layout */
+.matchup-stat-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 800;
+  background-color: var(--bg-surface);
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+/* Poll & Compare Styling */
+.poll-option-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.poll-option-row:hover {
+  border-color: var(--primary-blue);
+}
+
+.poll-btn-action {
+  background-color: var(--primary-blue);
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.compare-selectors {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.vs-badge-circle {
+  width: 44px;
+  height: 44px;
+  background-color: var(--accent-gold);
+  color: #000;
+  font-weight: 900;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compare-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 650px) {
+  .compare-grid-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.compare-team-card {
+  background-color: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.compare-team-card h4 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--primary-blue);
+}
+
+/* Layout */
 .main-layout {
   max-width: 1280px;
   margin: 0 auto;
@@ -563,7 +706,7 @@ button:hover, select:hover {
   color: var(--primary-blue);
 }
 
-/* Playoff Bracket */
+/* Bracket Styling & Predictor Mode */
 .bracket-filter-btns {
   display: flex;
   gap: 8px;
@@ -592,6 +735,29 @@ button:hover, select:hover {
 .predictor-tab.active {
   background-color: var(--accent-gold);
   color: #000000;
+}
+
+.predictor-status-bar {
+  background-color: rgba(245, 158, 11, 0.15);
+  border: 1px solid var(--accent-gold);
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.btn-reset-picks {
+  background-color: var(--accent-gold);
+  color: #000;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-weight: 800;
+  cursor: pointer;
 }
 
 .bracket-wrapper {
@@ -647,6 +813,11 @@ button:hover, select:hover {
   box-shadow: 0 4px 14px var(--shadow-glow);
 }
 
+.matchup-node.picked-node {
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+}
+
 .node-label {
   font-size: 10px;
   font-weight: 800;
@@ -670,6 +841,13 @@ button:hover, select:hover {
   border-radius: 6px;
   font-size: 13px;
   font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.node-team.user-picked {
+  background-color: var(--accent-gold) !important;
+  color: #000000 !important;
+  font-weight: 900 !important;
 }
 
 .node-team.winner {
@@ -692,6 +870,40 @@ button:hover, select:hover {
 
 .node-status.gold {
   color: var(--accent-gold);
+}
+
+.champ-crown-box {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.05));
+  border: 2px solid var(--accent-gold);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  margin-top: 15px;
+  animation: glow-pulse 2s infinite alternate;
+}
+
+@keyframes glow-pulse {
+  0% { box-shadow: 0 0 5px rgba(245, 158, 11, 0.3); }
+  100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.7); }
+}
+
+.crown-icon {
+  font-size: 28px;
+  display: block;
+}
+
+.champ-title {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--accent-gold);
+  display: block;
+}
+
+.champ-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
 }
 
 /* Info Box */
@@ -762,7 +974,6 @@ button:hover, select:hover {
 .net-fox { background-color: #002d62; }
 .net-fs1 { background-color: #022340; border: 1px solid #00a4e4; }
 .net-tbs { background-color: #00a3e0; }
-.net-espn { background-color: #cc0000; }
 
 .ticket-pill-btn {
   background-color: var(--accent-green);
@@ -779,7 +990,7 @@ button:hover, select:hover {
   transform: translateY(-2px);
 }
 
-/* Search Bar & 30-Team Directory Grid */
+/* Search Bar & 30-Team Grid */
 .search-input-field {
   width: 100%;
   max-width: 450px;
@@ -846,7 +1057,7 @@ button:hover, select:hover {
   border-color: var(--primary-blue);
 }
 
-/* Spotlight Card */
+/* Spotlight Preview Card */
 .spotlight-card {
   display: grid;
   grid-template-columns: 320px 1fr;
@@ -1205,7 +1416,7 @@ button:hover, select:hover {
   text-decoration: underline;
 }
 
-/* Modal Window Overlay */
+/* Modal Overlay */
 .modal-backdrop {
   position: fixed;
   top: 0;
