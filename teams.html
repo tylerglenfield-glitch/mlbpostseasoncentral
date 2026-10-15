@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MLB Postseason 2026 | 30-Team Franchise Hub</title>
+  <title>MLB Postseason 2026 | 30-Team Franchise Hub & Compare Tool</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
 </head>
 <body class="dark-mode">
 
-  <!-- Sticky Top Directory Bar -->
+  <!-- Header Nav -->
   <header class="top-header">
     <nav class="navbar">
       <a href="index.html" class="brand-logo">
@@ -23,7 +23,7 @@
       </a>
 
       <ul class="nav-directory" id="main-nav-links">
-        <li><a href="index.html" class="nav-link" id="nav-home">Scores & AI News</a></li>
+        <li><a href="index.html" class="nav-link" id="nav-home">Scores & AI Engine</a></li>
         <li><a href="bracket.html" class="nav-link" id="nav-bracket">Interactive Bracket</a></li>
         <li><a href="teams.html" class="nav-link active" id="nav-teams">30-Team Franchise Hub</a></li>
       </ul>
@@ -58,12 +58,13 @@
   <!-- VIEW 1: 30-TEAM DIRECTORY GRID -->
   <div id="main-teams-hub">
     <main class="main-layout">
+      
       <section id="team-spotlight" class="content-section">
         <div class="section-heading">
           <div>
             <span class="heading-kicker">30-FRANCHISE PORTAL</span>
             <h2 id="heading-teams">MLB Franchise Directory & Team Portals</h2>
-            <p class="section-subtitle" id="sub-teams">Select any team in Major League Baseball to preview their record or launch their dedicated team portal!</p>
+            <p class="section-subtitle" id="sub-teams">Select any team in Major League Baseball to preview their record, stars, and full season storyline!</p>
           </div>
         </div>
 
@@ -103,7 +104,7 @@
               </div>
             </div>
             <p class="spotlight-description" id="spotlight-desc">
-              The New York Yankees secured a 93–69 record in 2026, earning an AL Wild Card berth behind a monster offensive year from captain Aaron Judge, who slugged 53 home runs and drove in 122 RBIs. After sweeping Boston in the Wild Card round, New York's offense stalled against Tampa Bay's dominant pitching staff in the ALDS, dropping the series 3–0. The Bronx Bombers now enter the offseason focused on extending key free agents and retooling their rotation depth for 2027.
+              Spotlight story...
             </p>
             <div class="spotlight-stats-grid">
               <div class="stat-pill-box"><span class="stat-lbl">2026 Record</span><strong class="stat-val" id="spotlight-rec">93 - 69</strong></div>
@@ -114,6 +115,36 @@
           </div>
         </div>
       </section>
+
+      <!-- Head-to-Head Team Comparison Tool -->
+      <section id="compare-section" class="content-section">
+        <div class="section-heading">
+          <div>
+            <span class="heading-kicker">FRANCHISE COMPARISON TOOL</span>
+            <h2>⚔️ Head-to-Head Team Compare Engine</h2>
+            <p class="section-subtitle">Select any two franchises to compare regular season stats, titles, and rosters side-by-side.</p>
+          </div>
+        </div>
+
+        <div class="card-box">
+          <div class="compare-selectors">
+            <div class="select-wrapper">
+              <label>Select Team 1:</label>
+              <select id="compare-select-1" class="custom-select" onchange="runTeamComparison()"></select>
+            </div>
+            <div class="vs-badge-circle">VS</div>
+            <div class="select-wrapper">
+              <label>Select Team 2:</label>
+              <select id="compare-select-2" class="custom-select" onchange="runTeamComparison()"></select>
+            </div>
+          </div>
+
+          <div id="compare-result-box" style="margin-top:20px;">
+            <!-- Rendered dynamically -->
+          </div>
+        </div>
+      </section>
+
     </main>
   </div>
 
@@ -143,7 +174,7 @@
     <div class="main-layout">
       <!-- Sub-Nav Tabs -->
       <div class="portal-subnav-tabs">
-        <button class="portal-tab-btn active" onclick="switchPortalTab('overview', event)">📊 Overview & Stats</button>
+        <button class="portal-tab-btn active" onclick="switchPortalTab('overview', event)">📊 Overview & Storyline</button>
         <button class="portal-tab-btn" onclick="switchPortalTab('schedule', event)">📅 Schedule & Game Logs</button>
         <button class="portal-tab-btn" onclick="switchPortalTab('roster', event)">⭐ Key Stars & Roster</button>
         <button class="portal-tab-btn" onclick="switchPortalTab('news', event)">📰 Team Coverage</button>
@@ -158,19 +189,19 @@
 
             <div class="spotlight-stats-grid" style="margin-top:20px;">
               <div class="stat-pill-box"><span class="stat-lbl">2026 Record</span><strong class="stat-val" id="ptab-rec">103 - 59</strong></div>
-              <div class="stat-pill-box"><span class="stat-lbl">Home Record</span><strong class="stat-val" id="ptab-home">54 - 27</strong></div>
-              <div class="stat-pill-box"><span class="stat-lbl">Away Record</span><strong class="stat-val" id="ptab-away">49 - 32</strong></div>
-              <div class="stat-pill-box"><span class="stat-lbl">Run Differential</span><strong class="stat-val" id="ptab-rundiff">+142</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">Featured Star</span><strong class="stat-val" id="ptab-star">Jackson Chourio</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">Postseason Status</span><strong class="stat-val" id="ptab-status">NLCS Lead 2-0</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">World Series Titles</span><strong class="stat-val" id="ptab-ws-titles">0 Titles</strong></div>
             </div>
           </div>
 
           <div class="card-box">
             <h3>🏆 Franchise Achievements</h3>
             <ul class="honors-data-list">
-              <li><span>World Series Titles:</span> <strong id="ptab-ws-titles">0</strong></li>
+              <li><span>World Series Titles:</span> <strong id="ptab-ws-titles-side">0</strong></li>
               <li><span>League Pennants:</span> <strong id="ptab-pennants">1</strong></li>
               <li><span>Division Titles:</span> <strong id="ptab-div-titles">6</strong></li>
-              <li><span>Home Stadium:</span> <strong id="ptab-stadium">American Family Field</strong></li>
+              <li><span>Home Ballpark:</span> <strong id="ptab-stadium">American Family Field</strong></li>
             </ul>
           </div>
         </div>
@@ -232,5 +263,4 @@
 
   <script src="script.js"></script>
 </body>
-</html>
 </html>
