@@ -7,7 +7,7 @@ const MLB_PHOTOS = {
   LIGHTS: "https://images.unsplash.com/photo-1529763807622-491b1bb86698?auto=format&fit=crop&w=800&q=80"
 };
 
-// Thorough, Fact-Checked Database for All 30 MLB Franchises
+// Fact-Checked Database for All 30 MLB Franchises
 const mlb30Teams = {
   // AL EAST
   yankees: { 
@@ -139,10 +139,10 @@ const mlb30Teams = {
 
   // NL CENTRAL
   brewers: { 
-    name: "Milwaukee Brewers", div: "NL_CENTRAL", seed: "#1 Seed • NL Central Champs", rec: "103 - 59", pos: "NLCS Lead 2-0 vs LAD", star: "Jackson Chourio", ws: "0 Titles", primary: "#122a47", accent: "#ff1c41", stadium: "American Family Field (Milwaukee, WI)", pennants: "1", divTitles: "6", img: "brewers.jpg", fallback: MLB_PHOTOS.STADIUM, url: "https://www.mlb.com/brewers", 
-    desc: "The Milwaukee Brewers dominated Major League Baseball in 2026 with an MLB-best 103–59 record, clinching the NL Central title behind an untouchable bullpen and electric play from phenom Jackson Chourio. Milwaukee defeated San Diego 3–1 in the NLDS and holds a 2–0 NLCS lead over Los Angeles, positioning them as favorites for their first World Series title.", 
-    roster: [{ name: "Jackson Chourio", pos: "OF | #11", stat: ".288 BA, 26 HR, 88 RBI" }, { name: "Christian Yelich", pos: "OF | #22", stat: ".315 BA, 18 HR, .910 OPS" }], 
-    gamelog: [{ game: "NLCS Game 2", opp: "vs LA Dodgers", res: "W 7-4", score: "7 - 4", tv: "FS1" }, { game: "NLCS Game 1", opp: "vs LA Dodgers", res: "W 2-1", score: "2 - 1", tv: "FS1" }] 
+    name: "Milwaukee Brewers", div: "NL_CENTRAL", seed: "#1 Seed • NL Central Champs", rec: "103 - 59", pos: "NLCS Lead 3-0 vs LAD", star: "Jackson Chourio", ws: "0 Titles", primary: "#122a47", accent: "#ff1c41", stadium: "American Family Field (Milwaukee, WI)", pennants: "1", divTitles: "6", img: "brewers.jpg", fallback: MLB_PHOTOS.STADIUM, url: "https://www.mlb.com/brewers", 
+    desc: "The Milwaukee Brewers dominated Major League Baseball in 2026 with an MLB-best 103–59 record, clinching the NL Central title behind an untouchable bullpen and electric play from phenom Jackson Chourio. Milwaukee defeated San Diego 3–1 in the NLDS and now holds a commanding 3–0 NLCS lead over Los Angeles after a 6–2 Game 3 victory at Dodger Stadium, putting them one win away from the World Series.", 
+    roster: [{ name: "Jackson Chourio", pos: "OF | #11", stat: ".288 BA, 26 HR, 88 RBI, 5 Playoff HR" }, { name: "Christian Yelich", pos: "OF | #22", stat: ".315 BA, 18 HR, .910 OPS" }], 
+    gamelog: [{ game: "NLCS Game 3", opp: "@ LA Dodgers", res: "W 6-2", score: "6 - 2", tv: "FS1" }, { game: "NLCS Game 2", opp: "vs LA Dodgers", res: "W 7-4", score: "7 - 4", tv: "FS1" }, { game: "NLCS Game 1", opp: "vs LA Dodgers", res: "W 2-1", score: "2 - 1", tv: "FS1" }] 
   },
   cubs: { 
     name: "Chicago Cubs", div: "NL_CENTRAL", seed: "NL Wild Card #5", rec: "89 - 73", pos: "Eliminated in WC", star: "Pete Crow-Armstrong", ws: "3 Titles", primary: "#0e3386", accent: "#cc3433", stadium: "Wrigley Field (Chicago, IL)", pennants: "11", divTitles: "8", img: "cubs.jpg", fallback: MLB_PHOTOS.GLOVE, url: "https://www.mlb.com/cubs", 
@@ -171,10 +171,10 @@ const mlb30Teams = {
 
   // NL WEST
   dodgers: { 
-    name: "Los Angeles Dodgers", div: "NL_WEST", seed: "#2 Seed • NL West Champs", rec: "100 - 62", pos: "NLCS Trailing 0-2 vs MIL", star: "Shohei Ohtani", ws: "8 Titles", primary: "#005a9c", accent: "#ef3e42", stadium: "Dodger Stadium (Los Angeles, CA)", pennants: "25", divTitles: "21", img: "dodgers.jpg", fallback: MLB_PHOTOS.BATTER, url: "https://www.mlb.com/dodgers", 
-    desc: "The Los Angeles Dodgers captured the NL West with a 100–62 record in 2026, powered by Shohei Ohtani's historic 54-home-run season. Los Angeles defeated Atlanta 3–1 in the NLDS before dropping the first two NLCS games in Milwaukee. Returning to Dodger Stadium for Game 3, LA relies on its star lineup to turn the series around.", 
+    name: "Los Angeles Dodgers", div: "NL_WEST", seed: "#2 Seed • NL West Champs", rec: "100 - 62", pos: "NLCS Trailing 0-3 vs MIL", star: "Shohei Ohtani", ws: "8 Titles", primary: "#005a9c", accent: "#ef3e42", stadium: "Dodger Stadium (Los Angeles, CA)", pennants: "25", divTitles: "21", img: "dodgers.jpg", fallback: MLB_PHOTOS.BATTER, url: "https://www.mlb.com/dodgers", 
+    desc: "The Los Angeles Dodgers captured the NL West with a 100–62 record in 2026, powered by Shohei Ohtani's historic 54-home-run season. Los Angeles defeated Atlanta 3–1 in the NLDS but now faces elimination after dropping Game 3 at home, 2–6 to Milwaukee. Trailing 0–3 in the NLCS, the Dodgers play Game 4 tonight at Dodger Stadium needing a historical comeback.", 
     roster: [{ name: "Shohei Ohtani", pos: "DH/SP | #17", stat: ".310 BA, 54 HR, 130 RBI" }, { name: "Mookie Betts", pos: "SS/OF | #5", stat: ".289 BA, 28 HR" }], 
-    gamelog: [{ game: "NLCS Game 2", opp: "@ Milwaukee Brewers", res: "L 4-7", score: "4 - 7", tv: "FS1" }, { game: "NLCS Game 1", opp: "@ Milwaukee Brewers", res: "L 1-2", score: "1 - 2", tv: "FS1" }] 
+    gamelog: [{ game: "NLCS Game 3", opp: "vs Milwaukee Brewers", res: "L 2-6", score: "2 - 6", tv: "FS1" }, { game: "NLCS Game 2", opp: "@ Milwaukee Brewers", res: "L 4-7", score: "4 - 7", tv: "FS1" }, { game: "NLCS Game 1", opp: "@ Milwaukee Brewers", res: "L 1-2", score: "1 - 2", tv: "FS1" }] 
   },
   padres: { 
     name: "San Diego Padres", div: "NL_WEST", seed: "NL Wild Card #4", rec: "91 - 71", pos: "Eliminated in NLDS", star: "Fernando Tatis Jr.", ws: "0 Titles", primary: "#2f241d", accent: "#ffc425", stadium: "Petco Park (San Diego, CA)", pennants: "2", divTitles: "5", img: "padres.jpg", fallback: MLB_PHOTOS.GLOVE, url: "https://www.mlb.com/padres", 
@@ -242,8 +242,8 @@ function openFavoriteTeamPortal() {
 
 // Fan MVP Voting Poll Engine
 const pollCandidates = [
+  { id: "chourio", name: "Jackson Chourio (MIL)", votes: 520 },
   { id: "ohtani", name: "Shohei Ohtani (LAD)", votes: 412 },
-  { id: "chourio", name: "Jackson Chourio (MIL)", votes: 388 },
   { id: "caminero", name: "Junior Caminero (TB)", votes: 215 },
   { id: "judge", name: "Aaron Judge (NYY)", votes: 190 }
 ];
@@ -552,10 +552,10 @@ function switchPortalTab(tabName, e) {
 
 // Broadcast Schedule Renderer
 const scheduleData = [
-  { match: "NLCS Game 3", matchup: "Milwaukee Brewers @ LA Dodgers", time: "Oct 14 • 8:08 PM ET", net: "FS1", badge: "net-fs1", stream: "FOX Sports App", venue: "Dodger Stadium, Los Angeles, CA", link: "https://www.ticketmaster.com/mlb" },
-  { match: "ALCS Game 3", matchup: "Tampa Bay Rays @ Cleveland Guardians", time: "Oct 15 • 6:08 PM ET", net: "TBS", badge: "net-tbs", stream: "HBO Max / TBS App", venue: "Progressive Field, Cleveland, OH", link: "https://www.stubhub.com/mlb-tickets" },
-  { match: "NLCS Game 4", matchup: "Milwaukee Brewers @ LA Dodgers", time: "Oct 15 • 8:38 PM ET", net: "FS1", badge: "net-fs1", stream: "FOX Sports App", venue: "Dodger Stadium, Los Angeles, CA", link: "https://www.ticketmaster.com/mlb" },
-  { match: "ALCS Game 4", matchup: "Tampa Bay Rays @ Cleveland Guardians", time: "Oct 16 • 6:08 PM ET", net: "TBS", badge: "net-tbs", stream: "HBO Max / TBS App", venue: "Progressive Field, Cleveland, OH", link: "https://www.stubhub.com/mlb-tickets" },
+  { match: "ALCS Game 3", matchup: "Tampa Bay Rays @ Cleveland Guardians", time: "Oct 15 • 1:00 PM ET", net: "TBS", badge: "net-tbs", stream: "HBO Max / TBS App", venue: "Progressive Field, Cleveland, OH", link: "https://www.stubhub.com/mlb-tickets" },
+  { match: "NLCS Game 4", matchup: "Milwaukee Brewers @ LA Dodgers", time: "Oct 15 • 8:00 PM ET", net: "FS1", badge: "net-fs1", stream: "FOX Sports App", venue: "Dodger Stadium, Los Angeles, CA", link: "https://www.ticketmaster.com/mlb" },
+  { match: "ALCS Game 4", matchup: "Tampa Bay Rays @ Cleveland Guardians", time: "Oct 16 • 6:00 PM ET", net: "TBS", badge: "net-tbs", stream: "HBO Max / TBS App", venue: "Progressive Field, Cleveland, OH", link: "https://www.stubhub.com/mlb-tickets" },
+  { match: "NLCS Game 5*", matchup: "Milwaukee Brewers @ LA Dodgers", time: "Oct 16 • 9:00 PM ET", net: "FS1", badge: "net-fs1", stream: "FOX Sports App", venue: "Dodger Stadium, Los Angeles, CA", link: "https://www.ticketmaster.com/mlb" },
   { match: "World Series Game 1", matchup: "AL Champion vs NL Champion", time: "Oct 23 • 8:00 PM ET", net: "FOX", badge: "net-fox", stream: "FOX Sports Live", venue: "TBD (Home of Higher Seed)", link: "https://www.mlb.com/tickets" }
 ];
 
@@ -578,7 +578,7 @@ function renderSchedule() {
   });
 }
 
-// Live Scoreboard
+// Live Scoreboard Fetcher
 async function fetchLiveMLBData() {
   const ticker = document.getElementById('ticker-content');
   const scoreGrid = document.getElementById('live-scoreboard-grid');
@@ -635,25 +635,25 @@ async function fetchLiveMLBData() {
 }
 
 function renderFallbackScoreboard() {
-  setText('ticker-content', "⚾ NLCS Gm 2: MIL 7, LAD 4 (FINAL) | ALCS Gm 2: TB 3, CLE 1 (FINAL) | NLCS Gm 3: Tonight 8:08 PM ET on FS1");
+  setText('ticker-content', "⚾ NLCS Gm 3: MIL 6, LAD 2 (FINAL) | NLCS Gm 4: Tonight 8:00 PM ET on FS1 (MIL leads 3-0) | ALCS Gm 3: Today 1:00 PM ET on TBS (Tied 1-1)");
 
   const scoreGrid = document.getElementById('live-scoreboard-grid');
   if (scoreGrid) {
     scoreGrid.innerHTML = `
       <div class="score-card">
-        <div class="card-top"><span>NLCS GAME 2</span> <span class="status-badge final">FINAL</span></div>
-        <div class="team-score-row winner"><span>Milwaukee Brewers</span> <span>7</span></div>
-        <div class="team-score-row"><span>Los Angeles Dodgers</span> <span>4</span></div>
+        <div class="card-top"><span>NLCS GAME 3</span> <span class="status-badge final">FINAL</span></div>
+        <div class="team-score-row winner"><span>Milwaukee Brewers</span> <span>6</span></div>
+        <div class="team-score-row"><span>Los Angeles Dodgers</span> <span>2</span></div>
       </div>
       <div class="score-card">
-        <div class="card-top"><span>ALCS GAME 2</span> <span class="status-badge final">FINAL</span></div>
-        <div class="team-score-row winner"><span>Tampa Bay Rays</span> <span>3</span></div>
-        <div class="team-score-row"><span>Cleveland Guardians</span> <span>1</span></div>
-      </div>
-      <div class="score-card">
-        <div class="card-top"><span>NLCS GAME 3</span> <span class="status-badge">OCT 14 • 8:08 PM ET</span></div>
-        <div class="team-score-row"><span>Milwaukee Brewers (2-0)</span> <span>-</span></div>
+        <div class="card-top"><span>NLCS GAME 4</span> <span class="status-badge">TONIGHT • 8:00 PM ET</span></div>
+        <div class="team-score-row"><span>Milwaukee Brewers (3-0)</span> <span>-</span></div>
         <div class="team-score-row"><span>Los Angeles Dodgers</span> <span>-</span></div>
+      </div>
+      <div class="score-card">
+        <div class="card-top"><span>ALCS GAME 3</span> <span class="status-badge">TODAY • 1:00 PM ET</span></div>
+        <div class="team-score-row"><span>Tampa Bay Rays (1-1)</span> <span>-</span></div>
+        <div class="team-score-row"><span>Cleveland Guardians</span> <span>-</span></div>
       </div>
     `;
   }
@@ -665,9 +665,9 @@ const matchupDetailsMap = {
   'ALDS2': { title: "ALDS B: Guardians vs White Sox", summary: "Cleveland defeated Chicago 3-2 in 5 games.", games: ["Game 1: CWS 3, CLE 0", "Game 2: CWS 4, CLE 3", "Game 3: CLE 9, CWS 3", "Game 4: CLE 9, CWS 5", "Game 5: CLE 2, CWS 0"] },
   'NLDS1': { title: "NLDS A: Brewers vs Padres", summary: "Milwaukee defeated San Diego 3-1.", games: ["Game 1: MIL 3, SD 2", "Game 2: MIL 4, SD 3", "Game 3: SD 4, MIL 3", "Game 4: MIL 3, SD 1"] },
   'NLDS2': { title: "NLDS B: Dodgers vs Braves", summary: "Los Angeles defeated Atlanta 3-1.", games: ["Game 1: LAD 5, ATL 3", "Game 2: ATL 3, LAD 2", "Game 3: LAD 3, ATL 1", "Game 4: LAD 4, ATL 1"] },
-  'ALCS': { title: "ALCS: Rays vs Guardians", summary: "Series tied 1-1. Game 3 in Cleveland.", games: ["Game 1: CLE 7, TB 3", "Game 2: TB 3, CLE 1"] },
-  'NLCS': { title: "NLCS: Brewers vs Dodgers", summary: "Milwaukee leads 2-0 heading to Dodger Stadium.", games: ["Game 1: MIL 2, LAD 1", "Game 2: MIL 7, LAD 4"] },
-  'WS': { title: "2026 World Series", summary: "Begins October 23 on FOX.", games: ["Game 1: Oct 23", "Game 2: Oct 24"] }
+  'ALCS': { title: "ALCS: Rays vs Guardians", summary: "Series tied 1-1. Game 3 Today at 1:00 PM ET in Cleveland.", games: ["Game 1: CLE 7, TB 3", "Game 2: TB 3, CLE 1"] },
+  'NLCS': { title: "NLCS: Brewers vs Dodgers", summary: "Milwaukee leads 3-0 after a 6-2 Game 3 victory at Dodger Stadium. Game 4 tonight.", games: ["Game 1: MIL 2, LAD 1", "Game 2: MIL 7, LAD 4", "Game 3: MIL 6, LAD 2"] },
+  'WS': { title: "2026 World Series", summary: "Begins October 23, 2026 on FOX.", games: ["Game 1: Oct 23", "Game 2: Oct 24"] }
 };
 
 function togglePredictorMode() {
@@ -698,7 +698,6 @@ function pickTeamInNode(nodeId, teamName, event) {
 
   userPredictorPicks[nodeId] = teamName;
 
-  // Advance picks down the bracket
   if (nodeId === 'ALCS') {
     setText('pred-al-champ', `AL: ${teamName}`);
   } else if (nodeId === 'NLCS') {
@@ -786,9 +785,10 @@ function filterBracket(league, e) {
   });
 }
 
-// ⏱️ Live 1-Second Countdown Clock to World Series Game 1
+// ⏱️ Live 1-Second Countdown Timer Engine to World Series Game 1
 function startLiveTickingTimer() {
-  const targetDate = new Date("October 23, 2026 20:00:00 ET").getTime();
+  // Using ISO format with Eastern Daylight Time offset (-04:00) for cross-browser parsing
+  const targetDate = new Date("2026-10-23T20:00:00-04:00").getTime();
 
   function updateClock() {
     const now = new Date().getTime();
