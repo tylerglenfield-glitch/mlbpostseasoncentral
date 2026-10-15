@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MLB Postseason 2026 | Scores, AI Insights & News Hub</title>
+  <title>MLB Postseason 2026 | Live Scores, AI Predictions & Portal</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
 </head>
 <body class="dark-mode">
 
-  <!-- Sticky Header Nav -->
+  <!-- Sticky Navbar -->
   <header class="top-header">
     <nav class="navbar">
       <a href="index.html" class="brand-logo">
@@ -23,7 +23,7 @@
       </a>
 
       <ul class="nav-directory">
-        <li><a href="index.html" class="nav-link active" id="nav-home">Scores & AI News</a></li>
+        <li><a href="index.html" class="nav-link active" id="nav-home">Scores & AI Engine</a></li>
         <li><a href="bracket.html" class="nav-link" id="nav-bracket">Interactive Bracket</a></li>
         <li><a href="teams.html" class="nav-link" id="nav-teams">30-Team Franchise Hub</a></li>
       </ul>
@@ -46,7 +46,7 @@
     </nav>
   </header>
 
-  <!-- Live Scores Ticker Bar -->
+  <!-- Live Ticker Bar -->
   <div class="ticker-bar">
     <div class="ticker-badge"><span class="pulse-dot"></span> LIVE SYNC</div>
     <div class="ticker-content" id="ticker-content">
@@ -55,15 +55,15 @@
     <button onclick="fetchLiveMLBData()" class="sync-refresh-btn">🔄 Refresh Scores</button>
   </div>
 
-  <!-- Hero Banner with Ticking Live Countdown -->
+  <!-- Hero Section with Live Countdown -->
   <section class="hero-section">
     <div class="hero-container">
       <div class="hero-tag-pill">
-        <span>👑 WORLD SERIES GAME 1 COUNTDOWN:</span>
+        <span>⏳ WORLD SERIES GAME 1 COUNTDOWN:</span>
         <strong id="live-timer-clock">00D 00H 00M 00S</strong>
       </div>
       <h1 id="hero-heading" class="hero-title">Road to the World Series</h1>
-      <p id="hero-subtext" class="hero-description">Real-time live scores, AI-powered series predictions, interactive 12-team bracket, broadcast TV channels, and 30 dedicated team portals.</p>
+      <p id="hero-subtext" class="hero-description">Real-time live scoreboards, advanced AI championship simulation, interactive 12-team playoff bracket, broadcast schedules, fan MVP voting, and 30 team hubs.</p>
       <div class="hero-btn-group">
         <a href="bracket.html" class="btn btn-primary" id="btn-hero-bracket">Explore Live Bracket →</a>
         <a href="teams.html" class="btn btn-secondary" id="btn-hero-teams">Select Franchise Hub</a>
@@ -73,54 +73,114 @@
 
   <main class="main-layout">
 
-    <!-- 🤖 AI Postseason Overview & Game Breakdown -->
+    <!-- AI Postseason Analytics Dashboard -->
     <section id="ai-overview-section" class="content-section">
       <div class="section-heading">
         <div>
-          <span class="heading-kicker">OCTOBER INSIGHTS</span>
-          <h2>🤖 AI Postseason Overview & Championship Predictions</h2>
-          <p class="section-subtitle">Algorithmic analysis of remaining LCS matchups, pitching depth, and win probabilities.</p>
+          <span class="heading-kicker">OCTOBER AI INTELLIGENCE ENGINE</span>
+          <h2>🤖 AI Postseason Analytics & Championship Simulator</h2>
+          <p class="section-subtitle">Algorithmic analysis of remaining LCS matchups, pitching depth, rotational ERAs, and championship probabilities.</p>
         </div>
         <div class="live-status-pill">
-          <span class="pulse-dot green"></span> AI Model Active
+          <span class="pulse-dot green"></span> AI Model Active v2.6
         </div>
       </div>
 
+      <!-- Main AI Grid -->
       <div class="ai-overview-grid">
+        
+        <!-- Left Column: Odds & Key Metrics -->
         <div class="ai-card main-ai-card">
           <div class="ai-card-header">
-            <span class="ai-badge">PROJECTED WORLD SERIES CHAMPION</span>
+            <span class="ai-badge">PROJECTED CHAMPION</span>
             <h3>Milwaukee Brewers (62.4% Probability)</h3>
           </div>
           <p class="ai-summary-p">
-            <strong>Model Breakdown:</strong> Milwaukee's dominant 103–59 regular season, combined with an untouchable back-end bullpen (1.12 ERA in October), gives them the highest statistical likelihood of capturing the 2026 title. After taking a 2-0 NLCS lead over Los Angeles, the Brewers need just two wins in five games to punch their ticket to the Fall Classic.
+            <strong>Algorithmic Forecast:</strong> Milwaukee's 103-win season, combined with an untouchable back-end bullpen (1.12 ERA in October) and home-field advantage, gives them the highest likelihood of winning the Fall Classic. Holding a 2-0 NLCS lead over Los Angeles, Milwaukee needs just two wins to punch their ticket to the World Series.
           </p>
+
           <div class="probability-bar-group">
-            <div class="prob-label-row"><span>Milwaukee Brewers</span> <strong>62.4%</strong></div>
+            <div class="prob-label-row"><span>Milwaukee Brewers (NLCS 2-0 Lead)</span> <strong>62.4%</strong></div>
             <div class="prob-track"><div class="prob-fill" style="width: 62.4%; background: #f59e0b;"></div></div>
             
-            <div class="prob-label-row"><span>Tampa Bay Rays</span> <strong>18.2%</strong></div>
+            <div class="prob-label-row"><span>Tampa Bay Rays (ALCS Tied 1-1)</span> <strong>18.2%</strong></div>
             <div class="prob-track"><div class="prob-fill" style="width: 18.2%; background: #00a3e0;"></div></div>
 
-            <div class="prob-label-row"><span>Los Angeles Dodgers</span> <strong>11.5%</strong></div>
+            <div class="prob-label-row"><span>Los Angeles Dodgers (NLCS Down 0-2)</span> <strong>11.5%</strong></div>
             <div class="prob-track"><div class="prob-fill" style="width: 11.5%; background: #005a9c;"></div></div>
 
-            <div class="prob-label-row"><span>Cleveland Guardians</span> <strong>7.9%</strong></div>
+            <div class="prob-label-row"><span>Cleveland Guardians (ALCS Tied 1-1)</span> <strong>7.9%</strong></div>
             <div class="prob-track"><div class="prob-fill" style="width: 7.9%; background: #e31937;"></div></div>
+          </div>
+
+          <!-- Advanced AI Metric Cards -->
+          <div class="ai-metrics-row">
+            <div class="metric-mini-card">
+              <span class="m-lbl">Bullpen ERA Index</span>
+              <strong class="m-val green">1.12 ERA</strong>
+              <span class="m-sub">Milwaukee Relief Corps</span>
+            </div>
+            <div class="metric-mini-card">
+              <span class="m-lbl">Starting Rotation Strikeout %</span>
+              <strong class="m-val blue">31.4% SO</strong>
+              <span class="m-sub">Rays Starting Staff</span>
+            </div>
+            <div class="metric-mini-card">
+              <span class="m-lbl">Clutch Run Differential</span>
+              <strong class="m-val gold">+18 Runs</strong>
+              <span class="m-sub">7th-9th Inning Playoff Runs</span>
+            </div>
           </div>
         </div>
 
+        <!-- Right Column: LCS Series Breakdowns -->
         <div class="ai-card side-ai-card">
-          <h3>⚾ Key Upcoming Matchup AI Forecasts</h3>
+          <h3>⚡ LCS Matchup AI Deep Dives</h3>
+          
           <div class="ai-matchup-item">
-            <div class="ai-match-title">NLCS Game 3: Brewers @ Dodgers</div>
-            <div class="ai-match-detail">Dodgers favored at home (52% win probability) behind Yoshinobu Yamamoto, but must overcome a 0-2 series deficit against Milwaukee's elite relief corps.</div>
+            <div class="ai-match-header">
+              <span class="ai-match-title">NLCS: Brewers @ Dodgers (Game 3)</span>
+              <span class="ai-match-pill">Tonight • 8:08 PM ET</span>
+            </div>
+            <p class="ai-match-detail">
+              <strong>Model Prediction:</strong> Dodgers favored at home (52% win probability) behind Yoshinobu Yamamoto, but must overcome a 0-2 series deficit against Milwaukee's elite pitching staff.
+            </p>
+            <div class="matchup-stat-bar">
+              <span>MIL: 48% Win Prob</span>
+              <span>LAD: 52% Win Prob</span>
+            </div>
           </div>
+
           <div class="ai-matchup-item">
-            <div class="ai-match-title">ALCS Game 3: Rays @ Guardians</div>
-            <div class="ai-match-detail">Series tied 1-1. Tampa Bay holds a 54% edge due to starting rotation depth as the series shifts to cold-weather Progressive Field.</div>
+            <div class="ai-match-header">
+              <span class="ai-match-title">ALCS: Rays @ Guardians (Game 3)</span>
+              <span class="ai-match-pill">Tomorrow • 6:08 PM ET</span>
+            </div>
+            <p class="ai-match-detail">
+              <strong>Model Prediction:</strong> Series tied 1-1. Tampa Bay holds a 54% edge shifting to Progressive Field due to rotation depth and high-leverage bullpen matchups.
+            </p>
+            <div class="matchup-stat-bar">
+              <span>TB: 54% Win Prob</span>
+              <span>CLE: 46% Win Prob</span>
+            </div>
           </div>
         </div>
+
+      </div>
+    </section>
+
+    <!-- Fan Postseason MVP Voting Poll -->
+    <section id="fan-mvp-poll" class="content-section">
+      <div class="section-heading">
+        <div>
+          <span class="heading-kicker">FAN INTERACTIVE POLL</span>
+          <h2>🗳️ Vote: Who is Your 2026 Postseason MVP?</h2>
+          <p class="section-subtitle">Cast your vote and see real-time community percentages saved live.</p>
+        </div>
+      </div>
+
+      <div class="card-box" id="mvp-poll-container">
+        <!-- Rendered dynamically -->
       </div>
     </section>
 
@@ -130,7 +190,7 @@
         <div>
           <span class="heading-kicker">POSTSEASON SCOREBOARD</span>
           <h2 id="heading-live">Live Playoff Scoreboard & Game Results</h2>
-          <p class="section-subtitle" id="sub-live">Synced live with ESPN stats engine.</p>
+          <p class="section-subtitle" id="sub-live">Synced with ESPN stats engine.</p>
         </div>
       </div>
 
@@ -139,13 +199,13 @@
       </div>
     </section>
 
-    <!-- Postseason Stat Leaders -->
+    <!-- Stat Leaders -->
     <section id="stat-leaders" class="content-section">
       <div class="section-heading">
         <div>
           <span class="heading-kicker">OCTOBER STAT LEADERS</span>
           <h2>2026 Postseason Leaders</h2>
-          <p class="section-subtitle">Top individual performers across the 2026 Postseason.</p>
+          <p class="section-subtitle">Top individual statistical performers in the 2026 Postseason.</p>
         </div>
       </div>
 
@@ -173,13 +233,13 @@
       </div>
     </section>
 
-    <!-- Headlines -->
+    <!-- News Feed -->
     <section id="news-feed" class="content-section">
       <div class="section-heading">
         <div>
           <span class="heading-kicker">POSTSEASON MEDIA</span>
-          <h2 id="heading-news">Headlines & Championship Analysis</h2>
-          <p class="section-subtitle">Real-time news from MLB.com, ESPN, and FOX Sports.</p>
+          <h2 id="heading-news">Headlines & Postseason Analysis</h2>
+          <p class="section-subtitle">Real-time coverage from MLB.com, ESPN, and FOX Sports.</p>
         </div>
       </div>
 
@@ -199,14 +259,14 @@
 
         <article class="news-card">
           <div class="news-thumb">
-            <img src="rays.jpg" alt="Tampa Bay Rays" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80';">
-            <span class="news-badge badge-alcs">ALCS GAME 2</span>
+            <img src="mets.jpg" alt="New York Mets" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80';">
+            <span class="news-badge badge-analysis">METS FEATURE</span>
           </div>
           <div class="news-body">
-            <div class="news-meta">Oct 13, 2026 • ESPN MLB</div>
-            <h3>Rays Bounce Back in Game 2 to Even ALCS 1-1 vs Guardians</h3>
-            <p>Tampa Bay's pitching staff allowed just four hits at Tropicana Field to even the American League Championship Series before heading to Cleveland.</p>
-            <a href="https://www.espn.com/mlb/" target="_blank" class="news-action-btn">Read Recap on ESPN ↗</a>
+            <div class="news-meta">Oct 11, 2026 • ESPN MLB</div>
+            <h3>Juan Soto's Historic 43-HR Inaugural Season in Queens</h3>
+            <p>Evaluating Juan Soto's massive impact in his first year with the Mets following his record-breaking 15-year, $765 million contract.</p>
+            <a href="https://www.espn.com/mlb/" target="_blank" class="news-action-btn">Read Soto Feature on ESPN ↗</a>
           </div>
         </article>
 
@@ -218,7 +278,7 @@
           <div class="news-body">
             <div class="news-meta">Oct 8, 2026 • FOX Sports</div>
             <h3>Rays Complete 3-0 ALDS Sweep of Yankees behind Elite Pitching</h3>
-            <p>Tampa Bay held New York to six total runs across three games to secure an ALDS sweep and punch their ticket to the ALCS.</p>
+            <p>Tampa Bay held Aaron Judge and the New York offense to six total runs across three games to secure an ALDS sweep.</p>
             <a href="https://www.foxsports.com/mlb" target="_blank" class="news-action-btn">Read Breakdown on FOX ↗</a>
           </div>
         </article>
