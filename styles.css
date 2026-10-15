@@ -61,7 +61,7 @@ a, a:visited, a:hover, a:active {
   text-decoration: none;
 }
 
-/* Glass Header Navbar */
+/* Header Navbar */
 .top-header {
   position: sticky;
   top: 0;
@@ -254,7 +254,7 @@ button:hover, select:hover {
   border-radius: 20px;
 }
 
-/* Hero Banner & Timer */
+/* Hero Section */
 .hero-section {
   position: relative;
   background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%);
@@ -353,7 +353,7 @@ button:hover, select:hover {
   font-size: 13px;
 }
 
-/* Redesigned AI Section */
+/* AI Overview Cards */
 .ai-overview-grid {
   display: grid;
   grid-template-columns: 1.6fr 1fr;
@@ -410,7 +410,6 @@ button:hover, select:hover {
   display: flex;
   flex-direction: column;
   gap: 10px;
-
   margin-bottom: 20px;
 }
 
@@ -603,7 +602,7 @@ button:hover, select:hover {
   color: var(--primary-blue);
 }
 
-/* Layout */
+/* Main Layout */
 .main-layout {
   max-width: 1280px;
   margin: 0 auto;
@@ -656,7 +655,7 @@ button:hover, select:hover {
   border: 1px solid var(--border-color);
 }
 
-/* Scoreboard Grid */
+/* Scoreboards */
 .scoreboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -706,7 +705,7 @@ button:hover, select:hover {
   color: var(--primary-blue);
 }
 
-/* Bracket Styling & Predictor Mode */
+/* Bracket & Predictor */
 .bracket-filter-btns {
   display: flex;
   gap: 8px;
@@ -935,7 +934,7 @@ button:hover, select:hover {
   color: var(--text-main);
 }
 
-/* Table Card */
+/* Schedule Table */
 .table-card-wrapper {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
@@ -1416,7 +1415,7 @@ button:hover, select:hover {
   text-decoration: underline;
 }
 
-/* Modal Overlay */
+/* Modal Window Overlay */
 .modal-backdrop {
   position: fixed;
   top: 0;
