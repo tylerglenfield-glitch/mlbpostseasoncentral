@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MLB Postseason 2026 | Interactive Bracket & TV Schedule</title>
+  <title>MLB Postseason 2026 | Interactive Bracket & Predictor</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
 </head>
 <body class="dark-mode">
 
-  <!-- Sticky Top Directory Bar -->
+  <!-- Header Nav -->
   <header class="top-header">
     <nav class="navbar">
       <a href="index.html" class="brand-logo">
@@ -23,7 +23,7 @@
       </a>
 
       <ul class="nav-directory">
-        <li><a href="index.html" class="nav-link" id="nav-home">Scores & AI News</a></li>
+        <li><a href="index.html" class="nav-link" id="nav-home">Scores & AI Engine</a></li>
         <li><a href="bracket.html" class="nav-link active" id="nav-bracket">Interactive Bracket</a></li>
         <li><a href="teams.html" class="nav-link" id="nav-teams">30-Team Franchise Hub</a></li>
       </ul>
@@ -57,13 +57,13 @@
 
   <main class="main-layout">
 
-    <!-- 12-Team Interactive Playoff Bracket -->
+    <!-- 12-Team Interactive Bracket -->
     <section id="full-bracket" class="content-section">
       <div class="section-heading">
         <div>
           <span class="heading-kicker">OFFICIAL BRACKET ENGINE</span>
           <h2 id="heading-bracket">12-Team Interactive Postseason Bracket</h2>
-          <p class="section-subtitle" id="sub-bracket">Click any matchup card for game breakdowns, or switch to Predictor Mode to pick your winners!</p>
+          <p class="section-subtitle" id="sub-bracket">Click any matchup for game logs, or toggle Predictor Mode to pick your winners through the World Series!</p>
         </div>
         <div class="bracket-filter-btns">
           <button class="filter-tab active" onclick="filterBracket('all', event)">Full Bracket</button>
@@ -73,6 +73,12 @@
         </div>
       </div>
 
+      <!-- Predictor Status Notification Banner -->
+      <div id="predictor-status-banner" class="predictor-status-bar" style="display: none;">
+        <span>🎯 <strong>PREDICTOR MODE IS ACTIVE:</strong> Click any team inside the matchup cards to advance them to the next round!</span>
+        <button onclick="resetPredictorPicks()" class="btn-reset-picks">Reset Picks 🔄</button>
+      </div>
+
       <div class="bracket-wrapper">
         <div class="bracket-tree" id="bracket-tree">
           
@@ -80,31 +86,31 @@
           <div class="bracket-column">
             <h3 class="round-header">Wild Card Series <span class="sub-head">(Best of 3)</span></h3>
             
-            <div class="matchup-node" id="node-AL_WC1" onclick="handleNodeClick('AL_WC1', 'Guardians')">
+            <div class="matchup-node" id="node-AL_WC1" onclick="handleNodeClick('AL_WC1', 'Guardians', event)">
               <div class="node-label">AL WILD CARD #1</div>
-              <div class="node-team winner"><span class="seed">#3</span> <span class="team-name">Guardians</span> <span class="node-score">2</span></div>
-              <div class="node-team"><span class="seed">#6</span> <span class="team-name">Tigers</span> <span class="node-score">1</span></div>
+              <div class="node-team winner" onclick="pickTeamInNode('AL_WC1', 'Guardians', event)"><span class="seed">#3</span> <span class="team-name">Guardians</span> <span class="node-score">2</span></div>
+              <div class="node-team" onclick="pickTeamInNode('AL_WC1', 'Tigers', event)"><span class="seed">#6</span> <span class="team-name">Tigers</span> <span class="node-score">1</span></div>
               <div class="node-status">CLE Wins 2-1</div>
             </div>
 
-            <div class="matchup-node" id="node-AL_WC2" onclick="handleNodeClick('AL_WC2', 'Yankees')">
+            <div class="matchup-node" id="node-AL_WC2" onclick="handleNodeClick('AL_WC2', 'Yankees', event)">
               <div class="node-label">AL WILD CARD #2</div>
-              <div class="node-team winner"><span class="seed">#4</span> <span class="team-name">Yankees</span> <span class="node-score">2</span></div>
-              <div class="node-team"><span class="seed">#5</span> <span class="team-name">Red Sox</span> <span class="node-score">0</span></div>
+              <div class="node-team winner" onclick="pickTeamInNode('AL_WC2', 'Yankees', event)"><span class="seed">#4</span> <span class="team-name">Yankees</span> <span class="node-score">2</span></div>
+              <div class="node-team" onclick="pickTeamInNode('AL_WC2', 'Red Sox', event)"><span class="seed">#5</span> <span class="team-name">Red Sox</span> <span class="node-score">0</span></div>
               <div class="node-status">NYY Wins 2-0</div>
             </div>
 
-            <div class="matchup-node" id="node-NL_WC1" onclick="handleNodeClick('NL_WC1', 'Braves')">
+            <div class="matchup-node" id="node-NL_WC1" onclick="handleNodeClick('NL_WC1', 'Braves', event)">
               <div class="node-label">NL WILD CARD #1</div>
-              <div class="node-team winner"><span class="seed">#3</span> <span class="team-name">Braves</span> <span class="node-score">2</span></div>
-              <div class="node-team"><span class="seed">#6</span> <span class="team-name">Phillies</span> <span class="node-score">1</span></div>
+              <div class="node-team winner" onclick="pickTeamInNode('NL_WC1', 'Braves', event)"><span class="seed">#3</span> <span class="team-name">Braves</span> <span class="node-score">2</span></div>
+              <div class="node-team" onclick="pickTeamInNode('NL_WC1', 'Phillies', event)"><span class="seed">#6</span> <span class="team-name">Phillies</span> <span class="node-score">1</span></div>
               <div class="node-status">ATL Wins 2-1</div>
             </div>
 
-            <div class="matchup-node" id="node-NL_WC2" onclick="handleNodeClick('NL_WC2', 'Padres')">
+            <div class="matchup-node" id="node-NL_WC2" onclick="handleNodeClick('NL_WC2', 'Padres', event)">
               <div class="node-label">NL WILD CARD #2</div>
-              <div class="node-team winner"><span class="seed">#4</span> <span class="team-name">Padres</span> <span class="node-score">2</span></div>
-              <div class="node-team"><span class="seed">#5</span> <span class="team-name">Cubs</span> <span class="node-score">0</span></div>
+              <div class="node-team winner" onclick="pickTeamInNode('NL_WC2', 'Padres', event)"><span class="seed">#4</span> <span class="team-name">Padres</span> <span class="node-score">2</span></div>
+              <div class="node-team" onclick="pickTeamInNode('NL_WC2', 'Cubs', event)"><span class="seed">#5</span> <span class="team-name">Cubs</span> <span class="node-score">0</span></div>
               <div class="node-status">SD Wins 2-0</div>
             </div>
           </div>
@@ -113,31 +119,31 @@
           <div class="bracket-column">
             <h3 class="round-header">Division Series <span class="sub-head">(Best of 5)</span></h3>
 
-            <div class="matchup-node" id="node-ALDS1" onclick="handleNodeClick('ALDS1', 'Rays')">
+            <div class="matchup-node" id="node-ALDS1" onclick="handleNodeClick('ALDS1', 'Rays', event)">
               <div class="node-label">ALDS A</div>
-              <div class="node-team winner"><span class="seed">#1</span> <span class="team-name">Rays</span> <span class="node-score">3</span></div>
-              <div class="node-team"><span class="seed">#4</span> <span class="team-name">Yankees</span> <span class="node-score">0</span></div>
+              <div class="node-team winner" onclick="pickTeamInNode('ALDS1', 'Rays', event)"><span class="seed">#1</span> <span class="team-name">Rays</span> <span class="node-score">3</span></div>
+              <div class="node-team" onclick="pickTeamInNode('ALDS1', 'Yankees', event)"><span class="seed">#4</span> <span class="team-name">Yankees</span> <span class="node-score">0</span></div>
               <div class="node-status gold">TB Sweeps 3-0</div>
             </div>
 
-            <div class="matchup-node" id="node-ALDS2" onclick="handleNodeClick('ALDS2', 'Guardians')">
+            <div class="matchup-node" id="node-ALDS2" onclick="handleNodeClick('ALDS2', 'Guardians', event)">
               <div class="node-label">ALDS B</div>
-              <div class="node-team winner"><span class="seed">#2</span> <span class="team-name">Guardians</span> <span class="node-score">3</span></div>
-              <div class="node-team"><span class="seed">#6</span> <span class="team-name">White Sox</span> <span class="node-score">2</span></div>
+              <div class="node-team winner" onclick="pickTeamInNode('ALDS2', 'Guardians', event)"><span class="seed">#2</span> <span class="team-name">Guardians</span> <span class="node-score">3</span></div>
+              <div class="node-team" onclick="pickTeamInNode('ALDS2', 'White Sox', event)"><span class="seed">#6</span> <span class="team-name">White Sox</span> <span class="node-score">2</span></div>
               <div class="node-status">CLE Wins 3-2</div>
             </div>
 
-            <div class="matchup-node" id="node-NLDS1" onclick="handleNodeClick('NLDS1', 'Brewers')">
+            <div class="matchup-node" id="node-NLDS1" onclick="handleNodeClick('NLDS1', 'Brewers', event)">
               <div class="node-label">NLDS A</div>
-              <div class="node-team winner"><span class="seed">#1</span> <span class="team-name">Brewers</span> <span class="node-score">3</span></div>
-              <div class="node-team"><span class="seed">#4</span> <span class="team-name">Padres</span> <span class="node-score">1</span></div>
+              <div class="node-team winner" onclick="pickTeamInNode('NLDS1', 'Brewers', event)"><span class="seed">#1</span> <span class="team-name">Brewers</span> <span class="node-score">3</span></div>
+              <div class="node-team" onclick="pickTeamInNode('NLDS1', 'Padres', event)"><span class="seed">#4</span> <span class="team-name">Padres</span> <span class="node-score">1</span></div>
               <div class="node-status">MIL Wins 3-1</div>
             </div>
 
-            <div class="matchup-node" id="node-NLDS2" onclick="handleNodeClick('NLDS2', 'Dodgers')">
+            <div class="matchup-node" id="node-NLDS2" onclick="handleNodeClick('NLDS2', 'Dodgers', event)">
               <div class="node-label">NLDS B</div>
-              <div class="node-team winner"><span class="seed">#2</span> <span class="team-name">Dodgers</span> <span class="node-score">3</span></div>
-              <div class="node-team"><span class="seed">#3</span> <span class="team-name">Braves</span> <span class="node-score">1</span></div>
+              <div class="node-team winner" onclick="pickTeamInNode('NLDS2', 'Dodgers', event)"><span class="seed">#2</span> <span class="team-name">Dodgers</span> <span class="node-score">3</span></div>
+              <div class="node-team" onclick="pickTeamInNode('NLDS2', 'Braves', event)"><span class="seed">#3</span> <span class="team-name">Braves</span> <span class="node-score">1</span></div>
               <div class="node-status">LAD Wins 3-1</div>
             </div>
           </div>
@@ -146,18 +152,18 @@
           <div class="bracket-column">
             <h3 class="round-header">Championship Series <span class="sub-head">(Best of 7)</span></h3>
 
-            <div class="matchup-node active-series" id="node-ALCS" onclick="handleNodeClick('ALCS', 'Rays')">
+            <div class="matchup-node active-series" id="node-ALCS" onclick="handleNodeClick('ALCS', 'Rays', event)">
               <div class="node-label live-label">ALCS • LIVE</div>
-              <div class="node-team live"><span class="seed">#1</span> <span class="team-name">Tampa Bay Rays</span> <span class="node-score">1</span></div>
-              <div class="node-team live"><span class="seed">#2</span> <span class="team-name">Cleveland Guardians</span> <span class="node-score">1</span></div>
-              <div class="node-status gold">Tied 1-1 • Game 3 Tomorrow</div>
+              <div class="node-team live" onclick="pickTeamInNode('ALCS', 'Tampa Bay Rays', event)"><span class="seed">#1</span> <span class="team-name">Tampa Bay Rays</span> <span class="node-score">1</span></div>
+              <div class="node-team live" onclick="pickTeamInNode('ALCS', 'Cleveland Guardians', event)"><span class="seed">#2</span> <span class="team-name">Cleveland Guardians</span> <span class="node-score">1</span></div>
+              <div class="node-status gold" id="alcs-status-text">Series Tied 1-1 • Game 3 Tomorrow</div>
             </div>
 
-            <div class="matchup-node active-series" id="node-NLCS" onclick="handleNodeClick('NLCS', 'Brewers')">
+            <div class="matchup-node active-series" id="node-NLCS" onclick="handleNodeClick('NLCS', 'Brewers', event)">
               <div class="node-label live-label">NLCS • LIVE</div>
-              <div class="node-team live"><span class="seed">#1</span> <span class="team-name">Milwaukee Brewers</span> <span class="node-score">2</span></div>
-              <div class="node-team live"><span class="seed">#2</span> <span class="team-name">Los Angeles Dodgers</span> <span class="node-score">0</span></div>
-              <div class="node-status gold">MIL Leads 2-0 • Game 3 Tonight</div>
+              <div class="node-team live" onclick="pickTeamInNode('NLCS', 'Milwaukee Brewers', event)"><span class="seed">#1</span> <span class="team-name">Milwaukee Brewers</span> <span class="node-score">2</span></div>
+              <div class="node-team live" onclick="pickTeamInNode('NLCS', 'Los Angeles Dodgers', event)"><span class="seed">#2</span> <span class="team-name">Los Angeles Dodgers</span> <span class="node-score">0</span></div>
+              <div class="node-status gold" id="nlcs-status-text">MIL Leads 2-0 • Game 3 Tonight</div>
             </div>
           </div>
 
@@ -165,11 +171,18 @@
           <div class="bracket-column">
             <h3 class="round-header gold-header">World Series 👑 <span class="sub-head">(Best of 7)</span></h3>
 
-            <div class="matchup-node ws-card" id="node-WS" onclick="handleNodeClick('WS', 'Brewers')">
+            <div class="matchup-node ws-card" id="node-WS" onclick="handleNodeClick('WS', 'World Series', event)">
               <div class="node-label ws-label">2026 WORLD SERIES</div>
-              <div class="node-team pending"><span class="seed">AL</span> <span class="team-name" id="pred-al-champ">AL Champion</span> <span class="node-score">-</span></div>
-              <div class="node-team pending"><span class="seed">NL</span> <span class="team-name" id="pred-nl-champ">NL Champion</span> <span class="node-score">-</span></div>
-              <div class="node-status gold">Starts Oct 23 on FOX</div>
+              <div class="node-team pending" onclick="pickTeamInNode('WS', 'AL Champion', event)"><span class="seed">AL</span> <span class="team-name" id="pred-al-champ">AL Champion (TBD)</span></div>
+              <div class="node-team pending" onclick="pickTeamInNode('WS', 'NL Champion', event)"><span class="seed">NL</span> <span class="team-name" id="pred-nl-champ">NL Champion (TBD)</span></div>
+              <div class="node-status gold" id="ws-node-status">UPCOMING: Oct 23, 2026 on FOX</div>
+            </div>
+
+            <!-- Predicted Champion Badge Box -->
+            <div id="champ-crown-box" class="champ-crown-box" style="display:none;">
+              <span class="crown-icon">👑</span>
+              <span class="champ-title">YOUR 2026 CHAMPION:</span>
+              <strong id="champ-team-name" class="champ-name">Milwaukee Brewers</strong>
             </div>
           </div>
 
@@ -180,10 +193,10 @@
       <div class="info-card-box">
         <h3>📋 Postseason Bracket Rules & Format</h3>
         <ul class="styled-info-list">
-          <li><strong>Wild Card Round:</strong> Best-of-3 series hosted entirely at the home stadium of the higher seed.</li>
-          <li><strong>Division Series (DS):</strong> Best-of-5 series using a 2-2-1 home-field advantage format.</li>
-          <li><strong>League Championship Series (LCS):</strong> Best-of-7 series using a 2-3-2 format to crown the AL and NL Pennant winners.</li>
-          <li><strong>World Series:</strong> Best-of-7 fall classic hosted by the pennant winner with superior regular season win percentage.</li>
+          <li><strong>Wild Card Round:</strong> Best-of-3 series hosted entirely at the stadium of the higher seed.</li>
+          <li><strong>Division Series (DS):</strong> Best-of-5 series using a 2-2-1 home-field format.</li>
+          <li><strong>League Championship Series (LCS):</strong> Best-of-7 series using a 2-3-2 format to crown AL & NL Pennant winners.</li>
+          <li><strong>World Series:</strong> Begins October 23, 2026 on FOX. Best-of-7 Fall Classic hosted by the team with superior regular-season record.</li>
         </ul>
       </div>
     </section>
@@ -194,7 +207,7 @@
         <div>
           <span class="heading-kicker">BROADCAST DIRECTORY</span>
           <h2 id="heading-schedule">TV Broadcast Networks & Tickets</h2>
-          <p class="section-subtitle" id="sub-schedule">Game schedules, TV networks (FOX, FS1, TBS, ESPN), streaming apps, and verified ticket options.</p>
+          <p class="section-subtitle" id="sub-schedule">Game schedules, TV networks (FOX, FS1, TBS), streaming apps, and ticket options.</p>
         </div>
       </div>
 
@@ -211,7 +224,7 @@
             </tr>
           </thead>
           <tbody id="schedule-body">
-            <!-- Dynamically rendered -->
+            <!-- Rendered dynamically -->
           </tbody>
         </table>
       </div>
