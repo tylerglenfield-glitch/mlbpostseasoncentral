@@ -73,7 +73,7 @@
         </div>
       </div>
 
-      <!-- Predictor Status Notification Banner -->
+      <!-- Predictor Banner -->
       <div id="predictor-status-banner" class="predictor-status-bar" style="display: none;">
         <span>🎯 <strong>PREDICTOR MODE IS ACTIVE:</strong> Click any team inside the matchup cards to advance them to the next round!</span>
         <button onclick="resetPredictorPicks()" class="btn-reset-picks">Reset Picks 🔄</button>
@@ -156,14 +156,14 @@
               <div class="node-label live-label">ALCS • LIVE</div>
               <div class="node-team live" onclick="pickTeamInNode('ALCS', 'Tampa Bay Rays', event)"><span class="seed">#1</span> <span class="team-name">Tampa Bay Rays</span> <span class="node-score">1</span></div>
               <div class="node-team live" onclick="pickTeamInNode('ALCS', 'Cleveland Guardians', event)"><span class="seed">#2</span> <span class="team-name">Cleveland Guardians</span> <span class="node-score">1</span></div>
-              <div class="node-status gold" id="alcs-status-text">Series Tied 1-1 • Game 3 Tomorrow</div>
+              <div class="node-status gold" id="alcs-status-text">Series Tied 1-1 • Game 3 Today 1 PM ET</div>
             </div>
 
             <div class="matchup-node active-series" id="node-NLCS" onclick="handleNodeClick('NLCS', 'Brewers', event)">
               <div class="node-label live-label">NLCS • LIVE</div>
-              <div class="node-team live" onclick="pickTeamInNode('NLCS', 'Milwaukee Brewers', event)"><span class="seed">#1</span> <span class="team-name">Milwaukee Brewers</span> <span class="node-score">2</span></div>
+              <div class="node-team live winner" onclick="pickTeamInNode('NLCS', 'Milwaukee Brewers', event)"><span class="seed">#1</span> <span class="team-name">Milwaukee Brewers</span> <span class="node-score">3</span></div>
               <div class="node-team live" onclick="pickTeamInNode('NLCS', 'Los Angeles Dodgers', event)"><span class="seed">#2</span> <span class="team-name">Los Angeles Dodgers</span> <span class="node-score">0</span></div>
-              <div class="node-status gold" id="nlcs-status-text">MIL Leads 2-0 • Game 3 Tonight</div>
+              <div class="node-status gold" id="nlcs-status-text">MIL Leads 3-0 • Game 4 Tonight</div>
             </div>
           </div>
 
@@ -175,10 +175,10 @@
               <div class="node-label ws-label">2026 WORLD SERIES</div>
               <div class="node-team pending" onclick="pickTeamInNode('WS', 'AL Champion', event)"><span class="seed">AL</span> <span class="team-name" id="pred-al-champ">AL Champion (TBD)</span></div>
               <div class="node-team pending" onclick="pickTeamInNode('WS', 'NL Champion', event)"><span class="seed">NL</span> <span class="team-name" id="pred-nl-champ">NL Champion (TBD)</span></div>
-              <div class="node-status gold" id="ws-node-status">UPCOMING: Oct 23, 2026 on FOX</div>
+              <div class="node-status gold" id="ws-node-status">UPCOMING: Starts Oct 23, 2026 on FOX</div>
             </div>
 
-            <!-- Predicted Champion Badge Box -->
+            <!-- Predicted Champion Crown Badge -->
             <div id="champ-crown-box" class="champ-crown-box" style="display:none;">
               <span class="crown-icon">👑</span>
               <span class="champ-title">YOUR 2026 CHAMPION:</span>
