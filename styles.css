@@ -1,4 +1,4 @@
-/* Color Palette & Global Variables */
+/* Color Palette & Layout System */
 :root {
   --bg-dark: #0b0f19;
   --bg-surface: #151c2c;
@@ -36,7 +36,7 @@ body.light-mode {
   --shadow-glow: rgba(0, 0, 0, 0.06);
 }
 
-/* Base Reset & Hyperlink Engine */
+/* Hyperlink Reset Engine */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -254,7 +254,7 @@ button:hover, select:hover {
   border-radius: 20px;
 }
 
-/* Hero Section */
+/* Hero Section & Live Ticking Timer */
 .hero-section {
   position: relative;
   background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%);
@@ -265,23 +265,32 @@ button:hover, select:hover {
 }
 
 .hero-container {
-  max-width: 800px;
+  max-width: 820px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
 }
 
-.hero-tag {
-  display: inline-block;
-  background-color: var(--accent-gold);
-  color: #000000;
-  font-size: 12px;
-  font-weight: 900;
-  padding: 6px 16px;
-  border-radius: 20px;
+.hero-tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--accent-gold);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+}
+
+.hero-tag-pill strong {
+  color: var(--accent-gold);
+  font-family: 'Space Grotesk', monospace;
+  font-size: 15px;
   letter-spacing: 1px;
-  margin-bottom: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .hero-title {
@@ -344,6 +353,113 @@ button:hover, select:hover {
   font-size: 13px;
 }
 
+/* 🤖 AI Overview Styling */
+.ai-overview-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 850px) {
+  .ai-overview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ai-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.ai-card-header {
+  margin-bottom: 12px;
+}
+
+.ai-badge {
+  background-color: var(--accent-gold);
+  color: #000000;
+  font-size: 10px;
+  font-weight: 900;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.ai-card-header h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.ai-summary-p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.ai-summary-p strong {
+  color: var(--text-main);
+}
+
+.probability-bar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prob-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.prob-track {
+  width: 100%;
+  height: 8px;
+  background-color: var(--bg-dark);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.prob-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s ease-in-out;
+}
+
+.side-ai-card h3 {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.ai-matchup-item {
+  background-color: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.ai-match-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--primary-blue);
+  margin-bottom: 4px;
+}
+
+.ai-match-detail {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
 /* Content Layout */
 .main-layout {
   max-width: 1280px;
@@ -397,7 +513,7 @@ button:hover, select:hover {
   border: 1px solid var(--border-color);
 }
 
-/* Scoreboard Grid & Stat Leaders */
+/* Scoreboard Grid */
 .scoreboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -607,7 +723,7 @@ button:hover, select:hover {
   color: var(--text-main);
 }
 
-/* Table Component */
+/* Table Card */
 .table-card-wrapper {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
@@ -730,7 +846,7 @@ button:hover, select:hover {
   border-color: var(--primary-blue);
 }
 
-/* Spotlight Preview Card */
+/* Spotlight Card */
 .spotlight-card {
   display: grid;
   grid-template-columns: 320px 1fr;
@@ -804,6 +920,7 @@ button:hover, select:hover {
   font-size: 15px;
   color: var(--text-muted);
   margin-bottom: 20px;
+  line-height: 1.7;
 }
 
 .spotlight-stats-grid {
@@ -967,7 +1084,7 @@ button:hover, select:hover {
 }
 
 .body-p {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
   color: var(--text-main);
   margin-top: 10px;
