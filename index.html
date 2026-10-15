@@ -11,7 +11,7 @@
 </head>
 <body class="dark-mode">
 
-  <!-- Sticky Navbar -->
+  <!-- Sticky Header Navbar -->
   <header class="top-header">
     <nav class="navbar">
       <a href="index.html" class="brand-logo">
@@ -55,7 +55,7 @@
     <button onclick="fetchLiveMLBData()" class="sync-refresh-btn">🔄 Refresh Scores</button>
   </div>
 
-  <!-- Hero Section with Live Countdown -->
+  <!-- Hero Section with Working Live Ticking Timer -->
   <section class="hero-section">
     <div class="hero-container">
       <div class="hero-tag-pill">
@@ -63,7 +63,7 @@
         <strong id="live-timer-clock">00D 00H 00M 00S</strong>
       </div>
       <h1 id="hero-heading" class="hero-title">Road to the World Series</h1>
-      <p id="hero-subtext" class="hero-description">Real-time live scoreboards, advanced AI championship simulation, interactive 12-team playoff bracket, broadcast schedules, fan MVP voting, and 30 team hubs.</p>
+      <p id="hero-subtext" class="hero-description">Real-time scoreboards, AI postseason simulation, interactive 12-team playoff bracket, broadcast schedules, fan MVP voting, and 30 team hubs.</p>
       <div class="hero-btn-group">
         <a href="bracket.html" class="btn btn-primary" id="btn-hero-bracket">Explore Live Bracket →</a>
         <a href="teams.html" class="btn btn-secondary" id="btn-hero-teams">Select Franchise Hub</a>
@@ -86,38 +86,36 @@
         </div>
       </div>
 
-      <!-- Main AI Grid -->
       <div class="ai-overview-grid">
         
         <!-- Left Column: Odds & Key Metrics -->
         <div class="ai-card main-ai-card">
           <div class="ai-card-header">
             <span class="ai-badge">PROJECTED CHAMPION</span>
-            <h3>Milwaukee Brewers (62.4% Probability)</h3>
+            <h3>Milwaukee Brewers (84.5% Probability)</h3>
           </div>
           <p class="ai-summary-p">
-            <strong>Algorithmic Forecast:</strong> Milwaukee's 103-win season, combined with an untouchable back-end bullpen (1.12 ERA in October) and home-field advantage, gives them the highest likelihood of winning the Fall Classic. Holding a 2-0 NLCS lead over Los Angeles, Milwaukee needs just two wins to punch their ticket to the World Series.
+            <strong>Algorithmic Forecast:</strong> Following a commanding 6-2 Game 3 road victory at Dodger Stadium, Milwaukee now holds a 3-0 NLCS lead over Los Angeles. Teams holding a 3-0 series lead in MLB postseason history are 39-1 all-time (97.5% series win rate). Milwaukee's back-end relief staff (0.95 October ERA) makes them overwhelming favorites to clinch the pennant and capture the 2026 World Series.
           </p>
 
           <div class="probability-bar-group">
-            <div class="prob-label-row"><span>Milwaukee Brewers (NLCS 2-0 Lead)</span> <strong>62.4%</strong></div>
-            <div class="prob-track"><div class="prob-fill" style="width: 62.4%; background: #f59e0b;"></div></div>
+            <div class="prob-label-row"><span>Milwaukee Brewers (NLCS Leads 3-0)</span> <strong>84.5%</strong></div>
+            <div class="prob-track"><div class="prob-fill" style="width: 84.5%; background: #f59e0b;"></div></div>
             
-            <div class="prob-label-row"><span>Tampa Bay Rays (ALCS Tied 1-1)</span> <strong>18.2%</strong></div>
-            <div class="prob-track"><div class="prob-fill" style="width: 18.2%; background: #00a3e0;"></div></div>
+            <div class="prob-label-row"><span>Tampa Bay Rays (ALCS Tied 1-1)</span> <strong>8.8%</strong></div>
+            <div class="prob-track"><div class="prob-fill" style="width: 8.8%; background: #00a3e0;"></div></div>
 
-            <div class="prob-label-row"><span>Los Angeles Dodgers (NLCS Down 0-2)</span> <strong>11.5%</strong></div>
-            <div class="prob-track"><div class="prob-fill" style="width: 11.5%; background: #005a9c;"></div></div>
+            <div class="prob-label-row"><span>Cleveland Guardians (ALCS Tied 1-1)</span> <strong>4.2%</strong></div>
+            <div class="prob-track"><div class="prob-fill" style="width: 4.2%; background: #e31937;"></div></div>
 
-            <div class="prob-label-row"><span>Cleveland Guardians (ALCS Tied 1-1)</span> <strong>7.9%</strong></div>
-            <div class="prob-track"><div class="prob-fill" style="width: 7.9%; background: #e31937;"></div></div>
+            <div class="prob-label-row"><span>Los Angeles Dodgers (NLCS Down 0-3)</span> <strong>2.5%</strong></div>
+            <div class="prob-track"><div class="prob-fill" style="width: 2.5%; background: #005a9c;"></div></div>
           </div>
 
-          <!-- Advanced AI Metric Cards -->
           <div class="ai-metrics-row">
             <div class="metric-mini-card">
               <span class="m-lbl">Bullpen ERA Index</span>
-              <strong class="m-val green">1.12 ERA</strong>
+              <strong class="m-val green">0.95 ERA</strong>
               <span class="m-sub">Milwaukee Relief Corps</span>
             </div>
             <div class="metric-mini-card">
@@ -127,41 +125,41 @@
             </div>
             <div class="metric-mini-card">
               <span class="m-lbl">Clutch Run Differential</span>
-              <strong class="m-val gold">+18 Runs</strong>
+              <strong class="m-val gold">+22 Runs</strong>
               <span class="m-sub">7th-9th Inning Playoff Runs</span>
             </div>
           </div>
         </div>
 
-        <!-- Right Column: LCS Series Breakdowns -->
+        <!-- Right Column: LCS Matchup AI Deep Dives -->
         <div class="ai-card side-ai-card">
           <h3>⚡ LCS Matchup AI Deep Dives</h3>
           
           <div class="ai-matchup-item">
             <div class="ai-match-header">
-              <span class="ai-match-title">NLCS: Brewers @ Dodgers (Game 3)</span>
-              <span class="ai-match-pill">Tonight • 8:08 PM ET</span>
+              <span class="ai-match-title">NLCS Game 4: Brewers @ Dodgers</span>
+              <span class="ai-match-pill">Tonight • 8:00 PM ET</span>
             </div>
             <p class="ai-match-detail">
-              <strong>Model Prediction:</strong> Dodgers favored at home (52% win probability) behind Yoshinobu Yamamoto, but must overcome a 0-2 series deficit against Milwaukee's elite pitching staff.
+              <strong>Model Forecast:</strong> Milwaukee leads 3-0. Dodgers face elimination at home. Model gives Milwaukee a 61% chance to complete the 4-0 sweep behind starting rotation depth.
             </p>
             <div class="matchup-stat-bar">
-              <span>MIL: 48% Win Prob</span>
-              <span>LAD: 52% Win Prob</span>
+              <span>MIL: 61% Win Prob</span>
+              <span>LAD: 39% Win Prob</span>
             </div>
           </div>
 
           <div class="ai-matchup-item">
             <div class="ai-match-header">
-              <span class="ai-match-title">ALCS: Rays @ Guardians (Game 3)</span>
-              <span class="ai-match-pill">Tomorrow • 6:08 PM ET</span>
+              <span class="ai-match-title">ALCS Game 3: Rays @ Guardians</span>
+              <span class="ai-match-pill">Today • 1:00 PM ET</span>
             </div>
             <p class="ai-match-detail">
-              <strong>Model Prediction:</strong> Series tied 1-1. Tampa Bay holds a 54% edge shifting to Progressive Field due to rotation depth and high-leverage bullpen matchups.
+              <strong>Model Forecast:</strong> Series tied 1-1. Game shifted to 1:00 PM ET due to evening weather forecasts in Cleveland. Tampa Bay holds a 52% edge.
             </p>
             <div class="matchup-stat-bar">
-              <span>TB: 54% Win Prob</span>
-              <span>CLE: 46% Win Prob</span>
+              <span>TB: 52% Win Prob</span>
+              <span>CLE: 48% Win Prob</span>
             </div>
           </div>
         </div>
@@ -212,8 +210,8 @@
       <div class="scoreboard-grid">
         <div class="score-card">
           <div class="card-top"><span>HOME RUN LEADERS 💣</span></div>
-          <div class="team-score-row winner"><span>1. Shohei Ohtani (LAD)</span> <span>5 HR</span></div>
-          <div class="team-score-row"><span>2. Jackson Chourio (MIL)</span> <span>4 HR</span></div>
+          <div class="team-score-row winner"><span>1. Jackson Chourio (MIL)</span> <span>5 HR</span></div>
+          <div class="team-score-row"><span>2. Shohei Ohtani (LAD)</span> <span>5 HR</span></div>
           <div class="team-score-row"><span>3. Junior Caminero (TB)</span> <span>3 HR</span></div>
         </div>
 
@@ -247,13 +245,13 @@
         <article class="news-card">
           <div class="news-thumb">
             <img src="brewers.jpg" alt="Milwaukee Brewers" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1508802222057-4cabc15b825f?auto=format&fit=crop&w=800&q=80';">
-            <span class="news-badge badge-nlcs">NLCS GAME 2</span>
+            <span class="news-badge badge-nlcs">NLCS GAME 3</span>
           </div>
           <div class="news-body">
-            <div class="news-meta">Oct 12, 2026 • MLB.com</div>
-            <h3>Brewers Power Past Dodgers 7-4 to Take 2-0 NLCS Lead</h3>
-            <p>Milwaukee exploded for four runs in the 6th inning at American Family Field to take a 2-0 championship series lead heading to Los Angeles.</p>
-            <a href="https://www.mlb.com/news" target="_blank" class="news-action-btn">Read Full Report on MLB.com ↗</a>
+            <div class="news-meta">Oct 14, 2026 • MLB.com</div>
+            <h3>Brewers Push Dodgers to Brink of Elimination with 6-2 Game 3 Win</h3>
+            <p>Milwaukee launched three home runs and shut down Los Angeles at Dodger Stadium to take a commanding 3-0 NLCS lead heading into Game 4 tonight.</p>
+            <a href="https://www.mlb.com/news" target="_blank" class="news-action-btn">Read Full Game Story on MLB.com ↗</a>
           </div>
         </article>
 
