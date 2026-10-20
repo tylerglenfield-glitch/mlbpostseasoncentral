@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MLB Postseason 2026 | Interactive Bracket & Predictor</title>
+  <title>MLB Postseason 2026 | Interactive Bracket & World Series Predictor</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
         <div class="logo-icon-bg">⚾</div>
         <div class="logo-text">
           <span class="logo-title">OCTOBER PORTAL</span>
-          <span class="logo-sub">MLB POSTSEASON 2026</span>
+          <span class="logo-sub">2026 WORLD SERIES</span>
         </div>
       </a>
 
@@ -48,7 +48,7 @@
   <div class="ticker-bar">
     <div class="ticker-badge"><span class="pulse-dot"></span> LIVE AUTO-SYNC</div>
     <div class="ticker-content" id="ticker-content">
-      <span>⚾ Fetching real-time MLB scoreboards...</span>
+      <span>⚾ ALCS FINAL: Tampa Bay Rays win 4-2 vs Guardians! World Series Game 1: Fri Oct 23 on FOX</span>
     </div>
     <button onclick="fetchLiveMLBData()" class="sync-refresh-btn">🔄 Refresh Scores</button>
   </div>
@@ -60,7 +60,7 @@
         <div>
           <span class="heading-kicker">OFFICIAL BRACKET ENGINE</span>
           <h2 id="heading-bracket">12-Team Interactive Postseason Bracket</h2>
-          <p class="section-subtitle" id="sub-bracket">Click any matchup for game details, or toggle Predictor Mode to make your custom World Series picks!</p>
+          <p class="section-subtitle" id="sub-bracket">Click any matchup card for full game logs, or toggle Predictor Mode to pick your World Series Champion!</p>
         </div>
         <div class="bracket-filter-btns">
           <button class="filter-tab active" onclick="filterBracket('all', event)">Full Bracket</button>
@@ -71,7 +71,7 @@
       </div>
 
       <div id="predictor-status-banner" class="predictor-status-bar" style="display: none;">
-        <span>🎯 <strong>PREDICTOR MODE ACTIVE:</strong> Click any team inside the matchup cards to advance them to the World Series!</span>
+        <span>🎯 <strong>PREDICTOR MODE ACTIVE:</strong> Click either the Rays or Brewers in the World Series card to declare your 2026 Champion!</span>
         <button onclick="resetPredictorPicks()" class="btn-reset-picks">Reset Picks 🔄</button>
       </div>
 
@@ -149,10 +149,10 @@
             <h3 class="round-header">Championship Series <span class="sub-head">(Best of 7)</span></h3>
 
             <div class="matchup-node active-series" id="node-ALCS" onclick="handleNodeClick('ALCS', 'Rays', event)">
-              <div class="node-label live-label">ALCS • GAME 6 LIVE</div>
-              <div class="node-team live winner" onclick="pickTeamInNode('ALCS', 'Tampa Bay Rays', event)"><span class="seed">#1</span> <span class="team-name">Tampa Bay Rays</span> <span class="node-score">3</span></div>
-              <div class="node-team live" onclick="pickTeamInNode('ALCS', 'Cleveland Guardians', event)"><span class="seed">#2</span> <span class="team-name">Cleveland Guardians</span> <span class="node-score">2</span></div>
-              <div class="node-status gold" id="alcs-status-text">TB Leads 3-2 • Game 6 Tonight</div>
+              <div class="node-label live-label">ALCS • FINAL</div>
+              <div class="node-team winner" onclick="pickTeamInNode('ALCS', 'Tampa Bay Rays', event)"><span class="seed">#1</span> <span class="team-name">Tampa Bay Rays 🏆</span> <span class="node-score">4</span></div>
+              <div class="node-team" onclick="pickTeamInNode('ALCS', 'Cleveland Guardians', event)"><span class="seed">#2</span> <span class="team-name">Cleveland Guardians</span> <span class="node-score">2</span></div>
+              <div class="node-status gold" id="alcs-status-text">TB Wins 4-2 • AL Champions!</div>
             </div>
 
             <div class="matchup-node active-series" id="node-NLCS" onclick="handleNodeClick('NLCS', 'Brewers', event)">
@@ -167,16 +167,16 @@
           <div class="bracket-column">
             <h3 class="round-header gold-header">World Series 👑 <span class="sub-head">(Best of 7)</span></h3>
 
-            <div class="matchup-node ws-card" id="node-WS" onclick="handleNodeClick('WS', 'World Series', event)">
-              <div class="node-label ws-label">2026 WORLD SERIES</div>
+            <div class="matchup-node ws-card active-series" id="node-WS" onclick="handleNodeClick('WS', 'World Series', event)">
+              <div class="node-label ws-label">2026 WORLD SERIES • SET</div>
               <div class="node-team winner" onclick="pickTeamInNode('WS', 'Milwaukee Brewers', event)"><span class="seed">NL</span> <span class="team-name">Milwaukee Brewers</span></div>
-              <div class="node-team pending" onclick="pickTeamInNode('WS', 'AL Champion', event)"><span class="seed">AL</span> <span class="team-name" id="pred-al-champ">AL Champion (TB/CLE)</span></div>
-              <div class="node-status gold" id="ws-node-status">Starts Oct 23 on FOX</div>
+              <div class="node-team winner" onclick="pickTeamInNode('WS', 'Tampa Bay Rays', event)"><span class="seed">AL</span> <span class="team-name" id="pred-al-champ">Tampa Bay Rays</span></div>
+              <div class="node-status gold" id="ws-node-status">Game 1: Fri Oct 23 on FOX</div>
             </div>
 
             <div id="champ-crown-box" class="champ-crown-box" style="display:none;">
               <span class="crown-icon">👑</span>
-              <span class="champ-title">YOUR 2026 CHAMPION:</span>
+              <span class="champ-title">YOUR PREDICTED CHAMPION:</span>
               <strong id="champ-team-name" class="champ-name">Milwaukee Brewers</strong>
             </div>
           </div>
@@ -185,11 +185,12 @@
       </div>
 
       <div class="info-card-box">
-        <h3>📋 World Series & Postseason Format Info</h3>
+        <h3>📋 2026 World Series Official Schedule & Broadcasts</h3>
         <ul class="styled-info-list">
-          <li><strong>National League Pennant:</strong> Milwaukee swept LA 4–0 and holds home-field advantage for World Series Games 1 and 2 at American Family Field.</li>
-          <li><strong>American League Pennant:</strong> Tampa Bay leads Cleveland 3–2. Game 6 takes place tonight on TBS.</li>
-          <li><strong>World Series Broadcast:</strong> Begins Friday, October 23, 2026 at 8:00 PM ET exclusively on FOX.</li>
+          <li><strong>Game 1:</strong> Friday, Oct 23 @ Milwaukee Brewers (American Family Field) — 8:00 PM ET on FOX</li>
+          <li><strong>Game 2:</strong> Saturday, Oct 24 @ Milwaukee Brewers (American Family Field) — 8:00 PM ET on FOX</li>
+          <li><strong>Game 3:</strong> Monday, Oct 26 @ Tampa Bay Rays (Tropicana Field) — 8:00 PM ET on FOX</li>
+          <li><strong>Game 4:</strong> Tuesday, Oct 27 @ Tampa Bay Rays (Tropicana Field) — 8:00 PM ET on FOX</li>
         </ul>
       </div>
     </section>
@@ -198,8 +199,8 @@
     <section id="broadcast-schedule" class="content-section">
       <div class="section-heading">
         <div>
-          <span class="heading-kicker">AUTOMATED SCHEDULE DIRECTORY</span>
-          <h2 id="heading-schedule">TV Broadcast Networks & Tickets</h2>
+          <span class="heading-kicker">WORLD SERIES SCHEDULE DIRECTORY</span>
+          <h2 id="heading-schedule">2026 Fall Classic Broadcast Networks & Tickets</h2>
           <p class="section-subtitle" id="sub-schedule">Auto-updated from Major League Baseball's live schedule API.</p>
         </div>
       </div>
