@@ -11,7 +11,6 @@
 </head>
 <body class="dark-mode">
 
-  <!-- Header Nav -->
   <header class="top-header">
     <nav class="navbar">
       <a href="index.html" class="brand-logo">
@@ -46,16 +45,14 @@
     </nav>
   </header>
 
-  <!-- Live Ticker Bar -->
   <div class="ticker-bar">
-    <div class="ticker-badge"><span class="pulse-dot"></span> LIVE SYNC</div>
+    <div class="ticker-badge"><span class="pulse-dot"></span> LIVE AUTO-SYNC</div>
     <div class="ticker-content" id="ticker-content">
       <span>⚾ Fetching real-time MLB scoreboards...</span>
     </div>
     <button onclick="fetchLiveMLBData()" class="sync-refresh-btn">🔄 Refresh Scores</button>
   </div>
 
-  <!-- VIEW 1: 30-TEAM DIRECTORY GRID -->
   <div id="main-teams-hub">
     <main class="main-layout">
       
@@ -64,16 +61,14 @@
           <div>
             <span class="heading-kicker">30-FRANCHISE PORTAL</span>
             <h2 id="heading-teams">MLB Franchise Directory & Team Portals</h2>
-            <p class="section-subtitle" id="sub-teams">Select any team in Major League Baseball to preview their record, stars, and full season storyline!</p>
+            <p class="section-subtitle" id="sub-teams">Select any team in Major League Baseball to preview their record, key stars, and season storyline!</p>
           </div>
         </div>
 
-        <!-- Search Bar -->
         <div class="search-box-wrapper" style="margin-bottom: 20px;">
           <input type="text" id="team-search-input" placeholder="🔍 Search by team name, city, or division..." onkeyup="searchTeams(this.value)" class="search-input-field">
         </div>
 
-        <!-- Division Filters -->
         <div class="division-tab-bar">
           <button class="div-tab-btn active" onclick="filterTeamsByDivision('ALL', event)">All 30 Teams</button>
           <button class="div-tab-btn" onclick="filterTeamsByDivision('AL_EAST', event)">AL East</button>
@@ -84,20 +79,16 @@
           <button class="div-tab-btn" onclick="filterTeamsByDivision('NL_WEST', event)">NL West</button>
         </div>
 
-        <!-- Team Selector Grid -->
-        <div class="team-grid-picker" id="team-picker-grid">
-          <!-- Rendered dynamically -->
-        </div>
+        <div class="team-grid-picker" id="team-picker-grid"></div>
 
-        <!-- Spotlight Preview Card -->
         <div class="spotlight-card" id="team-spotlight-card">
           <div class="spotlight-media">
-            <img id="spotlight-img" src="yankees.jpg" alt="Team Spotlight" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1562077772-3bd90403f7f0?auto=format&fit=crop&w=800&q=80';">
-            <div class="spotlight-media-badge" id="spotlight-badge">AL Wild Card</div>
+            <img id="spotlight-img" src="brewers.jpg" alt="Team Spotlight" class="spotlight-img-obj" onerror="handleImageError(this, 'STADIUM');">
+            <div class="spotlight-media-badge" id="spotlight-badge">NL Champions</div>
           </div>
           <div class="spotlight-body">
             <div class="spotlight-header">
-              <h3 id="spotlight-title">New York Yankees</h3>
+              <h3 id="spotlight-title">Milwaukee Brewers</h3>
               <div class="spotlight-action-row">
                 <button onclick="setFavoriteTeam()" class="btn-fav-heart" id="fav-btn">❤️ Save as Favorite</button>
                 <button onclick="launchDedicatedPortal()" class="btn btn-primary btn-sm">🚀 Open Dedicated Portal</button>
@@ -107,16 +98,16 @@
               Spotlight story...
             </p>
             <div class="spotlight-stats-grid">
-              <div class="stat-pill-box"><span class="stat-lbl">2026 Record</span><strong class="stat-val" id="spotlight-rec">93 - 69</strong></div>
-              <div class="stat-pill-box"><span class="stat-lbl">Postseason Status</span><strong class="stat-val" id="spotlight-pos">Eliminated in ALDS</strong></div>
-              <div class="stat-pill-box"><span class="stat-lbl">Featured Star</span><strong class="stat-val" id="spotlight-star">Aaron Judge</strong></div>
-              <div class="stat-pill-box"><span class="stat-lbl">World Series Titles</span><strong class="stat-val" id="spotlight-ws">27 Titles</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">2026 Record</span><strong class="stat-val" id="spotlight-rec">103 - 59</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">Postseason Status</span><strong class="stat-val" id="spotlight-pos">NL Champions (4-0 Sweep)</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">Featured Star</span><strong class="stat-val" id="spotlight-star">Jackson Chourio</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">World Series Titles</span><strong class="stat-val" id="spotlight-ws">0 Titles</strong></div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Head-to-Head Team Comparison Tool -->
+      <!-- Head-to-Head Compare Engine -->
       <section id="compare-section" class="content-section">
         <div class="section-heading">
           <div>
@@ -139,16 +130,14 @@
             </div>
           </div>
 
-          <div id="compare-result-box" style="margin-top:20px;">
-            <!-- Rendered dynamically -->
-          </div>
+          <div id="compare-result-box" style="margin-top:20px;"></div>
         </div>
       </section>
 
     </main>
   </div>
 
-  <!-- VIEW 2: DEDICATED FULL-PAGE TEAM PORTAL VIEW -->
+  <!-- Dedicated Team Portal View -->
   <div id="dedicated-team-portal" style="display: none;">
     <div class="portal-header-banner" id="portal-banner">
       <div class="portal-container">
@@ -172,7 +161,6 @@
     </div>
 
     <div class="main-layout">
-      <!-- Sub-Nav Tabs -->
       <div class="portal-subnav-tabs">
         <button class="portal-tab-btn active" onclick="switchPortalTab('overview', event)">📊 Overview & Storyline</button>
         <button class="portal-tab-btn" onclick="switchPortalTab('schedule', event)">📅 Schedule & Game Logs</button>
@@ -180,7 +168,6 @@
         <button class="portal-tab-btn" onclick="switchPortalTab('news', event)">📰 Team Coverage</button>
       </div>
 
-      <!-- TAB 1: OVERVIEW -->
       <div id="ptab-overview" class="portal-tab-content active">
         <div class="portal-grid-2col">
           <div class="card-box">
@@ -190,7 +177,7 @@
             <div class="spotlight-stats-grid" style="margin-top:20px;">
               <div class="stat-pill-box"><span class="stat-lbl">2026 Record</span><strong class="stat-val" id="ptab-rec">103 - 59</strong></div>
               <div class="stat-pill-box"><span class="stat-lbl">Featured Star</span><strong class="stat-val" id="ptab-star">Jackson Chourio</strong></div>
-              <div class="stat-pill-box"><span class="stat-lbl">Postseason Status</span><strong class="stat-val" id="ptab-status">NLCS Lead 3-0</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">Postseason Status</span><strong class="stat-val" id="ptab-status">NL Champions</strong></div>
               <div class="stat-pill-box"><span class="stat-lbl">World Series Titles</span><strong class="stat-val" id="ptab-ws-titles">0 Titles</strong></div>
             </div>
           </div>
@@ -199,7 +186,7 @@
             <h3>🏆 Franchise Achievements</h3>
             <ul class="honors-data-list">
               <li><span>World Series Titles:</span> <strong id="ptab-ws-titles-side">0</strong></li>
-              <li><span>League Pennants:</span> <strong id="ptab-pennants">1</strong></li>
+              <li><span>League Pennants:</span> <strong id="ptab-pennants">2 (1982, 2026)</strong></li>
               <li><span>Division Titles:</span> <strong id="ptab-div-titles">6</strong></li>
               <li><span>Home Ballpark:</span> <strong id="ptab-stadium">American Family Field</strong></li>
             </ul>
@@ -207,7 +194,6 @@
         </div>
       </div>
 
-      <!-- TAB 2: SCHEDULE -->
       <div id="ptab-schedule" class="portal-tab-content">
         <div class="card-box">
           <h3>⚾ 2026 Postseason & Game Log</h3>
@@ -222,29 +208,21 @@
                   <th>Broadcast / Tickets</th>
                 </tr>
               </thead>
-              <tbody id="portal-gamelog-body">
-                <!-- Rendered dynamically -->
-              </tbody>
+              <tbody id="portal-gamelog-body"></tbody>
             </table>
           </div>
         </div>
       </div>
 
-      <!-- TAB 3: ROSTER -->
       <div id="ptab-roster" class="portal-tab-content">
         <div class="card-box">
           <h3>⭐ Key Players & Roster Anchors</h3>
-          <div class="roster-card-grid" id="portal-roster-grid">
-            <!-- Rendered dynamically -->
-          </div>
+          <div class="roster-card-grid" id="portal-roster-grid"></div>
         </div>
       </div>
 
-      <!-- TAB 4: NEWS -->
       <div id="ptab-news" class="portal-tab-content">
-        <div class="news-masonry" id="portal-news-grid">
-          <!-- Rendered dynamically -->
-        </div>
+        <div class="news-masonry" id="portal-news-grid"></div>
       </div>
 
     </div>
