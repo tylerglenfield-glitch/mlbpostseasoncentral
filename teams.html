@@ -17,7 +17,7 @@
         <div class="logo-icon-bg">⚾</div>
         <div class="logo-text">
           <span class="logo-title">OCTOBER PORTAL</span>
-          <span class="logo-sub">MLB POSTSEASON 2026</span>
+          <span class="logo-sub">2026 WORLD SERIES</span>
         </div>
       </a>
 
@@ -48,7 +48,7 @@
   <div class="ticker-bar">
     <div class="ticker-badge"><span class="pulse-dot"></span> LIVE AUTO-SYNC</div>
     <div class="ticker-content" id="ticker-content">
-      <span>⚾ Fetching real-time MLB scoreboards...</span>
+      <span>⚾ ALCS Champions: Tampa Bay Rays! World Series Game 1: Fri Oct 23 @ Milwaukee Brewers</span>
     </div>
     <button onclick="fetchLiveMLBData()" class="sync-refresh-btn">🔄 Refresh Scores</button>
   </div>
@@ -83,12 +83,12 @@
 
         <div class="spotlight-card" id="team-spotlight-card">
           <div class="spotlight-media">
-            <img id="spotlight-img" src="brewers.jpg" alt="Team Spotlight" class="spotlight-img-obj" onerror="handleImageError(this, 'STADIUM');">
-            <div class="spotlight-media-badge" id="spotlight-badge">NL Champions</div>
+            <img id="spotlight-img" src="rays.jpg" alt="Team Spotlight" class="spotlight-img-obj" onerror="handleImageError(this, 'LIGHTS');">
+            <div class="spotlight-media-badge" id="spotlight-badge">AL Champions</div>
           </div>
           <div class="spotlight-body">
             <div class="spotlight-header">
-              <h3 id="spotlight-title">Milwaukee Brewers</h3>
+              <h3 id="spotlight-title">Tampa Bay Rays</h3>
               <div class="spotlight-action-row">
                 <button onclick="setFavoriteTeam()" class="btn-fav-heart" id="fav-btn">❤️ Save as Favorite</button>
                 <button onclick="launchDedicatedPortal()" class="btn btn-primary btn-sm">🚀 Open Dedicated Portal</button>
@@ -98,9 +98,9 @@
               Spotlight story...
             </p>
             <div class="spotlight-stats-grid">
-              <div class="stat-pill-box"><span class="stat-lbl">2026 Record</span><strong class="stat-val" id="spotlight-rec">103 - 59</strong></div>
-              <div class="stat-pill-box"><span class="stat-lbl">Postseason Status</span><strong class="stat-val" id="spotlight-pos">NL Champions (4-0 Sweep)</strong></div>
-              <div class="stat-pill-box"><span class="stat-lbl">Featured Star</span><strong class="stat-val" id="spotlight-star">Jackson Chourio</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">2026 Record</span><strong class="stat-val" id="spotlight-rec">98 - 64</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">Postseason Status</span><strong class="stat-val" id="spotlight-pos">AL Champions (4-2 vs CLE)</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">Featured Star</span><strong class="stat-val" id="spotlight-star">Junior Caminero</strong></div>
               <div class="stat-pill-box"><span class="stat-lbl">World Series Titles</span><strong class="stat-val" id="spotlight-ws">0 Titles</strong></div>
             </div>
           </div>
@@ -147,10 +147,10 @@
           <div class="portal-titles">
             <div class="portal-badge-group">
               <span class="pill-badge gold" id="portal-badge">#1 Seed</span>
-              <span class="pill-badge outline" id="portal-div-name">NL Central</span>
+              <span class="pill-badge outline" id="portal-div-name">AL East</span>
             </div>
-            <h1 id="portal-team-name">Milwaukee Brewers</h1>
-            <p id="portal-tagline" class="portal-sub">Official 2026 Postseason & Franchise Hub</p>
+            <h1 id="portal-team-name">Tampa Bay Rays</h1>
+            <p id="portal-tagline" class="portal-sub">Official 2026 World Series Hub</p>
           </div>
         </div>
         <div class="portal-actions">
@@ -175,9 +175,9 @@
             <p id="portal-full-desc" class="body-p">Team storyline details...</p>
 
             <div class="spotlight-stats-grid" style="margin-top:20px;">
-              <div class="stat-pill-box"><span class="stat-lbl">2026 Record</span><strong class="stat-val" id="ptab-rec">103 - 59</strong></div>
-              <div class="stat-pill-box"><span class="stat-lbl">Featured Star</span><strong class="stat-val" id="ptab-star">Jackson Chourio</strong></div>
-              <div class="stat-pill-box"><span class="stat-lbl">Postseason Status</span><strong class="stat-val" id="ptab-status">NL Champions</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">2026 Record</span><strong class="stat-val" id="ptab-rec">98 - 64</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">Featured Star</span><strong class="stat-val" id="ptab-star">Junior Caminero</strong></div>
+              <div class="stat-pill-box"><span class="stat-lbl">Postseason Status</span><strong class="stat-val" id="ptab-status">AL Champions</strong></div>
               <div class="stat-pill-box"><span class="stat-lbl">World Series Titles</span><strong class="stat-val" id="ptab-ws-titles">0 Titles</strong></div>
             </div>
           </div>
@@ -186,9 +186,9 @@
             <h3>🏆 Franchise Achievements</h3>
             <ul class="honors-data-list">
               <li><span>World Series Titles:</span> <strong id="ptab-ws-titles-side">0</strong></li>
-              <li><span>League Pennants:</span> <strong id="ptab-pennants">2 (1982, 2026)</strong></li>
-              <li><span>Division Titles:</span> <strong id="ptab-div-titles">6</strong></li>
-              <li><span>Home Ballpark:</span> <strong id="ptab-stadium">American Family Field</strong></li>
+              <li><span>League Pennants:</span> <strong id="ptab-pennants">3 (2008, 2020, 2026)</strong></li>
+              <li><span>Division Titles:</span> <strong id="ptab-div-titles">5</strong></li>
+              <li><span>Home Ballpark:</span> <strong id="ptab-stadium">Tropicana Field</strong></li>
             </ul>
           </div>
         </div>
