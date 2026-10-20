@@ -11,7 +11,6 @@
 </head>
 <body class="dark-mode">
 
-  <!-- Header Nav -->
   <header class="top-header">
     <nav class="navbar">
       <a href="index.html" class="brand-logo">
@@ -46,9 +45,8 @@
     </nav>
   </header>
 
-  <!-- Live Ticker Bar -->
   <div class="ticker-bar">
-    <div class="ticker-badge"><span class="pulse-dot"></span> LIVE SYNC</div>
+    <div class="ticker-badge"><span class="pulse-dot"></span> LIVE AUTO-SYNC</div>
     <div class="ticker-content" id="ticker-content">
       <span>⚾ Fetching real-time MLB scoreboards...</span>
     </div>
@@ -57,13 +55,12 @@
 
   <main class="main-layout">
 
-    <!-- 12-Team Interactive Bracket -->
     <section id="full-bracket" class="content-section">
       <div class="section-heading">
         <div>
           <span class="heading-kicker">OFFICIAL BRACKET ENGINE</span>
           <h2 id="heading-bracket">12-Team Interactive Postseason Bracket</h2>
-          <p class="section-subtitle" id="sub-bracket">Click any matchup for game logs, or toggle Predictor Mode to pick your winners through the World Series!</p>
+          <p class="section-subtitle" id="sub-bracket">Click any matchup for game details, or toggle Predictor Mode to make your custom World Series picks!</p>
         </div>
         <div class="bracket-filter-btns">
           <button class="filter-tab active" onclick="filterBracket('all', event)">Full Bracket</button>
@@ -73,16 +70,15 @@
         </div>
       </div>
 
-      <!-- Predictor Banner -->
       <div id="predictor-status-banner" class="predictor-status-bar" style="display: none;">
-        <span>🎯 <strong>PREDICTOR MODE IS ACTIVE:</strong> Click any team inside the matchup cards to advance them to the next round!</span>
+        <span>🎯 <strong>PREDICTOR MODE ACTIVE:</strong> Click any team inside the matchup cards to advance them to the World Series!</span>
         <button onclick="resetPredictorPicks()" class="btn-reset-picks">Reset Picks 🔄</button>
       </div>
 
       <div class="bracket-wrapper">
         <div class="bracket-tree" id="bracket-tree">
           
-          <!-- Round 1: Wild Card -->
+          <!-- Wild Card Series -->
           <div class="bracket-column">
             <h3 class="round-header">Wild Card Series <span class="sub-head">(Best of 3)</span></h3>
             
@@ -115,7 +111,7 @@
             </div>
           </div>
 
-          <!-- Round 2: Division Series -->
+          <!-- Division Series -->
           <div class="bracket-column">
             <h3 class="round-header">Division Series <span class="sub-head">(Best of 5)</span></h3>
 
@@ -148,37 +144,36 @@
             </div>
           </div>
 
-          <!-- Round 3: Championship Series -->
+          <!-- Championship Series -->
           <div class="bracket-column">
             <h3 class="round-header">Championship Series <span class="sub-head">(Best of 7)</span></h3>
 
             <div class="matchup-node active-series" id="node-ALCS" onclick="handleNodeClick('ALCS', 'Rays', event)">
-              <div class="node-label live-label">ALCS • LIVE</div>
-              <div class="node-team live" onclick="pickTeamInNode('ALCS', 'Tampa Bay Rays', event)"><span class="seed">#1</span> <span class="team-name">Tampa Bay Rays</span> <span class="node-score">1</span></div>
-              <div class="node-team live" onclick="pickTeamInNode('ALCS', 'Cleveland Guardians', event)"><span class="seed">#2</span> <span class="team-name">Cleveland Guardians</span> <span class="node-score">1</span></div>
-              <div class="node-status gold" id="alcs-status-text">Series Tied 1-1 • Game 3 Today 1 PM ET</div>
+              <div class="node-label live-label">ALCS • GAME 6 LIVE</div>
+              <div class="node-team live winner" onclick="pickTeamInNode('ALCS', 'Tampa Bay Rays', event)"><span class="seed">#1</span> <span class="team-name">Tampa Bay Rays</span> <span class="node-score">3</span></div>
+              <div class="node-team live" onclick="pickTeamInNode('ALCS', 'Cleveland Guardians', event)"><span class="seed">#2</span> <span class="team-name">Cleveland Guardians</span> <span class="node-score">2</span></div>
+              <div class="node-status gold" id="alcs-status-text">TB Leads 3-2 • Game 6 Tonight</div>
             </div>
 
             <div class="matchup-node active-series" id="node-NLCS" onclick="handleNodeClick('NLCS', 'Brewers', event)">
-              <div class="node-label live-label">NLCS • LIVE</div>
-              <div class="node-team live winner" onclick="pickTeamInNode('NLCS', 'Milwaukee Brewers', event)"><span class="seed">#1</span> <span class="team-name">Milwaukee Brewers</span> <span class="node-score">3</span></div>
-              <div class="node-team live" onclick="pickTeamInNode('NLCS', 'Los Angeles Dodgers', event)"><span class="seed">#2</span> <span class="team-name">Los Angeles Dodgers</span> <span class="node-score">0</span></div>
-              <div class="node-status gold" id="nlcs-status-text">MIL Leads 3-0 • Game 4 Tonight</div>
+              <div class="node-label live-label">NLCS • FINAL</div>
+              <div class="node-team winner" onclick="pickTeamInNode('NLCS', 'Milwaukee Brewers', event)"><span class="seed">#1</span> <span class="team-name">Milwaukee Brewers 🏆</span> <span class="node-score">4</span></div>
+              <div class="node-team" onclick="pickTeamInNode('NLCS', 'Los Angeles Dodgers', event)"><span class="seed">#2</span> <span class="team-name">Los Angeles Dodgers</span> <span class="node-score">0</span></div>
+              <div class="node-status gold" id="nlcs-status-text">MIL Wins 4-0 • NL Champions!</div>
             </div>
           </div>
 
-          <!-- Round 4: World Series -->
+          <!-- World Series -->
           <div class="bracket-column">
             <h3 class="round-header gold-header">World Series 👑 <span class="sub-head">(Best of 7)</span></h3>
 
             <div class="matchup-node ws-card" id="node-WS" onclick="handleNodeClick('WS', 'World Series', event)">
               <div class="node-label ws-label">2026 WORLD SERIES</div>
-              <div class="node-team pending" onclick="pickTeamInNode('WS', 'AL Champion', event)"><span class="seed">AL</span> <span class="team-name" id="pred-al-champ">AL Champion (TBD)</span></div>
-              <div class="node-team pending" onclick="pickTeamInNode('WS', 'NL Champion', event)"><span class="seed">NL</span> <span class="team-name" id="pred-nl-champ">NL Champion (TBD)</span></div>
-              <div class="node-status gold" id="ws-node-status">UPCOMING: Starts Oct 23, 2026 on FOX</div>
+              <div class="node-team winner" onclick="pickTeamInNode('WS', 'Milwaukee Brewers', event)"><span class="seed">NL</span> <span class="team-name">Milwaukee Brewers</span></div>
+              <div class="node-team pending" onclick="pickTeamInNode('WS', 'AL Champion', event)"><span class="seed">AL</span> <span class="team-name" id="pred-al-champ">AL Champion (TB/CLE)</span></div>
+              <div class="node-status gold" id="ws-node-status">Starts Oct 23 on FOX</div>
             </div>
 
-            <!-- Predicted Champion Crown Badge -->
             <div id="champ-crown-box" class="champ-crown-box" style="display:none;">
               <span class="crown-icon">👑</span>
               <span class="champ-title">YOUR 2026 CHAMPION:</span>
@@ -189,25 +184,23 @@
         </div>
       </div>
 
-      <!-- Format Rules -->
       <div class="info-card-box">
-        <h3>📋 Postseason Bracket Rules & Format</h3>
+        <h3>📋 World Series & Postseason Format Info</h3>
         <ul class="styled-info-list">
-          <li><strong>Wild Card Round:</strong> Best-of-3 series hosted entirely at the stadium of the higher seed.</li>
-          <li><strong>Division Series (DS):</strong> Best-of-5 series using a 2-2-1 home-field format.</li>
-          <li><strong>League Championship Series (LCS):</strong> Best-of-7 series using a 2-3-2 format to crown AL & NL Pennant winners.</li>
-          <li><strong>World Series:</strong> Begins October 23, 2026 on FOX. Best-of-7 Fall Classic hosted by the team with superior regular-season record.</li>
+          <li><strong>National League Pennant:</strong> Milwaukee swept LA 4–0 and holds home-field advantage for World Series Games 1 and 2 at American Family Field.</li>
+          <li><strong>American League Pennant:</strong> Tampa Bay leads Cleveland 3–2. Game 6 takes place tonight on TBS.</li>
+          <li><strong>World Series Broadcast:</strong> Begins Friday, October 23, 2026 at 8:00 PM ET exclusively on FOX.</li>
         </ul>
       </div>
     </section>
 
-    <!-- Broadcast Schedule & Tickets -->
+    <!-- Broadcast Schedule -->
     <section id="broadcast-schedule" class="content-section">
       <div class="section-heading">
         <div>
-          <span class="heading-kicker">BROADCAST DIRECTORY</span>
+          <span class="heading-kicker">AUTOMATED SCHEDULE DIRECTORY</span>
           <h2 id="heading-schedule">TV Broadcast Networks & Tickets</h2>
-          <p class="section-subtitle" id="sub-schedule">Game schedules, TV networks (FOX, FS1, TBS), streaming apps, and ticket options.</p>
+          <p class="section-subtitle" id="sub-schedule">Auto-updated from Major League Baseball's live schedule API.</p>
         </div>
       </div>
 
@@ -215,16 +208,16 @@
         <table class="schedule-table">
           <thead>
             <tr>
-              <th id="th-matchup">Series Matchup</th>
-              <th id="th-time">Date & Start Time (ET)</th>
-              <th id="th-network">TV Network</th>
-              <th id="th-stream">Streaming App</th>
-              <th id="th-location">Ballpark & Venue</th>
-              <th id="th-buy">Buy Tickets</th>
+              <th>Series Matchup</th>
+              <th>Date & Start Time (ET)</th>
+              <th>TV Network</th>
+              <th>Streaming App</th>
+              <th>Ballpark & Venue</th>
+              <th>Buy Tickets</th>
             </tr>
           </thead>
           <tbody id="schedule-body">
-            <!-- Rendered dynamically -->
+            <!-- Populated dynamically via script.js -->
           </tbody>
         </table>
       </div>
@@ -232,7 +225,6 @@
 
   </main>
 
-  <!-- Interactive Modal -->
   <div id="matchup-modal" class="modal-backdrop" onclick="closeMatchupModal(event)">
     <div class="modal-card">
       <button class="modal-close-btn" onclick="closeMatchupModalDirect()">&times;</button>
