@@ -1,4 +1,4 @@
-// High-Resolution Universal Image Fallback Library (Ensures NO broken photos)
+// Universal High-Resolution Fallback Image Library
 const MLB_PHOTOS = {
   STADIUM: "https://images.unsplash.com/photo-1508802222057-4cabc15b825f?auto=format&fit=crop&w=800&q=80",
   BATTER: "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80",
@@ -7,42 +7,43 @@ const MLB_PHOTOS = {
   LIGHTS: "https://images.unsplash.com/photo-1529763807622-491b1bb86698?auto=format&fit=crop&w=800&q=80"
 };
 
-// Universal Image Fallback Handler (Guarantees every photo loads smoothly)
+// Universal Image Fallback Handler (Guarantees every image loads seamlessly)
 function handleImageError(imgElem, typeKey = 'STADIUM') {
   if (!imgElem) return;
   const fallbackUrl = MLB_PHOTOS[typeKey] || MLB_PHOTOS.STADIUM;
   if (imgElem.src !== fallbackUrl) {
-    imgElem.onerror = null; // prevents infinite loops
+    imgElem.onerror = null;
     imgElem.src = fallbackUrl;
   }
 }
 
-// 30-Franchise Database Updated as of October 19, 2026
+// 30-Franchise Postseason Database (Updated: Tampa Bay Wins ALCS 4-2)
 const mlb30Teams = {
+  // AL CHAMPIONS
+  rays: { 
+    name: "Tampa Bay Rays", div: "AL_EAST", seed: "#1 Seed • AL Champions", rec: "98 - 64", pos: "AL Champions (World Series vs MIL)", star: "Junior Caminero", ws: "0 Titles", primary: "#092c5c", accent: "#00a3e0", stadium: "Tropicana Field (St. Petersburg, FL)", pennants: "3 (2008, 2020, 2026)", divTitles: "5", img: "rays.jpg", fallbackType: 'LIGHTS', url: "https://www.mlb.com/rays", 
+    desc: "The Tampa Bay Rays are 2026 American League Champions! Tampa Bay defeated Cleveland 7–3 in ALCS Game 6 to capture the pennant 4–2 behind Junior Caminero's MVP performance (3 HRs, 8 RBIs). Tampa Bay advances to face Milwaukee in the 2026 World Series starting Friday, Oct 23.", 
+    roster: [{ name: "Junior Caminero", pos: "3B | #1", stat: ".290 BA, 31 HR, ALCS MVP" }, { name: "Shane Baz", pos: "SP | #11", stat: "14-6, 2.95 ERA, 25 Playoff SO" }, { name: "Yandy Díaz", pos: "1B | #2", stat: ".348 Playoff BA, 2 HR, 11 RBI" }], 
+    gamelog: [{ game: "ALCS Game 6", opp: "vs Cleveland Guardians", res: "W 7-3", score: "7 - 3", tv: "TBS" }, { game: "ALCS Game 5", opp: "@ Cleveland Guardians", res: "W 3-1", score: "3 - 1", tv: "TBS" }, { game: "ALCS Game 4", opp: "@ Cleveland Guardians", res: "W 7-3", score: "7 - 3", tv: "TBS" }] 
+  },
   // NL CHAMPIONS
   brewers: { 
-    name: "Milwaukee Brewers", div: "NL_CENTRAL", seed: "#1 Seed • NL Champions", rec: "103 - 59", pos: "NL Champions (WS Hosts)", star: "Jackson Chourio", ws: "0 Titles", primary: "#122a47", accent: "#ff1c41", stadium: "American Family Field (Milwaukee, WI)", pennants: "2 (1982, 2026)", divTitles: "6", img: "brewers.jpg", fallbackType: 'STADIUM', url: "https://www.mlb.com/brewers", 
-    desc: "The Milwaukee Brewers hold home-field advantage for Games 1 and 2 of the 2026 World Series! Milwaukee completed a 4-0 sweep of the Dodgers in the NLCS and enters the Fall Classic led by Jackson Chourio (6 postseason HRs) and an untouchable relief corps (0.88 October ERA).", 
+    name: "Milwaukee Brewers", div: "NL_CENTRAL", seed: "#1 Seed • NL Champions", rec: "103 - 59", pos: "NL Champions (World Series Hosts)", star: "Jackson Chourio", ws: "0 Titles", primary: "#122a47", accent: "#ff1c41", stadium: "American Family Field (Milwaukee, WI)", pennants: "2 (1982, 2026)", divTitles: "6", img: "brewers.jpg", fallbackType: 'STADIUM', url: "https://www.mlb.com/brewers", 
+    desc: "The Milwaukee Brewers hold home-field advantage for Games 1 and 2 of the 2026 World Series! Milwaukee completed a 4-0 sweep of the Dodgers in the NLCS and enters the Fall Classic led by Jackson Chourio (6 postseason HRs) and an untouchable bullpen (0.88 October ERA).", 
     roster: [{ name: "Jackson Chourio", pos: "OF | #11", stat: ".288 BA, 26 HR, 6 Postseason HRs" }, { name: "Christian Yelich", pos: "OF | #22", stat: ".392 Playoff BA, 18 HR, .910 OPS" }, { name: "Freddy Peralta", pos: "SP | #51", stat: "17-6, 2.85 ERA, 27 Playoff SO" }], 
-    gamelog: [{ game: "NLCS Game 4", opp: "@ LA Dodgers", res: "W 6-4", score: "6 - 4", tv: "FS1" }, { game: "NLCS Game 3", opp: "@ LA Dodgers", res: "W 6-2", score: "6 - 2", tv: "FS1" }, { game: "NLCS Game 2", opp: "vs LA Dodgers", res: "W 7-4", score: "7 - 4", tv: "FS1" }] 
+    gamelog: [{ game: "NLCS Game 4", opp: "@ LA Dodgers", res: "W 6-4", score: "6 - 4", tv: "FS1" }, { game: "NLCS Game 3", opp: "@ LA Dodgers", res: "W 6-2", score: "6 - 2", tv: "FS1" }] 
   },
-  // ALCS CONTENDERS
-  rays: { 
-    name: "Tampa Bay Rays", div: "AL_EAST", seed: "#1 Seed • ALCS Leads 3-2", rec: "98 - 64", pos: "ALCS Leads 3-2 vs CLE", star: "Junior Caminero", ws: "0 Titles", primary: "#092c5c", accent: "#00a3e0", stadium: "Tropicana Field (St. Petersburg, FL)", pennants: "2", divTitles: "5", img: "rays.jpg", fallbackType: 'LIGHTS', url: "https://www.mlb.com/rays", 
-    desc: "Tampa Bay took a 3-2 lead in the ALCS after back-to-back victories in Games 4 and 5 over Cleveland. Game 6 is live tonight at Tropicana Field with Tampa Bay one win away from clinching the AL Pennant.", 
-    roster: [{ name: "Junior Caminero", pos: "3B | #1", stat: ".290 BA, 31 HR, 4 Playoff HRs" }, { name: "Shane Baz", pos: "SP | #11", stat: "14-6, 2.95 ERA, 25 Playoff SO" }], 
-    gamelog: [{ game: "ALCS Game 5", opp: "@ Cleveland Guardians", res: "W 3-1", score: "3 - 1", tv: "TBS" }, { game: "ALCS Game 4", opp: "@ Cleveland Guardians", res: "W 7-3", score: "7 - 3", tv: "TBS" }] 
-  },
+  // ALCS RUNNERS-UP
   guardians: { 
-    name: "Cleveland Guardians", div: "AL_CENTRAL", seed: "#2 Seed • AL Central Champs", rec: "88 - 74", pos: "ALCS Trailing 2-3 vs TB", star: "José Ramírez", ws: "2 Titles", primary: "#0c2340", accent: "#e31937", stadium: "Progressive Field (Cleveland, OH)", pennants: "6", divTitles: "12", img: "guardians.jpg", fallbackType: 'GLOVE', url: "https://www.mlb.com/guardians", 
-    desc: "Cleveland battles to keep their season alive in ALCS Game 6 at Tropicana Field after dropping Game 5 at home. José Ramírez leads Cleveland's charge aiming to force a winner-take-all Game 7.", 
+    name: "Cleveland Guardians", div: "AL_CENTRAL", seed: "#2 Seed • AL Central Champs", rec: "88 - 74", pos: "Eliminated in ALCS (2-4 vs TB)", star: "José Ramírez", ws: "2 Titles", primary: "#0c2340", accent: "#e31937", stadium: "Progressive Field (Cleveland, OH)", pennants: "6", divTitles: "12", img: "guardians.jpg", fallbackType: 'GLOVE', url: "https://www.mlb.com/guardians", 
+    desc: "Cleveland's postseason run concluded in Game 6 of the ALCS in St. Petersburg. José Ramírez and the Guardians won 88 games and defeated Detroit and Chicago before falling 2–4 to Tampa Bay.", 
     roster: [{ name: "José Ramírez", pos: "3B | #11", stat: ".279 BA, 38 HR, 115 RBI" }, { name: "Steven Kwan", pos: "LF | #38", stat: ".312 BA, 12 HR, 20 SB" }], 
-    gamelog: [{ game: "ALCS Game 5", opp: "vs Tampa Bay Rays", res: "L 1-3", score: "1 - 3", tv: "TBS" }, { game: "ALCS Game 4", opp: "vs Tampa Bay Rays", res: "L 3-7", score: "3 - 7", tv: "TBS" }] 
+    gamelog: [{ game: "ALCS Game 6", opp: "@ Tampa Bay Rays", res: "L 3-7", score: "3 - 7", tv: "TBS" }] 
   },
   // NL WEST
   dodgers: { 
     name: "Los Angeles Dodgers", div: "NL_WEST", seed: "#2 Seed • NL West Champs", rec: "100 - 62", pos: "Eliminated in NLCS (0-4 vs MIL)", star: "Shohei Ohtani", ws: "8 Titles", primary: "#005a9c", accent: "#ef3e42", stadium: "Dodger Stadium (Los Angeles, CA)", pennants: "25", divTitles: "21", img: "dodgers.jpg", fallbackType: 'BATTER', url: "https://www.mlb.com/dodgers", 
-    desc: "The Los Angeles Dodgers captured the NL West with a 100-62 record behind Shohei Ohtani's historic 54-home-run season before being eliminated by Milwaukee in the NLCS.", 
+    desc: "The Los Angeles Dodgers captured the NL West with 100 wins behind Shohei Ohtani's historic 54-home-run season before being eliminated by Milwaukee in the NLCS.", 
     roster: [{ name: "Shohei Ohtani", pos: "DH/SP | #17", stat: ".310 BA, 54 HR, 130 RBI, 5 Playoff HRs" }, { name: "Mookie Betts", pos: "SS/OF | #5", stat: ".289 BA, 28 HR" }], 
     gamelog: [{ game: "NLCS Game 4", opp: "vs Milwaukee Brewers", res: "L 4-6", score: "4 - 6", tv: "FS1" }] 
   },
@@ -74,7 +75,7 @@ const mlb30Teams = {
   rockies: { name: "Colorado Rockies", div: "NL_WEST", seed: "Rebuilding", rec: "61 - 101", pos: "Regular Season 5th", star: "Ezequiel Tovar", ws: "0 Titles", primary: "#330066", accent: "#c4ced4", stadium: "Coors Field (Denver, CO)", pennants: "1", divTitles: "0", img: "rockies.jpg", fallbackType: 'PITCHER', url: "https://www.mlb.com/rockies", desc: "Ezequiel Tovar hit 25 home runs in Denver.", roster: [{ name: "Ezequiel Tovar", pos: "SS | #14", stat: ".268 BA, 25 HR" }], gamelog: [] }
 };
 
-let selectedTeamKey = 'brewers';
+let selectedTeamKey = 'rays';
 let isPredictorMode = false;
 let userPredictorPicks = {};
 
@@ -91,19 +92,16 @@ function setFavoriteTeam(key) {
 }
 
 function openFavoriteTeamPortal() {
-  const saved = localStorage.getItem('favMLBTeam') || 'brewers';
+  const saved = localStorage.getItem('favMLBTeam') || 'rays';
   if (window.location.pathname.includes('teams.html')) { openTeamPortal(saved); } 
   else { window.location.href = `teams.html?team=${saved}`; }
 }
 
-// ----------------------------------------------------
-// DYNAMIC LIVE DATA API FETCHERS
-// ----------------------------------------------------
-
+// Live Scoreboard & World Series Schedule Fetchers
 async function fetchLiveMLBData() {
   const ticker = document.getElementById('ticker-content');
   const scoreGrid = document.getElementById('live-scoreboard-grid');
-  if (ticker) ticker.innerHTML = "<span>🔄 Connecting to ESPN live score feed...</span>";
+  if (ticker) ticker.innerHTML = "<span>🔄 Connecting to live score feeds...</span>";
 
   try {
     const res = await fetch('https://site.api.espn.com/apis/site/v2/sports/baseball/mlb/scoreboard');
@@ -154,24 +152,24 @@ async function fetchLiveMLBData() {
 }
 
 function renderFallbackScoreboard() {
-  setText('ticker-content', "⚾ ALCS Game 6: CLE 3 @ TB 5 (In Progress - Rays lead ALCS 3-2) | NLCS Final: MIL 6, LAD 4 (MIL wins 4-0) | World Series Game 1: Oct 23 on FOX");
+  setText('ticker-content', "⚾ ALCS FINAL: TB 7, CLE 3 (TB wins 4-2) | 2026 WORLD SERIES: Tampa Bay Rays @ Milwaukee Brewers | Game 1: Fri Oct 23 on FOX");
   const scoreGrid = document.getElementById('live-scoreboard-grid');
   if (scoreGrid) {
     scoreGrid.innerHTML = `
       <div class="score-card">
-        <div class="card-top"><span>ALCS GAME 6 (RAYS LEAD 3-2)</span> <span class="status-badge">LIVE • TBS</span></div>
+        <div class="card-top"><span>ALCS GAME 6 (RAYS WIN AL PENNANT)</span> <span class="status-badge final">FINAL</span></div>
+        <div class="team-score-row winner"><span>Tampa Bay Rays 🏆</span> <span>7</span></div>
         <div class="team-score-row"><span>Cleveland Guardians</span> <span>3</span></div>
-        <div class="team-score-row winner"><span>Tampa Bay Rays</span> <span>5</span></div>
-      </div>
-      <div class="score-card">
-        <div class="card-top"><span>NLCS GAME 4 (MIL WINS 4-0)</span> <span class="status-badge final">FINAL</span></div>
-        <div class="team-score-row winner"><span>Milwaukee Brewers 🏆</span> <span>6</span></div>
-        <div class="team-score-row"><span>Los Angeles Dodgers</span> <span>4</span></div>
       </div>
       <div class="score-card">
         <div class="card-top"><span>2026 WORLD SERIES GAME 1</span> <span class="status-badge">FRI OCT 23 • 8:00 PM ET</span></div>
-        <div class="team-score-row"><span>AL Champion (TB/CLE)</span> <span>-</span></div>
-        <div class="team-score-row winner"><span>Milwaukee Brewers (Host)</span> <span>-</span></div>
+        <div class="team-score-row"><span>Tampa Bay Rays (AL)</span> <span>-</span></div>
+        <div class="team-score-row winner"><span>Milwaukee Brewers (NL Host)</span> <span>-</span></div>
+      </div>
+      <div class="score-card">
+        <div class="card-top"><span>2026 WORLD SERIES GAME 2</span> <span class="status-badge">SAT OCT 24 • 8:00 PM ET</span></div>
+        <div class="team-score-row"><span>Tampa Bay Rays (AL)</span> <span>-</span></div>
+        <div class="team-score-row winner"><span>Milwaukee Brewers (NL Host)</span> <span>-</span></div>
       </div>
     `;
   }
@@ -182,7 +180,7 @@ async function fetchAutoSchedule() {
   if (!tbody) return;
 
   try {
-    const response = await fetch('https://statsapi.mlb.com/api/v1/schedule?sportId=1&hydrate=broadcasts(all),venue&startDate=2026-10-19&endDate=2026-11-01');
+    const response = await fetch('https://statsapi.mlb.com/api/v1/schedule?sportId=1&hydrate=broadcasts(all),venue&startDate=2026-10-23&endDate=2026-11-01');
     const data = await response.json();
 
     if (data.dates && data.dates.length > 0) {
@@ -200,18 +198,14 @@ async function fetchAutoSchedule() {
             if (net) tvNetwork = net.callSign;
           }
 
-          let badgeClass = "net-fox";
-          if (tvNetwork.includes("FS1")) badgeClass = "net-fs1";
-          else if (tvNetwork.includes("TBS")) badgeClass = "net-tbs";
-
           const venue = game.venue ? game.venue.name : "MLB Ballpark";
 
           tbody.innerHTML += `
             <tr>
-              <td><strong>${game.description || 'Postseason Matchup'}</strong><br><span style="font-size:12px; color:var(--text-muted);">${awayTeam} @ ${homeTeam}</span></td>
+              <td><strong>${game.description || '2026 World Series'}</strong><br><span style="font-size:12px; color:var(--text-muted);">${awayTeam} @ ${homeTeam}</span></td>
               <td>${gameDate} • ${gameTime} ET</td>
-              <td><span class="net-pill ${badgeClass}">${tvNetwork}</span></td>
-              <td>${tvNetwork.includes("FOX") ? "FOX Sports App" : "HBO Max / TBS App"}</td>
+              <td><span class="net-pill net-fox">${tvNetwork}</span></td>
+              <td>FOX Sports Live</td>
               <td>${venue}</td>
               <td><a href="https://www.mlb.com/tickets" target="_blank" class="ticket-pill-btn">Tickets 🎟️</a></td>
             </tr>
@@ -230,10 +224,10 @@ function renderFallbackSchedule() {
   const tbody = document.getElementById('schedule-body');
   if (!tbody) return;
   const scheduleData = [
-    { match: "ALCS Game 6", matchup: "Cleveland Guardians @ Tampa Bay Rays", time: "Oct 19 • 8:08 PM ET", net: "TBS", badge: "net-tbs", stream: "HBO Max / TBS App", venue: "Tropicana Field, St. Petersburg, FL", link: "https://www.mlb.com/tickets" },
-    { match: "ALCS Game 7*", matchup: "Cleveland Guardians @ Tampa Bay Rays", time: "Oct 20 • 8:08 PM ET", net: "TBS", badge: "net-tbs", stream: "HBO Max / TBS App", venue: "Tropicana Field, St. Petersburg, FL", link: "https://www.mlb.com/tickets" },
-    { match: "World Series Game 1", matchup: "AL Champion @ Milwaukee Brewers", time: "Oct 23 • 8:00 PM ET", net: "FOX", badge: "net-fox", stream: "FOX Sports Live", venue: "American Family Field, Milwaukee, WI", link: "https://www.mlb.com/tickets" },
-    { match: "World Series Game 2", matchup: "AL Champion @ Milwaukee Brewers", time: "Oct 24 • 8:00 PM ET", net: "FOX", badge: "net-fox", stream: "FOX Sports Live", venue: "American Family Field, Milwaukee, WI", link: "https://www.mlb.com/tickets" }
+    { match: "World Series Game 1", matchup: "Tampa Bay Rays @ Milwaukee Brewers", time: "Fri Oct 23 • 8:00 PM ET", net: "FOX", stream: "FOX Sports Live", venue: "American Family Field, Milwaukee, WI" },
+    { match: "World Series Game 2", matchup: "Tampa Bay Rays @ Milwaukee Brewers", time: "Sat Oct 24 • 8:00 PM ET", net: "FOX", stream: "FOX Sports Live", venue: "American Family Field, Milwaukee, WI" },
+    { match: "World Series Game 3", matchup: "Milwaukee Brewers @ Tampa Bay Rays", time: "Mon Oct 26 • 8:00 PM ET", net: "FOX", stream: "FOX Sports Live", venue: "Tropicana Field, St. Petersburg, FL" },
+    { match: "World Series Game 4", matchup: "Milwaukee Brewers @ Tampa Bay Rays", time: "Tue Oct 27 • 8:00 PM ET", net: "FOX", stream: "FOX Sports Live", venue: "Tropicana Field, St. Petersburg, FL" }
   ];
 
   tbody.innerHTML = '';
@@ -242,10 +236,10 @@ function renderFallbackSchedule() {
       <tr>
         <td><strong>${item.match}</strong><br><span style="font-size:12px; color:var(--text-muted);">${item.matchup}</span></td>
         <td>${item.time}</td>
-        <td><span class="net-pill ${item.badge}">${item.net}</span></td>
+        <td><span class="net-pill net-fox">${item.net}</span></td>
         <td>${item.stream}</td>
         <td>${item.venue}</td>
-        <td><a href="${item.link}" target="_blank" class="ticket-pill-btn">Tickets 🎟️</a></td>
+        <td><a href="https://www.mlb.com/tickets" target="_blank" class="ticket-pill-btn">Tickets 🎟️</a></td>
       </tr>
     `;
   });
@@ -253,10 +247,10 @@ function renderFallbackSchedule() {
 
 // Fan MVP Poll Engine
 const pollCandidates = [
-  { id: "chourio", name: "Jackson Chourio (MIL)", votes: 742 },
-  { id: "caminero", name: "Junior Caminero (TB)", votes: 410 },
-  { id: "ohtani", name: "Shohei Ohtani (LAD)", votes: 388 },
-  { id: "ramirez", name: "José Ramírez (CLE)", votes: 295 }
+  { id: "chourio", name: "Jackson Chourio (MIL)", votes: 810 },
+  { id: "caminero", name: "Junior Caminero (TB)", votes: 765 },
+  { id: "diaz", name: "Yandy Díaz (TB)", votes: 412 },
+  { id: "yelich", name: "Christian Yelich (MIL)", votes: 390 }
 ];
 
 function renderFanMVPPoll() {
@@ -291,7 +285,7 @@ function initCompareDropdowns() {
     s1.innerHTML += `<option value="${key}">${team.name}</option>`;
     s2.innerHTML += `<option value="${key}">${team.name}</option>`;
   });
-  s1.value = 'brewers'; s2.value = 'rays'; runTeamComparison();
+  s1.value = 'rays'; s2.value = 'brewers'; runTeamComparison();
 }
 
 function runTeamComparison() {
@@ -344,7 +338,7 @@ function selectTeam(key) {
   const img = document.getElementById('spotlight-img');
   if (img) { 
     img.src = t.img; 
-    img.onerror = () => handleImageError(img, t.fallbackType || 'STADIUM'); 
+    img.onerror = () => handleImageError(img, t.fallbackType || 'LIGHTS'); 
   }
 }
 
@@ -412,27 +406,26 @@ function pickTeamInNode(nodeId, teamName, event) {
   if (event) event.stopPropagation();
   if (!isPredictorMode) { openMatchupDetails(nodeId); return; }
   userPredictorPicks[nodeId] = teamName;
-  if (nodeId === 'ALCS') setText('pred-al-champ', `AL: ${teamName}`);
-  else if (nodeId === 'WS') {
+  if (nodeId === 'WS') {
     const crownBox = document.getElementById('champ-crown-box');
     const champName = document.getElementById('champ-team-name');
     if (crownBox && champName) { champName.innerText = teamName; crownBox.style.display = 'block'; }
   }
-  alert(`🎯 Prediction Saved! You selected ${teamName} for ${nodeId}.`);
+  alert(`🎯 Prediction Saved! You picked ${teamName} to win the 2026 World Series.`);
 }
 
 function handleNodeClick(nodeId, defaultTeam, event) { if (!isPredictorMode) openMatchupDetails(nodeId); }
 
 function resetPredictorPicks() {
-  userPredictorPicks = {}; setText('pred-al-champ', 'AL Champion (TB/CLE)');
+  userPredictorPicks = {};
   const crownBox = document.getElementById('champ-crown-box'); if (crownBox) crownBox.style.display = 'none';
   alert("🔄 Predictor picks reset!");
 }
 
 const matchupDetailsMap = {
-  'NLCS': { title: "NLCS: Brewers vs Dodgers (MIL Wins 4-0)", summary: "Milwaukee swept LA 4-0 to win the NL Pennant and secure World Series hosting rights!", games: ["Game 1: MIL 2, LAD 1", "Game 2: MIL 7, LAD 4", "Game 3: MIL 6, LAD 2", "Game 4: MIL 6, LAD 4"] },
-  'ALCS': { title: "ALCS: Rays vs Guardians (TB Leads 3-2)", summary: "Tampa Bay leads 3-2 after winning Games 4 and 5 in Cleveland.", games: ["Game 1: CLE 7, TB 3", "Game 2: TB 3, CLE 1", "Game 3: CLE 3, TB 2", "Game 4: TB 7, CLE 3", "Game 5: TB 3, CLE 1"] },
-  'WS': { title: "2026 World Series", summary: "Begins Friday, October 23 at American Family Field in Milwaukee on FOX.", games: ["Game 1: Fri Oct 23", "Game 2: Sat Oct 24"] }
+  'NLCS': { title: "NLCS: Brewers vs Dodgers (MIL Wins 4-0)", summary: "Milwaukee swept LA 4-0 to win the NL Pennant!", games: ["Game 1: MIL 2, LAD 1", "Game 2: MIL 7, LAD 4", "Game 3: MIL 6, LAD 2", "Game 4: MIL 6, LAD 4"] },
+  'ALCS': { title: "ALCS: Rays vs Guardians (TB Wins 4-2)", summary: "Tampa Bay defeated Cleveland 4-2 to win the 2026 AL Pennant!", games: ["Game 1: CLE 7, TB 3", "Game 2: TB 3, CLE 1", "Game 3: CLE 3, TB 2", "Game 4: TB 7, CLE 3", "Game 5: TB 3, CLE 1", "Game 6: TB 7, CLE 3"] },
+  'WS': { title: "2026 World Series: Rays vs Brewers", summary: "Starts Friday, October 23 at American Family Field in Milwaukee on FOX.", games: ["Game 1: Fri Oct 23", "Game 2: Sat Oct 24", "Game 3: Mon Oct 26", "Game 4: Tue Oct 27"] }
 };
 
 function openMatchupDetails(key) {
@@ -474,9 +467,9 @@ function startLiveTickingTimer() {
 }
 
 const i18n = {
-  en: { home: "Scores & AI Engine", bracket: "Interactive Bracket", teams: "30-Team Franchise Hub", heroTitle: "Road to the 2026 World Series" },
-  es: { home: "Marcadores e Inteligencia", bracket: "Cuadro Interactivo", teams: "Hub 30 Franquicias", heroTitle: "El Camino a la Serie Mundial 2026" },
-  zh: { home: "比分与AI分析", bracket: "互动季后赛图", teams: "30支球队中心", heroTitle: "通往2026世界大赛之路" }
+  en: { home: "Scores & AI Engine", bracket: "Interactive Bracket", teams: "30-Team Franchise Hub", heroTitle: "2026 World Series: Rays vs Brewers" },
+  es: { home: "Marcadores e Inteligencia", bracket: "Cuadro Interactivo", teams: "Hub 30 Franquicias", heroTitle: "Serie Mundial 2026: Rays vs Brewers" },
+  zh: { home: "比分与AI分析", bracket: "互动季后赛图", teams: "30支球队中心", heroTitle: "2026世界大赛：光芒 vs 密尔沃基酿酒人" }
 };
 
 function changeLanguage(langKey) {
